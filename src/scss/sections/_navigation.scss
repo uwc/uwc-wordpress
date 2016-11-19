@@ -1,0 +1,250 @@
+// ==== NAVIGATION ==== //
+
+// 1. Headroom
+// 2. Upper navigation
+// 3. Lower navigation
+// 4. Turbolinks
+
+// 1. Headroom
+
+.site-navigation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: palette(white);
+  box-shadow: 0 2px 8px -2px palette(gray, light);
+  z-index: 9999;
+
+  .headroom & {
+    position: fixed;
+    transition: transform $anim-m;
+  }
+
+  .headroom--pinned &,
+  .headroom--unpinned.headroom--bottom & {
+    transform: translateY(0%);
+  }
+
+  .headroom--unpinned & {
+    transform: translateY(-48%);
+  }
+
+  @include mappy-query(tablet-desktop) {
+    .admin-bar & {
+      top: 32px;
+    }
+  }
+}
+
+// 2. Upper navigation //
+
+.navigation-upper {
+  @include ctnr(wide);
+
+  @include clearfix;
+
+  position: relative;
+  padding-top: 24px;
+  transition: visibility $anim-m;
+  visibility: visible;
+
+  @include mappy-query(tablet-desktop) {
+    .headroom--unpinned & {
+      visibility: hidden;
+    }
+
+    .headroom--unpinned.headroom--bottom & {
+      visibility: visible;
+    }
+  }
+}
+
+.navigation-left,
+.navigation-right {
+  // Lift the left & right elements above the center element.
+  position: relative;
+  padding-bottom: 12px;
+  z-index: 10000;
+}
+
+.navigation-left {
+  float: left;
+}
+
+.navigation-center {
+  display: block;
+  padding-bottom: 12px;
+  line-height: 0;
+  text-align: center;
+
+  @include mappy-query(tablet-desktop) {
+    position: absolute;
+    right: 0;
+    left: 0;
+    line-height: 0;
+  }
+
+
+  svg,
+  .custom-logo {
+    max-width: 100%;
+    transition: opacity $anim-s;
+    opacity: 1;
+
+    &:hover,
+    &:focus {
+      opacity: 0.75;
+    }
+  }
+
+  svg {
+    height: vr(1);
+  }
+
+  .custom-logo {
+    height: auto;
+    vertical-align: middle;
+  }
+}
+
+.navigation-right {
+  float: right;
+}
+
+.navigation-search {
+  padding: 0;
+  transition: transform $anim-s;
+  border: 0;
+  outline: none;
+  background: none;
+  color: palette(gray);
+  cursor: pointer;
+
+  svg {
+    transition: fill $anim-s;
+    vertical-align: middle;
+    fill: palette(gray);
+
+    &:hover,
+    &:focus {
+      fill: palette(orange);
+    }
+  }
+
+  .-search-open & {
+    transform: rotate(180deg);
+  }
+}
+
+.search-open {
+  display: inline;
+
+  .-search-open & {
+    display: none;
+  }
+}
+
+.search-close {
+  display: none;
+
+  .-search-open & {
+    display: inline;
+  }
+}
+
+// 3. Lower navigation
+
+.navigation-lower {
+  @include ctnr(wide);
+
+  clear: both;
+}
+
+// responsive-nav.js 1.0.39 by @viljamis
+
+@include mappy-query(phone) {
+  .navigation-links ul {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .navigation-links li {
+    display: block;
+    width: 100%;
+  }
+
+  .js .navigation-links {
+    display: block;
+    position: absolute;
+    max-height: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    zoom: 1;
+  }
+
+  .navigation-links.opened {
+    max-height: 9999px;
+  }
+
+  .navigation-button {
+    @include font(small);
+
+    margin-left: 8px;
+    padding: 0;
+    padding-left: 16px;
+    border: 0;
+    border-left: 1px solid gray;
+    outline: none;
+    background: none;
+    color: palette(gray, darker);
+    font-size: ms(1);
+    cursor: pointer;
+    vertical-align: middle;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+  }
+}
+
+
+@include mappy-query(tablet-desktop) {
+  .js .navigation-links {
+    position: relative;
+  }
+
+  .js .navigation-links.closed {
+    max-height: none;
+  }
+
+  .navigation-button {
+    display: none;
+  }
+}
+
+
+// 4. Turbolinks //
+
+.turbolinks-bar {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+
+  // Display full progress bar to indicate completed page load.
+  background-color: palette(blue);
+  background-image: linear-gradient(left, palette(blue), palette(turquoise));
+  z-index: 99998;
+
+  @include mappy-query(tablet-desktop) {
+    .admin-bar & {
+      top: 32px;
+    }
+  }
+}
