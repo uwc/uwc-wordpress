@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/uwc/uwc-wordpress.svg?branch=development)](https://travis-ci.org/uwc/uwc-wordpress) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c8129049d7374429b9fa6c88fff60376)](https://www.codacy.com/app/connor_baer/uwc-wordpress)
+[![Build Status](https://travis-ci.org/uwc/uwc-wordpress.svg?branch=development)](https://travis-ci.org/uwc/uwc-wordpress) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6acc8e447ec54e208f1c08505ebd3afc)](https://www.codacy.com/app/connor_baer/uwc-wordpress)
 
 # A WordPress theme for UWC websites.
 
