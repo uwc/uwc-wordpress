@@ -142,25 +142,27 @@ module.exports = {
     }
   },
 
+  update: {
+    // Copies dependencies from package managers to `_scss` and renames them to allow for them to be imported as a Sass file.
+    src: [
+      bower + 'normalize-css/normalize.css',
+      bower + 'slick-lightbox/dist/slick-lightbox.css',
+      bower + 'slick-carousel/slick/slick.css',
+      bower + 'slick-carousel/slick/slick-theme.css'
+    ],
+    dest: src + 'scss/deps',
+    rename: {
+      prefix: '_',
+      extname: '.scss'
+    }
+  },
+
   utils: {
     clean: [ build + '**/.DS_Store' ], // A glob pattern matching junk files to clean out of `build`; feel free to add to this array.
     wipe: [ dist ], // Clean this out before creating a new distribution copy.
     dist: {
       src: [ build + '**/*', '!' + build + '**/*.map' ],
       dest: dist
-    },
-    dependencies: { // Copies dependencies from `bower_components` to `src/scss` and renames them to allow for them to be imported as a Sass file.
-      src: [
-        bower + 'normalize-css/normalize.css',
-        bower + 'slick-lightbox/dist/slick-lightbox.css',
-        bower + 'slick-carousel/slick/slick.css',
-        bower + 'slick-carousel/slick/slick-theme.css'
-      ],
-      dest: src + 'scss/deps',
-      rename: {
-        prefix: '_',
-        extname: '.scss'
-      }
     }
   }
 };
