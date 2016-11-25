@@ -4,12 +4,12 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package UWC_Website
+ * @package UWC
  */
 
 ?>
 
-<section class="section-quote">
+<section class="section section-quote">
 	<blockquote><p><?php the_sub_field( 'quote' ); ?></p>
 		<?php
 		if ( get_sub_field( 'citation' ) ) {

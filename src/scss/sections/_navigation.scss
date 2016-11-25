@@ -1,13 +1,13 @@
 // ==== NAVIGATION ==== //
 
-// 1. Headroom
-// 2. Upper navigation
-// 3. Lower navigation
+// 1. Metabar
+// 2. Brand
+// 3. Navigation
 // 4. Turbolinks
 
-// 1. Headroom
+// 1. Metabar //
 
-.site-navigation {
+.metabar {
   position: absolute;
   top: 0;
   right: 0;
@@ -16,6 +16,7 @@
   box-shadow: 0 2px 8px -2px palette(gray, light);
   z-index: 9999;
 
+  // Headroom: hide and show metabar on scroll.
   .headroom & {
     position: fixed;
     transition: transform $anim-m;
@@ -27,29 +28,30 @@
   }
 
   .headroom--unpinned & {
-    transform: translateY(-48%);
+    transform: translateY(-50%);
   }
 
-  @include mappy-query(tablet-desktop) {
+  @include mappy-bp(small) {
     .admin-bar & {
       top: 32px;
     }
   }
 }
 
-// 2. Upper navigation //
+// 2. Brand //
 
-.navigation-upper {
-  @include ctnr(wide);
+.brand {
+  @include ctnr(three);
 
   @include clearfix;
 
   position: relative;
-  padding-top: 24px;
+  padding-top: 18px;
   transition: visibility $anim-m;
   visibility: visible;
 
-  @include mappy-query(tablet-desktop) {
+  // Headroom: hide and show metabar on scroll.
+  @include mappy-bp(small) {
     .headroom--unpinned & {
       visibility: hidden;
     }
@@ -60,36 +62,43 @@
   }
 }
 
-.navigation-left,
-.navigation-right {
+.brand-left,
+.brand-right {
   // Lift the left & right elements above the center element.
   position: relative;
   padding-bottom: 12px;
   z-index: 10000;
 }
 
-.navigation-left {
+.brand-left {
   float: left;
 }
 
-.navigation-center {
+.brand-center {
   display: block;
   padding-bottom: 12px;
   line-height: 0;
   text-align: center;
 
-  @include mappy-query(tablet-desktop) {
+  @include mappy-bp(small) {
     position: absolute;
     right: 0;
     left: 0;
     line-height: 0;
+
+    .site-logo {
+      max-width: 50vw;
+    }
   }
 
-
-  svg,
-  .custom-logo {
-    max-width: 100%;
+  .site-logo {
+    display: block;
+    height: 32px;
+    margin: 0 auto;
     transition: opacity $anim-s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     opacity: 1;
 
     &:hover,
@@ -97,28 +106,18 @@
       opacity: 0.75;
     }
   }
-
-  svg {
-    height: vr(1);
-  }
-
-  .custom-logo {
-    height: auto;
-    vertical-align: middle;
-  }
 }
 
-.navigation-right {
+.brand-right {
   float: right;
 }
 
-.navigation-search {
+.brand-search {
   padding: 0;
   transition: transform $anim-s;
   border: 0;
   outline: none;
   background: none;
-  color: palette(gray);
   cursor: pointer;
 
   svg {
@@ -153,17 +152,17 @@
   }
 }
 
-// 3. Lower navigation
+// 3. Navigation //
 
-.navigation-lower {
-  @include ctnr(wide);
+.navigation {
+  @include ctnr(three);
 
   clear: both;
 }
 
 // responsive-nav.js 1.0.39 by @viljamis
 
-@include mappy-query(phone) {
+@include mappy-bp(max-width small) {
   .navigation-links ul {
     display: block;
     width: 100%;
@@ -191,7 +190,7 @@
   }
 
   .navigation-button {
-    @include font(small);
+    @include font(body-s);
 
     margin-left: 8px;
     padding: 0;
@@ -211,7 +210,7 @@
 }
 
 
-@include mappy-query(tablet-desktop) {
+@include mappy-bp(small) {
   .js .navigation-links {
     position: relative;
   }
@@ -229,7 +228,7 @@
 // 4. Turbolinks //
 
 .turbolinks-bar {
-  display: block;
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -242,7 +241,7 @@
   background-image: linear-gradient(left, palette(blue), palette(turquoise));
   z-index: 99998;
 
-  @include mappy-query(tablet-desktop) {
+  @include mappy-bp(small) {
     .admin-bar & {
       top: 32px;
     }

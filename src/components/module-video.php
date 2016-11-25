@@ -4,13 +4,15 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package UWC_Website
+ * @package UWC
  */
 
 ?>
 
-<section class="section-video">
-	<div class="section-wrapper">
-		<?php the_sub_field( 'video' ); ?>
+<section class="section section-video">
+	<div class="section-videoOuter">
+		<div class="section-videoInner">
+			<?php the_sub_field( 'video' ); ?>
+		</div>
 	</div>
 </section>

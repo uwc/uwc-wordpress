@@ -1,4 +1,5 @@
 /* jshint -W117 */
+/* jshint -W070 */
 /* jshint -W098 */
 ( function( $ ) {
 
@@ -61,14 +62,6 @@
     } );
   }
 
-  // CONTACT BUTTON //
-
-  function _contactButton() {
-    $( '#js-contact' ).on( 'click', function() {
-      $( '#js-body' ).toggleClass( '-contact-open' );
-    } );
-  }
-
   // SEARCH //
 
   function _search() {
@@ -84,21 +77,19 @@
     } );
   }
 
-  $( document ).ready( function() {
-    _smoothScroll();
-    _headroom();
-    _contactButton();
-    _search();
-    _slickLightbox();
-    _responsiveNav();
-  } );
-
-  // Close everything on escape.
+  // Close search on escape.
   $( document ).on( 'keyup', function( e ) {
     if ( 27 === e.keyCode ) {
       $( '#js-body' ).removeClass( '-search-open' );
-      $( '#js-body' ).removeClass( '-contact-open' );
     }
+  } );
+
+  $( document ).ready( function() {
+    _smoothScroll();
+    _headroom();
+    _search();
+    _slickLightbox();
+    _responsiveNav();
   } );
 
 }( jQuery ) );

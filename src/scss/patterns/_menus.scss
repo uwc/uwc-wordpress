@@ -1,106 +1,111 @@
 // ==== MENUS ==== //
 
-/**
- * 1. Header
- * 2. Social
- * 3. Footer
- */
+// 1. Header
+// 2. Social
+// 3. Footer
 
 // 1. Header //
 
-#menu-primary {
+.menu-primary {
   position: relative;
   text-align: center;
 
-  & > .menu-item {
+  > .menu-item {
+    display: inline-block;
+    position: relative;
+    height: 100%;
     margin: 0 1.5%;
     padding-bottom: 12px;
-    list-style-type: none;
-    display: inline-block;
-    height: 100%;
-    position: relative;
     cursor: pointer;
+    list-style-type: none;
 
     @include mappy-bp(large) {
       margin: 0 2.5%;
     }
-  }
 
-  & > .menu-item > a {
-    @include font(small);
+    > a {
+      @include font(body-s);
+      @include link-underline(blue);
 
-    @include link-underline(purple);
+      color: palette(gray, dark);
+      font-weight: $sans-medium;
 
-    color: palette(gray, darker);
-
-    @include mappy-query(phone) {
-      font-size: ms(1);
+      &::after {
+        bottom: -2px;
+        width: 60px;
+        max-width: 66%;
+        height: 3px;
+      }
     }
   }
 
-  .menu-item:hover > a:after,
-  .menu-item:focus > a:after,
-  .menu-item.current-menu-item > a:after {
-    visibility: visible;
+
+  .menu-item:hover > a::after,
+  .menu-item.current-menu-item > a::after,
+  .menu-item.current-menu-ancestor > a::after {
+    transform: translate(0, 0);
     opacity: 1;
-    transform: translate(0px, 0px);
+    visibility: visible;
   }
 
   .sub-menu {
     position: absolute;
     top: 100%;
     left: -#{vr(0.5)};
-    z-index: 100;
     min-width: 100%;
-    padding-bottom: vr(0.25);
-    background-color: palette(white);
-    box-shadow: 0px 2px 8px -2px palette(gray, light);
-    border-bottom-right-radius: vr(0.125);
-    border-bottom-left-radius: vr(0.125);
-    visibility: hidden;
-    transform: translate(0px, -4px);
-    opacity: 0;
+    padding-bottom: 0.25rem;
+    transform: translate(0, -4px);
     transition: visibility $anim-m, opacity $anim-m, transform $anim-m;
+    background-color: palette(white);
+    box-shadow: 1px 2px 8px -2px palette(gray, light), -1px 2px 8px -2px palette(gray, light);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
 
     .menu-item {
-      @include font(small);
+      @include font(body-s);
 
+      width: 100%;
+      padding: vr(0.125) vr(0.5);
+      transition: background-color $anim-s, color $anim-s;
+      background-color: palette(white);
       text-align: left;
       white-space: nowrap;
-      padding: vr(0.125) vr(0.5);
-      background-color: palette(white);
-      width: 100%;
-      transition: color $anim-s;
 
       &:hover,
       &:focus {
-        color: palette(purple, light);
+        background-color: palette(gray, lighter);
+        color: palette(blue);
+      }
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
       }
     }
   }
 
-  @include mappy-query(tablet-desktop) {
-    & > .menu-item:hover > .sub-menu {
-      visibility: visible;
+  @include mappy-bp(small) {
+    > .menu-item:hover > .sub-menu {
+      transform: translate(0, 0);
       opacity: 1;
-      transform: translate(0px, 0px);
+      visibility: visible;
     }
   }
 }
 
 // 2. Social //
 
-/**
- * Social icons displayed in the navigation bar.
- * A normal WordPress menu with custom links can be used to display the icons.
- * The trick are the CSS attribute selectors that check for the domain.
- * Inspired by http://justintadlock.com/archives/2013/08/14/social-nav-menus-part-2
- */
-#menu-social {
+// A normal WordPress menu with custom links can be used to display social icons.
+// The trick are the CSS attribute selectors that check for the domain.
+// Inspired by http://justintadlock.com/archives/2013/08/14/social-nav-menus-part-2
+
+.menu-social {
+  margin: 0;
+  padding: 0;
   list-style: none;
   text-align: right;
-  padding: 0;
-  margin: 0;
 
   li {
     display: inline-block;
@@ -109,164 +114,164 @@
   a {
     margin-right: vr(0.5);
 
-    &:before {
-      content: '\64';
+    &::before {
       display: inline-block;
-      color: palette(gray);
-      font-family: 'uwc-website' !important;
-      vertical-align: top;
-      font-style: normal !important;
-      font-weight: normal !important;
-      font-variant: normal !important;
-      text-transform: none !important;
-      font-size: 20px;
-      speak: none;
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       transition: color $anim-s;
+      color: palette(gray);
+      font-family: "uwc-website" !important;
+      font-size: 20px;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-style: normal !important;
+      font-variant: normal !important;
+      font-weight: normal !important;
+      line-height: 1.5;
+      text-transform: none !important;
+      content: "\64";
+      speak: none;
+      vertical-align: top;
     }
 
     &[href*="wordpress"],
     &[href*="wordpress"] {
-      &:before {
-        content: '\63';
+      &::before {
+        content: "\63";
       }
 
-      &:focus:before,
-      &:hover:before {
+      &:focus::before,
+      &:hover::before {
         color: #1e8cbe;
       }
     }
 
     &[href*="facebook"] {
-      &:before {
-        content: '\68';
+      &::before {
+        content: "\68";
       }
 
-      &:focus:before,
-      &:hover:before {
+      &:focus::before,
+      &:hover::before {
         color: #3b5998;
       }
     }
 
     &[href*="twitter"] {
-      &:before {
-        content: '\69';
+      &::before {
+        content: "\69";
       }
 
-      &:focus:before,
-      &:hover:before {
+      &:focus::before,
+      &:hover::before {
         color: #55acee;
       }
     }
 
     &[href*="plus.google"] {
-      &:before {
-        content: '\61';
+      &::before {
+        content: "\61";
       }
 
-      &:focus:before,
-      &:hover:before {
+      &:focus::before,
+      &:hover::before {
         color: #dc4e41;
       }
     }
 
     &[href*="pinterest"] {
-      &:before {
-        content: '\71';
+      &::before {
+        content: "\71";
       }
 
-      &:focus:before,
-      &:hover:before {
+      &:focus::before,
+      &:hover::before {
         color: #bd081c;
       }
     }
 
     &[href*="github"] {
-      &:before {
-        content: '\70';
+      &::before {
+        content: "\70";
       }
 
-      &:focus:before,
-      &:hover:before {
+      &:focus::before,
+      &:hover::before {
         color: #333333;
       }
     }
 
     &[href*="tumblr"] {
-      &:before {
-        content: '\6d';
+      &::before {
+        content: "\6d";
       }
 
-      &:focus:before,
-      &:hover:before {
+      &:focus::before,
+      &:hover::before {
         color: #35465c;
       }
     }
 
     &[href*="youtube"] {
-      &:before {
-        content: '\6a';
+      &::before {
+        content: "\6a";
       }
 
-      &:focus:before,
-      &:hover:before {
+      &:focus::before,
+      &:hover::before {
         color: #cd201f;
       }
     }
 
     &[href*="flickr"] {
-      &:before {
-        content: '\72';
+      &::before {
+        content: "\72";
       }
 
-      &:focus:before,
-      &:hover:before {
+      &:focus::before,
+      &:hover::before {
         color: #ff0084;
       }
     }
 
     &[href*="vimeo"] {
-      &:before {
-        content: '\6c';
+      &::before {
+        content: "\6c";
       }
 
-      &:focus:before,
-      &:hover:before {
+      &:focus::before,
+      &:hover::before {
         color: #1ab7ea;
       }
     }
 
     &[href*="instagram"] {
-      &:before {
-        content: '\6b';
+      &::before {
+        content: "\6b";
       }
 
-      &:focus:before,
-      &:hover:before {
+      &:focus::before,
+      &:hover::before {
         color: #3f729b;
       }
     }
 
     &[href*="linkedin"] {
-      &:before {
-        content: '\67';
+      &::before {
+        content: "\67";
       }
 
-      &:focus:before,
-      &:hover:before {
+      &:focus::before,
+      &:hover::before {
         color: #0077b5;
       }
     }
 
     &[href^="mailto:"] {
-      &:before {
-        content: '\6f';
+      &::before {
+        content: "\6f";
       }
 
-      &:focus:before,
-      &:hover:before {
+      &:focus::before,
+      &:hover::before {
         color: #ffa930;
       }
     }

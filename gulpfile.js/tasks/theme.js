@@ -1,9 +1,9 @@
 // ==== THEME ==== //
 
-var gulp        = require('gulp'),
-    gutil       = require('gulp-util'),
-    phpcbf      = require('gulp-phpcbf'),
-    wppot       = require('gulp-wp-pot'),
+var gulp        = require( 'gulp' ),
+    gutil       = require( 'gulp-util' ),
+    phpcbf      = require( 'gulp-phpcbf' ),
+    wppot       = require( 'gulp-wp-pot' ),
     sort        = require('gulp-sort'),
     plugins     = require('gulp-load-plugins')({ camelize: true }),
     config      = require('../../gulpconfig').theme;
@@ -16,10 +16,10 @@ gulp.task('theme-acf', function() {
 });
 
 // Copy readme file to the `build` folder
-gulp.task('theme-readme', function() {
-  return gulp.src(config.readme.src)
-  .pipe(plugins.changed(config.readme.dest))
-  .pipe(gulp.dest(config.readme.dest));
+gulp.task('theme-meta', function() {
+  return gulp.src(config.meta.src)
+  .pipe(plugins.changed(config.meta.dest))
+  .pipe(gulp.dest(config.meta.dest));
 });
 
 // Copy custom font files to the `build` folder
@@ -72,4 +72,4 @@ gulp.task('theme-lang', ['languages'], function() {
 
 
 // All the theme tasks in one
-gulp.task('theme', ['theme-lang', 'theme-php', 'theme-fonts', 'theme-readme', 'theme-acf']);
+gulp.task('theme', ['theme-lang', 'theme-php', 'theme-fonts', 'theme-meta', 'theme-acf']);

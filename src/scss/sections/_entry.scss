@@ -1,0 +1,121 @@
+// ==== ARTICLE ==== //
+
+// Style post and page elements here.
+
+// 1. Content
+// 2. Anchors
+// 3. Shariff
+// 4. Footer
+
+// 1. Content //
+
+.content {
+  @include clearfix;
+}
+
+.content-main {
+  @include ctnr(three);
+}
+
+.content-entry {
+  @include ctnr(two);
+}
+
+// 2. Anchors //
+
+.anchors {
+  @include ctnr(one);
+
+  width: inherit;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.anchors-header {
+  @include font(body-l);
+
+  margin-bottom: .5rem;
+}
+
+.anchor-links {
+  margin-left: 1rem;
+}
+
+.anchor-link {
+  @include font(body-s);
+
+  list-style: decimal;
+}
+
+// 3. Shariff //
+
+// See '_content.scss' for the content styling!
+
+.shariff {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  transition: $anim-s;
+
+  a::after {
+    display: none;
+  }
+}
+
+// 4. Footer //
+
+.post-navigation {
+  @include ctnr(two);
+  @include clearfix;
+
+  position: relative;
+  padding-top: vr(0.75);
+  padding-bottom: vr(1.5);
+  clear: both;
+
+  .nav-previous {
+    position: relative;
+    float: left;
+    z-index: 100;
+
+    a {
+      @include font(button);
+      @include link-arrow(left, purple);
+    }
+  }
+
+  .nav-numbers {
+    @include font(body-s);
+
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    a {
+      @include font(button);
+
+      color: palette(purple);
+    }
+  }
+
+  .nav-next {
+    position: relative;
+    float: right;
+    z-index: 100;
+
+    a {
+      @include font(button);
+      @include link-arrow(right, purple);
+
+      text-align: right;
+    }
+  }
+}
+
+.post-tags {
+  @include ctnr(two);
+  @include font(body-s);
+
+  color: palette(gray);
+}

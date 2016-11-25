@@ -25,6 +25,9 @@ body#tinymce.wp-editor {
   // Mappy Breakpoints: a breakpoint mixin that uses Sass maps, from https://github.com/zellwk/mappy-breakpoints.
   @import "mappy-breakpoints/mappy-breakpoints";
 
+  // Open Color: Color scheme for UI design, from https://github.com/yeun/open-color.
+  @import "deps/open-color";
+
   // Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/.
   @import "deps/normalize";
 
@@ -49,7 +52,7 @@ body#tinymce.wp-editor {
   @import "sections/content";
 
   // Apply fundamental styles to editor.
-  @include ctnr(golden);
+  @include ctnr(three);
 
   color: palette(gray, dark);
   font-family: $sans;

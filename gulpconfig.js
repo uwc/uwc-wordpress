@@ -1,7 +1,11 @@
+/* jshint -W117 */
+/* jshint -W098 */
+/* jshint -W070 */
+
 // ==== CONFIGURATION ==== //
 
 // Project paths
-var project = 'uwc-wordpress', // The directory name for the theme.
+var project = 'uwc', // The directory name for the theme.
   src = './src/', // The raw material of the theme: custom scripts, SCSS source files, PHP files, images, etc.; do not delete this folder!
   build = './' + project + '/', // A temporary directory containing a development version of your theme; delete it anytime.
   dist = './dist/', // The distribution package that you'll be uploading to your server; delete it anytime.
@@ -13,14 +17,15 @@ var project = 'uwc-wordpress', // The directory name for the theme.
 module.exports = {
 
   browsersync: {
-    files: [ build + '/**', '!' + build + '/**.map' ], // Exclude map files.
+    files: build + '/**', // Exclude map files.
     port: 5000, // Port number for the live version of the site; default: 3000.
-    proxy: 'http://nc-website/', // We need to use a proxy instead of the built-in server because WordPress has to do some server-side rendering for the theme to work.
+    proxy: 'http://local.uwc/', // We need to use a proxy instead of the built-in server because WordPress has to do some server-side rendering for the theme to work.
     notify: false, // In-line notifications (the blocks of text saying whether you are connected to the BrowserSync server or not).
     ui: false, // Set to false if you don't need the browsersync UI.
     open: false, // Set to false if you don't like the browser window opening automatically.
+    reloadDelay: 1000, // Time, in milliseconds, to wait before reloading/injecting
     watchOptions: {
-      debounceDelay: 2000 // This introduces a small delay when watching for file change events to avoid triggering too many reloads.
+      debounceDelay: 4000 // This introduces a small delay when watching for file change events to avoid triggering too many reloads.
     }
   },
 
@@ -34,18 +39,33 @@ module.exports = {
   },
 
   images: {
-    build: { // Copies images from `src` to `build`; does not optimize.
-      src: src + '**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)',
-      dest: build
+    resize: {
+      src: [src + 'images/*(*.png|*.jpg|*.jpeg)'],
+      responsive: {
+        // Convert all images to JPEG format.
+        '*': [{
+          // image.jpg is 30 pixels tall.
+          height: 96,
+          withoutEnlargement: false,
+        }, {
+          // image-thumbnail.jpg is 320 pixels wide.
+          width: 640,
+          withoutEnlargement: false,
+          rename: {
+            suffix: '-thumbnail',
+          },
+        },],
+      },
+      dest: build + 'images/',
     },
-    dist: {
-      src: [ dist + '**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)', '!' + dist + 'screenshot.png' ], // The source is actually `dist` since we are minifying images in place.
+    optimize: {
+      src: dist + 'images/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)', // The source is actually `dist/images` since we are minifying images in place.
       imagemin: {
         optimizationLevel: 7,
         progressive: true,
         interlaced: true
       },
-      dest: dist
+      dest: dist + 'images/'
     }
   },
 
@@ -132,8 +152,8 @@ module.exports = {
       src: src + 'fonts/*', // This simply copies the custom font files over.
       dest: build + 'fonts/'
     },
-    readme: {
-      src: src + 'readme.*', // This simply copies the readme file over.
+    meta: {
+      src: [ src + '*.md', src + '*.txt', src + 'screenshot.*' ], // This simply copies the theme meta files over.
       dest: build
     },
     acf: {
@@ -146,6 +166,7 @@ module.exports = {
     // Copies dependencies from package managers to `_scss` and renames them to allow for them to be imported as a Sass file.
     src: [
       bower + 'normalize-css/normalize.css',
+      modules + 'open-color/open-color.scss',
       bower + 'slick-lightbox/dist/slick-lightbox.css',
       bower + 'slick-carousel/slick/slick.css',
       bower + 'slick-carousel/slick/slick-theme.css'

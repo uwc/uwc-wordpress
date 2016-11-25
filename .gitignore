@@ -1,5 +1,5 @@
 # Run `gulp` to generate the theme directory.
-uwc-wordpress/
+uwc/
 
 # Run `gulp dist` to generate the distribution directory.
 dist/

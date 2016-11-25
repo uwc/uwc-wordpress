@@ -1,52 +1,74 @@
 [![Build Status](https://travis-ci.org/uwc/uwc-wordpress.svg?branch=development)](https://travis-ci.org/uwc/uwc-wordpress) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6acc8e447ec54e208f1c08505ebd3afc)](https://www.codacy.com/app/connor_baer/uwc-wordpress)
 
-# A WordPress theme for UWC websites.
+# UWC WordPress
 
-> Please [request permission](mailto:uwc@connorbaer.io) before use.
+A WordPress theme for [UWC](http://uwc.org) websites.
 
-Contributors: [Connor Bär](http://connorbaer.io)
 
-Requires at least: WordPress 4.5, PHP 5.5
+# Contents
+
+- [Overview](#Overview)
+- [Installation](#Installation)
+- [Contribute](#Contribute)
+- [Copyright](#Copyright)
+
+
+# Overview
+
+Contributors: [Connor Bär](http://madebyconnor.de)
+
+Requires at least: WordPress 4.4, PHP 5.5
 
 Tested up to: WordPress 4.6.1, PHP 7.0
 
 Version: 2.0.0
 
-License: [MIT](#copyright)
+License: [GPL-3.0](#Copyright)
 
 Tags: custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready
 
-## Description
 
-_To be updated._
+# Installation
 
-If you are interested in contributing to the development, [drop me a line](mailto:uwc@connorbaer.io).
+*This theme can only be installed on self-hosted WordPress installations and not on sites that are hosted on wordpress.com.* I provide managed hosting for UWC websites. Drop me a line at [hello@madebyconnor.io](mailto:hello@madebyconnor.io) if you're interested.
 
-## Installation
-
-> This theme can only be installed on self-hosted WordPress installations and not on sites that are hosted on wordpress.com.
-
-1. UWC WordpPress is not listed publicly on Wordpress.org. Therefore you have to install the [GitHub Updater](https://github.com/afragen/github-updater) plugin to install the theme and receive future updates. Follow the instructions in the [readme file](https://github.com/afragen/github-updater#upload) to install the plugin, then come back here.
+1. UWCde Website is not listed publicly on wordpress.org. Therefore you have to install the [GitHub Updater](https://github.com/afragen/github-updater) plugin to install the theme and receive future updates. Follow the instructions in the [readme file](https://github.com/afragen/github-updater#upload) to install the plugin, then come back here.
 2. In WordPress, navigate to 'Settings' > 'GitHub Updater', then select 'Install Theme' from the tabs at the top.
 3. Paste the url `https://github.com/uwc/uwc-wordpress` into the field 'Theme URI'. You can leave the other fields as they are and click on the 'Install Theme' button.
 4. Click on the 'Activate' button to use your new theme right away.
-5. Go to https:// for a guide on how to customize this theme.
+5. Go to the [UWC Documentation](https://docs.uwc.io) for a guide on how to use this theme.
 6. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
-## Copyright
 
-The MIT License (MIT) Copyright (c) 2016 Connor Bär
+# Contribute
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Interested in contributing to the development of this theme? I look forward to your pull requests und issues. Or drop me a line at [hello@connorbaer.io](mailto:hello@connorbaer.io).
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+# Copyright
 
---------------------------------------------------------------------------------
+UWC Website Theme, Copyright 2016 [Made by Connor](http://madebyconnor.io). UWC Website is distributed under the terms of the [GNU GPL-3.0 License](https://github.com/uwc/uwc-wordpress/blob/master/LICENSE.md).
 
-UWC WordpPress theme bundles the following third-party resources:
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas Licenses: MIT/GPL2 Source: <https://github.com/aFarkas/html5shiv>
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-...and others to be added.
+---
+
+### UWC Website bundles the following third-party resources:
+
+Headroom.js, Copyright 2013 Nick Williams License: MIT Source: https://github.com/WickyNilliams/headroom.js
+
+HTML5 Shiv v3.7.3, Copyright 2014 Alexander Farkas Licenses: MIT/GPL2 Source: https://github.com/aFarkas/html5shiv
+
+Modular Scale v.2.1.3, Copyright 2015 Scott Kellum (@scottkellum), Adam Stacoviak (@adamstac) and Mason Wendell (@codingdesigner) License: MIT Source: https://github.com/modularscale/modularscale-sass
+
+normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal License: MIT Source: https://necolas.github.io/normalize.css/
+
+Responsive Nav, Copyright 2013 Viljami Salminen License: MIT Source:
+https://github.com/viljamis/responsive-nav.js
+
+slick-lightbox, Copyright 2014 Petr Marek License: MIT Source: https://github.com/mreq/slick-lightbox
+
+Smooth Scroll, Copyright 2016 Go Make Things, LLC License: MIT Source:
+https://github.com/cferdinandi/smooth-scroll

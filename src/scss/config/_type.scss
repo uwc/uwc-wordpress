@@ -3,96 +3,64 @@
 // Define all global font styles here.
 
 // 1. Variables
-// 2. font()
-// 3. Link styles
+// 2. Lines
+// 3. font()
 // 4. Global styles
+
 
 // 1. Variables //
 
-$sans: "Source Sans Pro", "Bliss", Arial, sans-serif;
+$sans: "Source Sans Pro", Arial, sans-serif;
 $sans-normal: 400;
-$sans-medium: 500;
+$sans-medium: 600;
 $sans-bold: 700;
 
 $ms-base: 1rem;
 $ms-ratio: 1.2;
 
-$typi: (null: (16px, 1.6), medium: 21px, x-large: 28px);
+$typi: (null: (16px, 1.75), medium: 18px, large: 20px, x-large: 24px);
 
-// 2. font() //
+// 2. Lines //
 
-// The font() function accepts a style parameter.
-// It is intended to promote consistency in the typography,
-// therefore the number of styles should be kept to a minimum.
-// Attributes which change between instances should not be defined here (e.g. color).
-@mixin font($style: null) {
-  @if $style == null {
-    @warn "Mixin font() received no input! Please provide a style.";
-
-    color: red;
-    font-size: ms(10);
-  }
-  @else if $style == "title" {
-    font-size: ms(6);
-    font-weight: $sans-bold;
-    line-height: 1;
-    word-wrap: break-word;
-  }
-  @else if $style == "header1" {
-    font-size: ms(4);
-    font-weight: $sans-bold;
-    line-height: 1.2;
-    word-wrap: break-word;
-  }
-  @else if $style == "header2" {
-    font-size: ms(3);
-    font-weight: $sans-bold;
-    line-height: 1.2;
-    word-wrap: break-word;
-  }
-  @else if $style == "header3" {
-    font-size: ms(2);
-    font-weight: $sans-bold;
-    line-height: 1.2;
-    word-wrap: break-word;
-  }
-  @else if $style == "header4" {
-    font-size: ms(1);
-    font-weight: $sans-bold;
-    line-height: 1.2;
-    word-wrap: break-word;
-  }
-  @else if $style == "large" {
-    font-size: ms(1);
-    font-weight: $sans-medium;
-    word-wrap: break-word;
-  }
-  @else if $style == "body" {
-    font-size: ms(0);
-    word-wrap: break-word;
-  }
-  @else if $style == "small" {
-    font-size: ms(-1);
-    font-weight: $sans-medium;
-    letter-spacing: 0.01rem;
-    word-wrap: break-word;
-  }
-  @else if $style == "button" {
-    font-size: ms(-1);
-    font-weight: $sans-bold;
-    letter-spacing: 0.02rem;
-    cursor: pointer;
-    word-wrap: break-word;
-  }
-  @else {
-    @warn "Mixin font() received invalid input! This style does not exist.";
-
-    color: red;
-    font-size: ms(10);
+@mixin line-header($color: white) {
+  &::after {
+    display: block;
+    width: 2.5em;
+    max-width: 80%;
+    height: 0.15em;
+    margin-top: 1rem;
+    background-color: palette($color);
+    content: "";
   }
 }
 
-// 3. Link Styles //
+@mixin line-link($bg-color: white, $bg-shade: base, $txt-color: $primary) {
+  $selection-color: palette(blue, lighter);
+
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position: 0% 90%, 100% 90%, 0% 90%;
+  background-size: .05em 1px, .05em 1px, 1px 1px;
+  color: palette($txt-color);
+
+  &:hover,
+  &:focus {
+    background-image: linear-gradient(palette($bg-color, $bg-shade), palette($bg-color, $bg-shade)), linear-gradient(palette($bg-color, $bg-shade), palette($bg-color, $bg-shade)), linear-gradient(palette($txt-color), palette($txt-color));
+    text-shadow: .03em 0 palette($bg-color, $bg-shade), -.03em 0 palette($bg-color, $bg-shade), 0 .03em palette($bg-color, $bg-shade), 0 -.03em palette($bg-color, $bg-shade), .06em 0 palette($bg-color, $bg-shade), -.06em 0 palette($bg-color, $bg-shade), .09em 0 palette($bg-color, $bg-shade), -.09em 0 palette($bg-color, $bg-shade), .12em 0 palette($bg-color, $bg-shade), -.12em 0 palette($bg-color, $bg-shade), .15em 0 palette($bg-color, $bg-shade), -.15em 0 palette($bg-color, $bg-shade);
+
+    &::selection {
+      background: $selection-color;
+      text-shadow: .03em 0 $selection-color, -.03em 0 $selection-color, 0 .03em $selection-color, 0 -.03em $selection-color, .06em 0 $selection-color, -.06em 0 $selection-color, .09em 0 $selection-color, -.09em 0 $selection-color, .12em 0 $selection-color, -.12em 0 $selection-color, .15em 0 $selection-color, -.15em 0 $selection-color;
+    }
+
+    &::before,
+    &::after,
+    *,
+    *::before,
+    *::after {
+      text-shadow: none;
+    }
+  }
+}
 
 @mixin link-arrow($direction: none, $color: none) {
   transform: translate(0, 0) translateZ(0);
@@ -122,12 +90,12 @@ $typi: (null: (16px, 1.6), medium: 21px, x-large: 28px);
   }
   @else if $direction == left {
     &::before {
-      content: "←";
-      color: inherit;
-      padding-right: vr(0.2);
       display: inline-block;
+      padding-right: vr(0.2);
       transform: translate(0, 0);
       transition: transform $anim-s;
+      color: inherit;
+      content: "←";
     }
 
     &:hover::before,
@@ -137,12 +105,12 @@ $typi: (null: (16px, 1.6), medium: 21px, x-large: 28px);
   }
   @else if $direction == down {
     &::after {
-      content: "↓";
-      color: inherit;
-      padding-left: vr(0.2);
       display: inline-block;
+      padding-left: vr(0.2);
       transform: translate(0, 0);
       transition: transform $anim-s;
+      color: inherit;
+      content: "↓";
     }
 
     &:hover::after,
@@ -167,18 +135,18 @@ $typi: (null: (16px, 1.6), medium: 21px, x-large: 28px);
   transition: color $anim-s;
 
   &::after {
-    content: "";
     position: absolute;
-    width: 100%;
-    height: 2px;
     bottom: 0;
     left: 0;
-    z-index: -1;
-    background-color: palette($color, light);
-    visibility: hidden;
-    transform: translate(0px, 2px);
-    opacity: 0;
+    width: 100%;
+    height: 2px;
+    transform: translate(0, 2px);
     transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
+    background-color: palette($color, light);
+    content: "";
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
   }
 
   &:hover,
@@ -188,15 +156,91 @@ $typi: (null: (16px, 1.6), medium: 21px, x-large: 28px);
 
   &:hover::after,
   &:focus::after {
-    visibility: visible;
+    transform: translate(0, -2px);
     opacity: 1;
-    transform: translate(0px, -2px);
+    visibility: visible;
+  }
+}
+
+// 3. font() //
+
+// The font() function accepts a style parameter.
+// It is intended to promote consistency in the typography,
+// therefore the number of styles should be kept to a minimum.
+// Attributes which change between instances should not be defined here (e.g. color).
+@mixin font($style: null) {
+  @if $style == null {
+    @warn "Mixin font() received no input! Please provide a style.";
+
+    color: red;
+    font-size: ms(10);
+  }
+
+  @else if $style == "title" {
+    font-size: ms(6);
+    font-weight: $sans-bold;
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+
+  @else if $style == "header-l" {
+    font-size: ms(4);
+    font-weight: $sans-bold;
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+
+  @else if $style == "header-m" {
+    font-size: ms(3);
+    font-weight: $sans-bold;
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+
+  @else if $style == "header-s" {
+    font-size: ms(2);
+    font-weight: $sans-bold;
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+
+  @else if $style == "body-l" {
+    font-size: ms(1);
+    font-weight: $sans-medium;
+    word-wrap: break-word;
+  }
+
+  @else if $style == "body-m" {
+    font-size: ms(0);
+    word-wrap: break-word;
+  }
+
+  @else if $style == "body-s" {
+    font-size: ms(-1);
+    letter-spacing: 0.01em;
+    word-wrap: break-word;
+  }
+
+  @else if $style == "button" {
+    font-size: ms(-1);
+    font-weight: $sans-medium;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    word-wrap: break-word;
+  }
+
+  @else {
+    @warn "Mixin font() received invalid input! This style does not exist.";
+
+    color: red;
+    font-size: ms(10);
   }
 }
 
 // 4. Global styles //
 
-/* Update the foundational and global aspects of the page. */
+// Update the foundational and global aspects of the page.
 
 html {
   @include typi-base;
@@ -204,23 +248,6 @@ html {
   font-family: $sans;
   font-weight: $sans-normal;
   word-wrap: break-word;
-  background-color: palette(gray, darker);
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  box-sizing: inherit;
-}
-
-body {
-  min-height: 100vh;
-  min-width: 100vw;
-  overflow-x: hidden;
-  background-color: palette(white, light);
-  color: palette(gray, dark);
 }
 
 a {
@@ -251,22 +278,20 @@ pre {
 }
 
 pre {
-  border: 1px solid palette(gray, light);
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.3125;
-  margin: 0 0 1.75em;
   max-width: 100%;
-  overflow: auto;
+  margin: 0 0 1.75em;
   padding: 1.75em;
+  border: 1px solid palette(gray, light);
+  font-size: ms(1);
+  line-height: 1.3125;
   white-space: pre;
-  white-space: pre-wrap;
+  overflow: auto;
   word-wrap: break-word;
 }
 
 code {
-  background-color: palette(gray, light);
   padding: 0.125em 0.25em;
+  background-color: palette(gray, light);
 }
 
 abbr,
@@ -277,9 +302,9 @@ acronym {
 
 mark,
 ins {
+  padding: 0.125em 0.25em;
   background: palette(blue, light);
   color: palette(white);
-  padding: 0.125em 0.25em;
   text-decoration: none;
 }
 
@@ -288,15 +313,15 @@ big {
 }
 
 hr {
-  background-color: palette(gray, light);
-  border: 0;
   height: 1px;
   margin: 0 0 vr(1);
+  border: 0;
+  background-color: palette(gray, light);
 }
 
 cite {
-  font-size: ms(0);
   color: palette(gray);
+  font-size: ms(0);
 
   &::before {
     content: "\2014\00a0";

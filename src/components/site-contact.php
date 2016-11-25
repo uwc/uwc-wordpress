@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package UWC_Website
+ * @package UWC
  */
 
 $id = get_the_ID();
@@ -22,7 +22,7 @@ if ( $name && $contact && $email ) :
 
 	<div class="contact-outer">
 		<div class="contact-inner">
-			<button id="js-contact" class="contact-button"><span class="screen-reader-text"><?php esc_attr_e( 'Contact us', 'uwc-wordpress' ) ?></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path class="contact-open" d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"/><path class="contact-close" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+			<button id="js-contact" class="contact-button"><span class="screen-reader-text"><?php esc_attr_e( 'Contact us', 'uwc' ) ?></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path class="contact-open" d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"/><path class="contact-close" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
 			<div class="contact-box">
 				<div class="contact-header">
 				<?php if ( get_field( 'profile_picture', $id ) ) :
@@ -47,7 +47,7 @@ if ( $name && $contact && $email ) :
 					    'em' => array(),
 					    'strong' => array(),
 					) ); ?></p>
-					<a href="mailto:<?php echo esc_html( $email ) ?>" class="contact-link"><?php echo esc_attr_e( 'Ask a question', 'uwc-wordpress' ) ?></a>
+					<a href="mailto:<?php echo esc_html( $email ) ?>" class="contact-link"><?php echo esc_attr_e( 'Ask a question', 'uwc' ) ?></a>
 				</div>
 			</div>
 		</div>

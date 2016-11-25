@@ -1,95 +1,102 @@
 // ==== FOOTER ==== //
 
-/* Mixins, functions, and other non-declarative things */
+// Style the footer widget area and meta information here.
 
-/* Rewrite layout with a 2-1-1 approach. */
+// 1. General
+// 2. Metabar
+// 3. Widgets
+// 4. Meta
 
-.site-footer {
+// 1. General //
+
+.footer {
+  @include ctnr(full);
+
   position: relative;
-  margin-top: vr(1.5);
+  margin-top: 2rem;
   box-shadow: 0 -2px 8px -2px palette(gray, light);
-  background-color: palette(white);
+}
 
-  &:before {
-    content: "";
-    display: block;
-    background-color: palette(blue);
-    background-image: linear-gradient(left, palette(blue), palette(turquoise));
-    width: 100%;
-    height: 3px;
+// 2. Metabar //
+
+.footer-metabar {
+  @include ctnr(three);
+
+  padding-top: 2rem;
+}
+
+.footer-tagline {
+  @include font(header-m);
+  @include line-header($primary);
+
+  float: left;
+}
+
+.footer-social {
+  float: right;
+}
+
+.footer-tagline,
+.footer-social {
+  width: 100%;
+
+  @include mappy-bp(medium) {
+    width: 50%;
   }
 }
+
+// 3. Widgets //
 
 .footer-widgets {
-  @include ctnr(golden);
+  @include ctnr(three);
 
-  @include clearfix;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 2rem;
 
-  padding-top: vr(1);
-  padding-bottom: vr(1);
-
-  .footer-widget {
-    float: left;
-  }
-
-  @include mappy-query(tablet-desktop) {
-    .footer-left,
-    .footer-right {
-      width: calc((100% / 3) - #{vr(0.5)});
-    }
-
-    .footer-left {
-      margin-right: vr(0.5);
-    }
-
-    .footer-center {
-      width: calc((100% / 3) - #{vr(1)});
-      margin-left: vr(0.5);
-      margin-right: vr(0.5);
-    }
-
-    .footer-right {
-      margin-left: vr(0.5);
-    }
-  }
-
-
-  @include mappy-query(phone) {
-    .footer-left {
-      width: 100%;
-    }
-
-    .footer-center,
-    .footer-right {
-      width: calc(50% - #{vr(0.5)});
-      margin-top: vr(1);
-    }
-
-    .footer-center {
-      margin-right: vr(0.5);
-    }
-
-    .footer-right {
-      margin-left: vr(0.5);
-    }
+  @include mappy-bp(max-width medium) {
+    flex-wrap: wrap;
   }
 }
 
-.footer-info {
-  @include ctnr(golden);
+.footer-widget:first-child {
+  width: 100%;
 
-  font-size: ms(-2);
-  color: palette(gray);
-  text-align: center;
-  padding-bottom: vr(0.75);
-
-  a {
-    padding: 0.1rem 0.2rem;
-
-    &:hover,
-    &:focus {
-      background-image: linear-gradient(45deg, #dd2476, #ff512f);
-      color: palette(white);
-    }
+  @include mappy-bp(medium) {
+    width: calc(50% - 1rem);
   }
+}
+
+.footer-widget:nth-child(2),
+.footer-widget:nth-child(3) {
+  width: calc(50% - 1rem);
+  margin-top: 1rem;
+
+  @include mappy-bp(medium) {
+    width: calc(25% - 1.5rem);
+    margin-top: 0;
+  }
+}
+
+// 4. Meta //
+
+.footer-info {
+  @include font(body-s);
+
+  padding: .5rem 0;
+  background-color: palette(gray, lighter);
+  color: palette(gray);
+  font-size: ms(-2);
+}
+
+.footer-wrapper {
+  @include ctnr(three);
+}
+
+.footer-legal {
+  float: left;
+}
+
+.footer-author {
+  float: right;
 }

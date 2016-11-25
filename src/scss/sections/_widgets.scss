@@ -3,19 +3,19 @@
 // Mixins, functions, and other non-declarative things.
 
 .widget-area {
-  @include ctnr(golden);
+  @include ctnr(two);
 }
 
 .widget {
-  @include font(small);
+  @include font(body-s);
 
   color: palette(gray, dark);
 
   .widget-title {
-    @include font(header4);
+    @include font(body-l);
 
-    margin-bottom: vr(0.25);
-    color: palette(gray);
+    margin-bottom: 0.5rem;
+    color: palette(gray, dark);
   }
 
   a {

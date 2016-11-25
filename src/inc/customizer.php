@@ -1,8 +1,8 @@
 <?php
 /**
- * UWC Website Theme Customizer.
+ * UWC WordPress Theme Customizer.
  *
- * @package UWC_Website
+ * @package UWC
  */
 
 /**
@@ -19,17 +19,17 @@ function uwc_website_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'esc_html',
 	) );
 	$wp_customize->add_section( 'uwc_website_theme_options' , array(
-		'title'       => __( 'Theme Options', 'uwc-wordpress' ),
+		'title'       => __( 'Theme Options', 'uwc' ),
 		'priority'    => 30,
 	) );
 	$wp_customize->add_control(
 		'comments',
 		array(
-		'label'       => __( 'Disable comments', 'uwc-wordpress' ),
+		'label'       => __( 'Disable comments', 'uwc' ),
 		'section'     => 'uwc_website_theme_options',
 		'settings'    => 'comments',
 		'type'        => 'checkbox',
-		'description' => __( 'Check the box to hide comments on the frontend. Comments are NOT deleted and can thus be unhidden at any time.', 'uwc-wordpress' ),
+		'description' => __( 'Check the box to hide comments on the frontend. Comments are NOT deleted and can thus be unhidden at any time.', 'uwc' ),
 		)
 	);
 }

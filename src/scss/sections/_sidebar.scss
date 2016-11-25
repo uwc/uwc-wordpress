@@ -17,7 +17,7 @@
 }
 
 .contact-inner {
-  @include ctnr(wide);
+  @include ctnr(three);
 
   position: relative;
 }
@@ -46,7 +46,7 @@
     box-shadow: 0px 2px 12px 0px palette(gray);
   }
 
-  &:before {
+  &::before {
     background-color: palette(pink, light);
     background-image: linear-gradient(135deg, palette(purple, light), palette(pink, light));
     content: '';
@@ -61,7 +61,7 @@
     transition: opacity $anim-s;
   }
 
-  &:hover:before {
+  &:hover::before {
     opacity: 1;
   }
 
@@ -143,13 +143,13 @@
 }
 
 .contact-name {
-  @include font(header4);
+  @include font(header-s);
 
   color: palette(white);
 }
 
 .contact-role {
-  @include font(small);
+  @include font(body-s);
 
   color: palette(white);
 }
@@ -159,7 +159,7 @@
 }
 
 .contact-info {
-  @include font(body);
+  @include font(body-m);
 
   margin-bottom: vr(0.125);
 }

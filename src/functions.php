@@ -1,14 +1,14 @@
 <?php
 /**
- * UWC Website functions and definitions.
+ * UWC WordPress functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package UWC_Website
+ * @package UWC
  */
 
 /**
- * UWC Website has only been tested in WordPress 4.4 and later.
+ * UWC WordPress has only been tested in WordPress 4.4 and later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -27,7 +27,7 @@ if ( ! function_exists( 'uwc_website_setup' ) ) :
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 */
-		load_theme_textdomain( 'uwc-wordpress', trailingslashit( get_template_directory() ) . 'languages' );
+		load_theme_textdomain( 'uwc', trailingslashit( get_template_directory() ) . 'languages' );
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
@@ -46,18 +46,32 @@ if ( ! function_exists( 'uwc_website_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		// Enable support for custom logo.
-		add_theme_support( 'custom-logo', array(
-			'height'      => 28,
-			'width'       => 220,
-			'flex-width'  => true,
-			'header-text' => array( 'site-title' ),
+		// Enable support for custom header used for logo.
+		add_theme_support( 'custom-header', array(
+			'default-image'          => get_template_directory_uri() . '/images/uwc.png',
+			'width'                  => 210,
+			'height'                 => 32,
+			'flex-width'             => true,
+			'uploads'                => true,
+		) );
+
+		register_default_headers( array(
+			'uwc' => array(
+				'url'           => '%s/images/uwc.png',
+				'thumbnail_url' => '%s/images/uwc-thumbnail.png',
+				'description'   => __( 'UWC', 'uwc' ),
+			),
+			'uwcde' => array(
+				'url'           => '%s/images/uwcde.png',
+				'thumbnail_url' => '%s/images/uwcde-thumbnail.png',
+				'description'   => __( 'UWC Germany', 'uwc' ),
+			),
 		) );
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'uwc-wordpress' ),
-			'social' => __( 'Social Links Menu', 'uwc-wordpress' ),
+			'primary' => __( 'Primary Menu', 'uwc' ),
+			'social' => __( 'Social Links Menu', 'uwc' ),
 		) );
 
 		/*
@@ -118,39 +132,39 @@ add_action( 'after_setup_theme', 'uwc_website_content_width', 0 );
  */
 function uwc_website_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'uwc-wordpress' ),
+		'name'          => esc_html__( 'Sidebar', 'uwc' ),
 		'id'            => 'sidebar-1',
-		'description'   => '',
+		'description'   => __( 'Add widgets here to appear in your sidebar.', 'uwc' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer left', 'uwc-wordpress' ),
-		'id'            => 'footer-left',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'name'          => __( 'Footer 1', 'uwc' ),
+		'id'            => 'sidebar-2',
+		'description'   => __( 'Add widgets here to appear in your footer.', 'uwc' ),
+		'before_widget' => '<section id="%1$s" class="widget footer-widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
+		'before_title'  => '<h2 class="widget-title footer-widgetTitle">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer center', 'uwc-wordpress' ),
-		'id'            => 'footer-center',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'name'          => __( 'Footer 2', 'uwc' ),
+		'id'            => 'sidebar-3',
+		'description'   => __( 'Add widgets here to appear in your footer.', 'uwc' ),
+		'before_widget' => '<section id="%1$s" class="widget footer-widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
+		'before_title'  => '<h2 class="widget-title footer-widgetTitle">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer right', 'uwc-wordpress' ),
-		'id'            => 'footer-right',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'name'          => __( 'Footer 3', 'uwc' ),
+		'id'            => 'sidebar-4',
+		'description'   => __( 'Add widgets here to appear in your footer.', 'uwc' ),
+		'before_widget' => '<section id="%1$s" class="widget footer-widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
+		'before_title'  => '<h2 class="widget-title footer-widgetTitle">',
 		'after_title'   => '</h2>',
 	) );
 }
@@ -158,7 +172,7 @@ add_action( 'widgets_init', 'uwc_website_widgets_init' );
 
 if ( ! function_exists( 'uwc_website_fonts_url' ) ) :
 	/**
-	 * Register Google fonts for UWC Website.
+	 * Register Google fonts for UWC WordPress.
 	 *
 	 * @return string Google fonts URL for the theme.
 	 */
@@ -167,8 +181,8 @@ if ( ! function_exists( 'uwc_website_fonts_url' ) ) :
 		$fonts     = array();
 		$subsets   = 'latin,latin-ext';
 		/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-		if ( 'off' !== _x( 'on', 'Source Sans Pro font: on or off', 'uwc-wordpress' ) ) {
-			$fonts[] = 'Source+Sans+Pro:400,500,700';
+		if ( 'off' !== _x( 'on', 'Source Sans Pro font: on or off', 'uwc' ) ) {
+			$fonts[] = 'Source+Sans+Pro:400,600,700';
 		}
 		if ( $fonts ) {
 			$fonts_url = add_query_arg( array(

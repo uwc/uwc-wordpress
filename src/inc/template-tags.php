@@ -4,32 +4,8 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package UWC_Website
+ * @package UWC
  */
-
-if ( ! function_exists( 'uwc_website_custom_logo' ) ) :
-	/**
-	 * Prints HTML with meta information for the current post-date/time and author.
-	 */
-	function uwc_website_custom_logo() {
-		/* Try to retrieve the Custom Logo. */
-		$output = '';
-		if ( function_exists( 'get_custom_logo' ) ) {
-			$output = get_custom_logo();
-		}
-
-		/**
-		 * Nothing in the output:
-		 * Custom Logo is not supported, or there is no selected logo.
-		 * In both cases we display the site's name.
-		 */
-		if ( empty( $output ) ) {
-			$output = '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></h1>';
-		}
-
-		echo $output; // WPCS: XSS ok.
-	}
-endif;
 
 if ( ! function_exists( 'uwc_website_page_navigation' ) ) :
 	/**
@@ -82,9 +58,9 @@ if ( ! function_exists( 'uwc_website_paginated' ) ) :
 			'mid_size' => 1,
 		) );
 
-		$paginate_previous = get_previous_posts_link( __( 'Previous page', 'uwc-wordpress' ) );
+		$paginate_previous = get_previous_posts_link( __( 'Previous page', 'uwc' ) );
 
-		$paginate_next = get_next_posts_link( __( 'Next page', 'uwc-wordpress' ) );
+		$paginate_next = get_next_posts_link( __( 'Next page', 'uwc' ) );
 
 		// Display the pagination if more than one page is found.
 		if ( $paginate_numbers ) {
@@ -137,11 +113,11 @@ if ( ! function_exists( 'uwc_website_content_navigation' ) ) :
 			}
 		}
 		if ( count( $items ) !== 0 ) {
-			echo '<nav class="entry-navigation"><h6>Inhalt</h6><div class="entry-links">';
+			echo '<nav class="anchors"><h6 class="anchors-header">', esc_html__( 'In This Section', 'uwc' ), '</h6><ul class="anchor-links">';
 			foreach ( $items as $item ) {
-				echo '<a href="#', esc_html( urlencode( $item ) ), '" title="', esc_html( $item ), '" data-scroll>', esc_html( $item ), '</a>';
+				echo '<li class="anchor-link"><a href="#', esc_html( urlencode( $item ) ), '" title="', esc_html( $item ), '" data-scroll>', esc_html( $item ), '</a></li>';
 			}
-			echo '</nav>';
+			echo '</ul></nav>';
 		}
 	}
 endif;
@@ -164,12 +140,12 @@ if ( ! function_exists( 'uwc_website_posted_on' ) ) :
 		);
 
 			$posted_on = sprintf(
-				esc_html_x( 'Posted on %s', 'post date', 'uwc-wordpress' ),
+				esc_html_x( 'Posted on %s', 'post date', 'uwc' ),
 				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 			);
 
 			$byline = sprintf(
-				esc_html_x( 'by %s', 'post author', 'uwc-wordpress' ),
+				esc_html_x( 'by %s', 'post author', 'uwc' ),
 				'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 			);
 

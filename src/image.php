@@ -2,13 +2,13 @@
 /**
  * The template for displaying image attachments
  *
- * @package UWC Website
+ * @package UWC
  */
 
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="main" role="main">
 
 			<?php
 				// Start the loop.
@@ -19,8 +19,8 @@ get_header(); ?>
 
 			<nav id="image-navigation" class="navigation image-navigation">
 				<div class="nav-links">
-					<div class="nav-previous"><?php previous_image_link( false, __( 'Previous Image', 'uwc-wordpress' ) ); ?></div>
-					<div class="nav-next"><?php next_image_link( false, __( 'Next Image', 'uwc-wordpress' ) ); ?></div>
+					<div class="nav-previous"><?php previous_image_link( false, __( 'Previous Image', 'uwc' ) ); ?></div>
+					<div class="nav-next"><?php next_image_link( false, __( 'Next Image', 'uwc' ) ); ?></div>
 				</div><!-- .nav-links -->
 			</nav><!-- .image-navigation -->
 
@@ -49,11 +49,11 @@ get_header(); ?>
 						<?php
 						the_content();
 						wp_link_pages( array(
-							'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'uwc-wordpress' ) . '</span>',
+							'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'uwc' ) . '</span>',
 							'after'       => '</div>',
 							'link_before' => '<span>',
 							'link_after'  => '</span>',
-							'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'uwc-wordpress' ) . ' </span>%',
+							'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'uwc' ) . ' </span>%',
 							'separator'   => '<span class="screen-reader-text">, </span>',
 						) );
 						?>
@@ -66,7 +66,7 @@ get_header(); ?>
 						$metadata = wp_get_attachment_metadata();
 						if ( $metadata ) {
 							printf( '<span class="full-size-link"><span class="screen-reader-text">%1$s </span><a href="%2$s">%3$s &times; %4$s</a></span>',
-								esc_html_x( 'Full size', 'Used before full size attachment link.', 'uwc-wordpress' ),
+								esc_html_x( 'Full size', 'Used before full size attachment link.', 'uwc' ),
 								esc_url( wp_get_attachment_url() ),
 								absint( $metadata['width'] ),
 								absint( $metadata['height'] )
@@ -79,13 +79,13 @@ get_header(); ?>
 				<?php
 				// Parent post navigation.
 				the_post_navigation( array(
-					'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'uwc-wordpress' ),
+					'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'uwc' ),
 				) );
 				// End the loop.
 				endwhile;
 			?>
 
-		</main><!-- .site-main -->
+		</main><!-- .main -->
 	</div><!-- .content-area -->
 
 <?php get_sidebar(); ?>

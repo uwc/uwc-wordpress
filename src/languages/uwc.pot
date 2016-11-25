@@ -1,0 +1,221 @@
+# Copyright (C) 2016 uwc
+# This file is distributed under the same license as the uwc package.
+msgid ""
+msgstr ""
+"Project-Id-Version: uwc\n"
+"Report-Msgid-Bugs-To: https://github.com/uwc/uwc/issues\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Connor Bär <hello@connorbaer.io>\n"
+"Language-Team: Made by Connor. <hello@connorbaer.io>\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/404.php:18
+msgid "404: Page not found."
+msgstr ""
+
+#: src/404.php:20
+msgid "Sorry, the page you&#8217;re looking for doesn&#8217;t exist. Check the URL for errors or try searching for it below."
+msgstr ""
+
+#: src/comments.php:30
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: src/comments.php:34
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/comments.php:68
+msgid "Comments are closed."
+msgstr ""
+
+#: src/components/content-link.php:13, src/components/element-link.php:37
+msgid "Continue reading"
+msgstr ""
+
+#: src/components/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: src/components/content-none.php:18
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: src/components/content-none.php:23
+msgid "Sorry, but nothing matched your search terms."
+msgstr ""
+
+#: src/components/content-none.php:26
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
+msgstr ""
+
+#: src/components/content-standard.php:17, src/components/content-video.php:17
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: src/components/content-standard.php:22, src/components/content-video.php:22, src/image.php:52
+msgid "Pages:"
+msgstr ""
+
+#: src/components/element-link.php:19, src/components/element-standard.php:19, src/components/element-video.php:25
+msgid "Featured"
+msgstr ""
+
+#: src/components/element-standard.php:37, src/components/element-video.php:43
+msgid "Weiter lesen"
+msgstr ""
+
+#: src/components/site-contact.php:25
+msgid "Contact us"
+msgstr ""
+
+#: src/components/site-contact.php:50
+msgid "Ask a question"
+msgstr ""
+
+#: src/footer.php:32
+msgid "All rights reserved."
+msgstr ""
+
+#: src/functions.php:62
+msgid "UWC"
+msgstr ""
+
+#: src/functions.php:67
+msgid "UWC Germany"
+msgstr ""
+
+#: src/functions.php:73
+msgid "Primary Menu"
+msgstr ""
+
+#: src/functions.php:74
+msgid "Social Links Menu"
+msgstr ""
+
+#: src/functions.php:135
+msgid "Sidebar"
+msgstr ""
+
+#: src/functions.php:137
+msgid "Add widgets here to appear in your sidebar."
+msgstr ""
+
+#: src/functions.php:144
+msgid "Footer 1"
+msgstr ""
+
+#: src/functions.php:146, src/functions.php:155, src/functions.php:164
+msgid "Add widgets here to appear in your footer."
+msgstr ""
+
+#: src/functions.php:153
+msgid "Footer 2"
+msgstr ""
+
+#: src/functions.php:162
+msgid "Footer 3"
+msgstr ""
+
+#: src/functions.php:184
+msgctxt "Source Sans Pro font: on or off"
+msgid "on"
+msgstr ""
+
+#: src/header.php:41
+msgid "Skip to content"
+msgstr ""
+
+#: src/header.php:65
+msgid "Search"
+msgstr ""
+
+#: src/header.php:66
+msgid "Menu"
+msgstr ""
+
+#: src/image.php:22
+msgid "Previous Image"
+msgstr ""
+
+#: src/image.php:23
+msgid "Next Image"
+msgstr ""
+
+#: src/image.php:56
+msgid "Page"
+msgstr ""
+
+#: src/image.php:69
+msgctxt "Used before full size attachment link."
+msgid "Full size"
+msgstr ""
+
+#: src/image.php:82
+msgctxt "Parent post link"
+msgid "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%title</span>"
+msgstr ""
+
+#: src/inc/back-compat.php:35, src/inc/back-compat.php:45, src/inc/back-compat.php:58
+msgid "UWC WordPress requires at least WordPress version 4.4. You are running version %s. Please upgrade and try again."
+msgstr ""
+
+#: src/inc/customizer.php:22
+msgid "Theme Options"
+msgstr ""
+
+#: src/inc/customizer.php:28
+msgid "Disable comments"
+msgstr ""
+
+#: src/inc/customizer.php:32
+msgid "Check the box to hide comments on the frontend. Comments are NOT deleted and can thus be unhidden at any time."
+msgstr ""
+
+#: src/inc/template-tags.php:61
+msgid "Previous page"
+msgstr ""
+
+#: src/inc/template-tags.php:63
+msgid "Next page"
+msgstr ""
+
+#: src/inc/template-tags.php:116
+msgid "In This Section"
+msgstr ""
+
+#: src/inc/template-tags.php:143
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#: src/inc/template-tags.php:148
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#: src/search.php:22
+msgid "Search results for &#x201c;%s&#x201d;:"
+msgstr ""
+
+#: src/searchform.php:9
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: src/searchform.php:10
+msgctxt "placeholder"
+msgid "Search..."
+msgstr ""

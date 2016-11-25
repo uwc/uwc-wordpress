@@ -6,13 +6,13 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package UWC_Website
+ * @package UWC
  */
 
 $taxonomies = get_field( 'newsfeed' );
 
 $posts = get_posts(array(
-	'posts_per_page' => 4,
+	'posts_per_page' => 3,
 	'category'       => $taxonomies,
 	'orderby'        => 'date',
 	'order'          => 'DESC',
@@ -20,32 +20,22 @@ $posts = get_posts(array(
 ));
 $count = count( $posts );
 
-if ( $taxonomies && $count >= 4 ) {
-	echo '<section class="section-newsfeed">';
+if ( $taxonomies && $count >= 3 ) {
+	echo '<section class="section section-news">';
 	$index = 1;
 	foreach ( $posts as $post ) {
-		$categories = array();
 		$featured = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
 		$featured_url = $featured[0];
 
-		foreach ( $taxonomies as $taxonomy ) {
-			if ( in_category( $taxonomy, $post->ID ) ) {
-				array_push( $categories, $taxonomy );
-			}
-		}
-
 		if ( has_post_thumbnail( $post->ID ) ) {
-			echo '<article class="section-post post-' . intval( $index ) . ' -thumbnail"><div class="section-image" style="background-image: url(';
+			echo '<article class="news-post news-' . intval( $index ) . '"><div class="news-background" style="background-image: url(';
 			echo esc_url( $featured_url );
 			echo ')"></div>';
 		} else {
-			echo '<article class="section-post post-' . intval( $index ) . ' -no-thumbnail">';
+			echo '<article class="news-post news-' . intval( $index ) . '"><div class="news-background"></div>';
 		}
-		echo '<div class="section-wrapper">';
-		foreach ( $categories as $category ) {
-			echo '<a href="' . esc_url( get_category_link( $category ) ) . '" class="section-category">' . esc_html( get_cat_name( $category ) ) . '</a> ';
-		}
-		echo '<a href="' . esc_url( get_permalink( $post->ID ) ) . '"><h2 class="section-headline">' . get_the_title( $post->ID ) . '</h2><h4 class="section-date">' . get_the_date( '', $post->ID ) . '</h4></a></div></article>';
+		echo '<div class="news-wrapper">';
+		echo '<a href="' . esc_url( get_permalink( $post->ID ) ) . '"><h4 class="news-date">' . get_the_date( '', $post->ID ) . '</h4><h2 class="news-headline">' . get_the_title( $post->ID ) . '</h2></a></div></article>';
 		$index++;
 	}
 	echo '</section>';
