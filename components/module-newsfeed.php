@@ -27,15 +27,16 @@ if ( $taxonomies && $count >= 3 ) {
 		$featured = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
 		$featured_url = $featured[0];
 
+		echo '<article class="news-post news-' . intval( $index ) . '"><a href="' . esc_url( get_permalink( $post->ID ) ) . '">';
 		if ( has_post_thumbnail( $post->ID ) ) {
-			echo '<article class="news-post news-' . intval( $index ) . '"><div class="news-background" style="background-image: url(';
+			echo '<div class="news-background" style="background-image: url(';
 			echo esc_url( $featured_url );
 			echo ')"></div>';
 		} else {
-			echo '<article class="news-post news-' . intval( $index ) . '"><div class="news-background"></div>';
+			echo '<div class="news-background"></div>';
 		}
 		echo '<div class="news-wrapper">';
-		echo '<a href="' . esc_url( get_permalink( $post->ID ) ) . '"><h4 class="news-date">' . get_the_date( '', $post->ID ) . '</h4><h2 class="news-headline">' . get_the_title( $post->ID ) . '</h2></a></div></article>';
+		echo '<h4 class="news-date">' . get_the_date( '', $post->ID ) . '</h4><h2 class="news-headline">' . get_the_title( $post->ID ) . '</h2></div></a></article>';
 		$index++;
 	}
 	echo '</section>';
