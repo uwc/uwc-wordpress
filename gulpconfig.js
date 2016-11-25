@@ -39,34 +39,28 @@ module.exports = {
   },
 
   images: {
-    resize: {
-      src: [src + 'images/*(*.png|*.jpg|*.jpeg)'],
-      responsive: {
-        // Convert all images to JPEG format.
-        '*': [{
-          // image.jpg is 30 pixels tall.
-          height: 96,
-          withoutEnlargement: false,
-        }, {
-          // image-thumbnail.jpg is 320 pixels wide.
-          width: 640,
-          withoutEnlargement: false,
-          rename: {
-            suffix: '-thumbnail',
-          },
-        },],
-      },
-      dest: build + 'images/',
+    src: [src + 'images/*(*.png|*.jpg|*.jpeg)'],
+    responsive: {
+      // Convert all images to JPEG format.
+      '*': [{
+        // image.jpg is 30 pixels tall.
+        height: 96,
+        withoutEnlargement: false,
+      }, {
+        // image-thumbnail.jpg is 320 pixels wide.
+        width: 640,
+        withoutEnlargement: false,
+        rename: {
+          suffix: '-thumbnail',
+        },
+      },],
     },
-    optimize: {
-      src: dist + 'images/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)', // The source is actually `dist/images` since we are minifying images in place.
-      imagemin: {
-        optimizationLevel: 7,
-        progressive: true,
-        interlaced: true
-      },
-      dest: dist + 'images/'
-    }
+    imagemin: {
+      optimizationLevel: 7,
+      progressive: true,
+      interlaced: true
+    },
+    dest: build + 'images/',
   },
 
   scripts: {
@@ -145,7 +139,7 @@ module.exports = {
       src: [ src + '/**/*.php', ! src + '/vendor/**/*.*' ],
       dest: build,
       bin: 'phpcbf',
-      standard: 'WordPress-Core',
+      standard: './phpcs.ruleset.xml',
       warningSeverity: '0'
     },
     fonts: {

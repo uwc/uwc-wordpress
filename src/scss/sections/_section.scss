@@ -7,8 +7,6 @@
 // 5. Newsfeed
 
 .section {
-  @include clearfix;
-
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
@@ -16,6 +14,7 @@
 // 1. Text + Image //
 
 .section-textImage {
+  @include clearfix;
 
   .section-imageOuter {
     @include ctnr(one);
@@ -141,6 +140,7 @@
 
 .section-video,
 .section-googleMaps {
+  @include clearfix;
 
   .section-videoOuter,
   .section-googleMapsOuter {
@@ -186,7 +186,6 @@
 .section-news {
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
 
   @include mappy-bp(max-width medium) {
     flex-wrap: wrap;

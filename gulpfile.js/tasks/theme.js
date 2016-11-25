@@ -2,9 +2,7 @@
 
 var gulp        = require( 'gulp' ),
     gutil       = require( 'gulp-util' ),
-    phpcbf      = require( 'gulp-phpcbf' ),
     wppot       = require( 'gulp-wp-pot' ),
-    sort        = require('gulp-sort'),
     plugins     = require('gulp-load-plugins')({ camelize: true }),
     config      = require('../../gulpconfig').theme;
 
@@ -32,7 +30,7 @@ gulp.task('theme-fonts', function() {
 // Lint theme php files with phpcbf, then copy to the `build` folder
 gulp.task('theme-php', function () {
   return gulp.src(config.php.src)
-  .pipe(phpcbf({
+  .pipe(plugins.phpcbf({
     bin: config.php.bin,
     standard: config.php.standard,
     warningSeverity: config.php.warningSeverity
@@ -41,24 +39,17 @@ gulp.task('theme-php', function () {
   .pipe(gulp.dest(config.php.dest));
 });
 
-// Copy composer dependency files to the `build` folder
-gulp.task('theme-composer', function() {
-  return gulp.src(config.composer.src)
-  .pipe(plugins.changed(config.composer.dest))
-  .pipe(gulp.dest(config.composer.dest));
-});
-
 // Update language template file with latest strings
 gulp.task('languages', function () {
   return gulp.src(config.php.src)
-    .pipe(sort())
+    .pipe(plugins.sort())
     .pipe(wppot( {
       domain: config.lang.domain,
       destFile: config.lang.domain+'.pot',
       package: config.lang.domain,
-      bugReport: 'https://github.com/uwc/'+config.lang.domain+'/issues',
+      bugReport: 'https://github.com/uwc/'+config.lang.domain+'-wordpress/issues',
       lastTranslator: 'Connor Bär <hello@connorbaer.io>',
-      team: 'Made by Connor. <hello@connorbaer.io>'
+      team: 'Made by Connor. <hello@madebyconnor.io>'
     } ))
     .pipe(gulp.dest(config.lang.languages));
 });

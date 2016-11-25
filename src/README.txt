@@ -30,7 +30,7 @@ Tags: custom-menu, editor-style, featured-image-header, featured-images, post-fo
 
 # Installation
 
-*This theme can only be installed on self-hosted WordPress installations and not on sites that are hosted on wordpress.com.* I provide managed hosting for UWC websites. Drop me a line at [hello@madebyconnor.io](mailto:hello@madebyconnor.io) if you're interested.
+**This theme can only be installed on self-hosted WordPress installations and not on sites that are hosted on wordpress.com.** I provide managed hosting for UWC websites. Drop me a line at [hello@madebyconnor.io](mailto:hello@madebyconnor.io) if you're interested.
 
 1. UWCde Website is not listed publicly on wordpress.org. Therefore you have to install the [GitHub Updater](https://github.com/afragen/github-updater) plugin to install the theme and receive future updates. Follow the instructions in the [readme file](https://github.com/afragen/github-updater#upload) to install the plugin, then come back here.
 2. In WordPress, navigate to 'Settings' > 'GitHub Updater', then select 'Install Theme' from the tabs at the top.

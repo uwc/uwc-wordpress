@@ -14,7 +14,7 @@ if ( have_rows( 'modules' ) ) :
 	while ( have_rows( 'modules' ) ) : the_row();
 
 		if ( get_row_layout() === 'text_image' ) :
-			get_template_part( 'components/module', 'textImage' );
+			get_template_part( 'components/module', 'textimage' );
 
 		elseif ( get_row_layout() === 'quote' ) :
 
@@ -22,7 +22,7 @@ if ( have_rows( 'modules' ) ) :
 
 		elseif ( get_row_layout() === 'call_to_action' ) :
 
-			get_template_part( 'components/module', 'callToAction' );
+			get_template_part( 'components/module', 'calltoaction' );
 
 		elseif ( get_row_layout() === 'video' ) :
 
@@ -30,7 +30,7 @@ if ( have_rows( 'modules' ) ) :
 
 		elseif ( get_row_layout() === 'google_maps' ) :
 
-			get_template_part( 'components/module', 'googleMaps' );
+			get_template_part( 'components/module', 'googlemaps' );
 
 		endif;
 

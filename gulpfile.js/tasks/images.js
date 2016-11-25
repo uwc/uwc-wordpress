@@ -5,14 +5,9 @@ var gulp        = require( 'gulp' ),
     config      = require( '../../gulpconfig' ).images;
 
     // Optimize images.
-    gulp.task('images', ['image-resize'], function () {
-      return gulp.src(config.optimize.src)
-      .pipe(plugins.imagemin(config.optimize.imagemin))
-      .pipe(gulp.dest(config.optimize.dest));
-    });
-
-    gulp.task('image-resize', function () {
-      return gulp.src(config.resize.src)
-        .pipe(plugins.responsive(config.resize.responsive))
-        .pipe(gulp.dest(config.resize.dest));
+    gulp.task( 'images', function() {
+      return gulp.src( config.src )
+      .pipe(plugins.responsive(config.responsive))
+      .pipe( plugins.imagemin( config.imagemin ) )
+      .pipe( gulp.dest( config.dest ) );
     });
