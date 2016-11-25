@@ -4,13 +4,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package UWC_Website
+ * @package UWC
  */
 
 get_header(); ?>
 
 	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="main" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
@@ -19,7 +19,7 @@ get_header(); ?>
 				<div class="search-wrapper">
 					<?php get_search_form(); ?>
 				</div>
-				<h1 class="search-title"><?php printf( esc_html__( 'Search results for &#x201c;%s&#x201d;:', 'uwc-wordpress' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="search-title"><?php printf( esc_html__( 'Search results for &#x201c;%s&#x201d;:', 'uwc' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header>
 			<?php
 			/* Start the Loop */

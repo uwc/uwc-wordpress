@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: UWC Website\n"
+"Project-Id-Version: UWC WordPress\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-wordpress/issues\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2016-11-20 01:16+0000\n"
@@ -158,10 +158,10 @@ msgstr ""
 #: src/inc/back-compat.php:35, src/inc/back-compat.php:45,
 #: src/inc/back-compat.php:58
 msgid ""
-"UWC Website requires at least WordPress version 4.4. You are running version "
+"UWC WordPress requires at least WordPress version 4.4. You are running version "
 "%s. Please upgrade and try again."
 msgstr ""
-"UWC Website setzt mindestens WordPress Version 4.4 voraus. Du nutzt Version "
+"UWC WordPress setzt mindestens WordPress Version 4.4 voraus. Du nutzt Version "
 "%s. Bitte aktualisiere und probiere es dann noch einmal."
 
 #: src/inc/customizer.php:22

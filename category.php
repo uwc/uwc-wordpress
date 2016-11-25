@@ -4,23 +4,23 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package UWC_Website
+ * @package UWC
  */
 
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="main" role="main">
 
-		<?php
-		if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : ?>
 
-			<header class="header -entry -no-featured">
+			<header class="header header-noFeatured">
 				<div class="header-outer">
 					<h1 class="header-title"><?php single_cat_title(); ?>
 					<h2 class="header-summary"><?php echo category_description(); ?></h2>
 				</div>
 			</header>
+
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();

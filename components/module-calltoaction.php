@@ -4,11 +4,11 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package UWC_Website
+ * @package UWC
  */
 
 ?>
 
-<section class="section-cta">
+<section class="section section-cta">
 	<a href="<?php the_sub_field( 'cta_url' ) ?>"><?php the_sub_field( 'cta_text' ) ?></a>
 </section>

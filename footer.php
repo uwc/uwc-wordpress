@@ -6,34 +6,36 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package UWC_Website
+ * @package UWC
  */
 
 ?></div>
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="footer-widgets">
-			<?php if ( is_active_sidebar( 'footer-left' ) ) : ?>
-				<div class="footer-widget footer-left">
-					<?php dynamic_sidebar( 'footer-left' ); ?>
-				</div>
-			<?php endif; ?>
-			<?php if ( is_active_sidebar( 'footer-center' ) ) : ?>
-				<div class="footer-widget footer-center">
-					<?php dynamic_sidebar( 'footer-center' ); ?>
-				</div>
-			<?php endif; ?>
-			<?php if ( is_active_sidebar( 'footer-right' ) ) : ?>
-				<div class="footer-widget footer-right">
-					<?php dynamic_sidebar( 'footer-right' ); ?>
-				</div>
-			<?php endif; ?>
-		</div>
-		<div class="footer-info">
-			<p>&#xa9; <?php bloginfo( 'name' ); ?>. <?php echo esc_html__( 'All rights reserved.', 'uwc-wordpress' ); ?> <a href="http://connorbaer.io/" rel="designer" target="_blank">Made by Connor.</a></p>
-		</div>
+			<footer id="colophon" class="footer" role="contentinfo">
+			<div class="footer-metabar">
+				<h3 class="footer-tagline"><?php bloginfo( 'description' ); ?></h3>
+				<?php if ( has_nav_menu( 'social' ) ) {
+					wp_nav_menu( array(
+						'theme_location'  => 'social',
+						'container_class' => 'footer-social',
+						'menu_class'      => 'menu-social',
+						'depth'           => 1,
+						'link_before'     => '<span class="screen-reader-text">',
+						'link_after'      => '</span>',
+						'fallback_cb'     => 'false',
+					) );
+} ?>
+			</div>
 
-	</footer>
-</div>
+			<?php get_sidebar( 'footer' ); ?>
+			<div class="footer-info">
+				<div class="footer-wrapper">
+					<span class="footer-legal">&#xa9; <?php bloginfo( 'name' ); ?>. <?php echo esc_html__( 'All rights reserved.', 'uwc' ); ?></span>
+					<span class="footer-author"><a href="<?php $my_theme = wp_get_theme();
+					echo $my_theme->get( 'AuthorURI' ); ?>" rel="designer" target="_blank">Made by Connor.</a></span>
+				</div>
+			</div>
+		</footer>
+	</div>
 <?php wp_footer(); ?>
 </body>
 </html>

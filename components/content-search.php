@@ -4,11 +4,10 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package UWC_Website
+ * @package UWC
  */
 
 ?>
-
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'search-result' ); ?>>
 	<a href="<?php esc_url( the_permalink() ); ?>" rel="bookmark">
