@@ -23,14 +23,11 @@ get_header(); ?>
 				</div>
 			</header>
 
+			<div class="content-main pure-ctnr">
+
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
-			?>
-
-			<div class="content-main pure-ctnr">
-
-				<?php
 
 					/*
 					 * Include the Post-Format-specific template for the content.

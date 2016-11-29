@@ -11,15 +11,16 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="main" role="main">
+			<div class="content-main pure-ctnr">
 
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="search-header">
-				<div class="search-wrapper">
+			<header class="box-4">
+				<div class="box-4-2">
 					<?php get_search_form(); ?>
 				</div>
-				<h1 class="search-title"><?php printf( esc_html__( 'Search results for &#x201c;%s&#x201d;:', 'uwc' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="search-title box-2-2"><?php printf( esc_html__( 'Search results for &#x201c;%s&#x201d;:', 'uwc' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header>
 			<?php
 			/* Start the Loop */
@@ -41,7 +42,7 @@ get_header(); ?>
 			get_template_part( 'components/content', 'none' );
 
 		endif; ?>
-
+			</div>
 		</main>
 	</section>
 <?php

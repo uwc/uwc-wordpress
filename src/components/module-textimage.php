@@ -9,10 +9,10 @@
 
 ?>
 
-<section class="section section-textImage pure-g pure-ctnr" data-color="<?php the_sub_field( 'ti_color' ); ?>">
+<section class="section section-textImage feed-post pure-g pure-ctnr">
 	<div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3 box-2-2">
-		<div class="textImage-photo">
-			<a class="textImage-image" href="<?php the_sub_field( 'link_url' ); ?>" style="background-image: url(<?php
+		<div class="feed-imageWrapper">
+			<a class="feed-image" href="<?php the_sub_field( 'link_url' ); ?>" style="background-image: url('<?php
 
 			$image = get_sub_field( 'image' );
 			$size = 'medium'; // (thumbnail, medium, large, full or custom size)
@@ -24,15 +24,14 @@
 
 			}
 
-		?>)"></a>
+		?>')"></a>
 		</div>
 	</div>
 	<div class="pure-u-1 pure-u-md-2-3 pure-u-lg-2-3  box-2-2">
-		<div class="textImage-body">
-			<h2 class="textImage-headline"><?php the_sub_field( 'headline' ); ?></h2>
-			<p class="textImage-text"><?php the_sub_field( 'text' ); ?></p>
-
-			<a href="<?php the_sub_field( 'link_url' ); ?>" class="textImage-link"><?php the_sub_field( 'link_text' ); ?></a>
+		<div class="feed-body">
+			<h2 class="feed-headline"><?php the_sub_field( 'headline' ); ?></h2>
+			<p class="feed-text"><?php the_sub_field( 'text' ); ?></p>
+			<a href="<?php the_sub_field( 'link_url' ); ?>" class="feed-link"><?php the_sub_field( 'link_text' ); ?></a>
 		</div>
 	</div>
 </section>

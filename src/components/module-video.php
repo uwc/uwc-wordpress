@@ -9,7 +9,7 @@
 
 ?>
 
-<section class="section section-video pure-ctnr"  data-color="<?php the_sub_field( 'vd_color' ); ?>">
+<section class="section section-video pure-ctnr">
 	<div class="video-container pure-g">
 		<div class="pure-u-1-1 pure-u-md-2-3 pure-u-lg-2-3 box-2-2">
 			<div class="video-wrapper">

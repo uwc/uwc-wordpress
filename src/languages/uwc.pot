@@ -41,7 +41,7 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: src/components/content-link.php:13, src/components/element-link.php:37
+#: src/components/content-link.php:13
 msgid "Continue reading"
 msgstr ""
 
@@ -69,12 +69,20 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: src/components/element-link.php:19, src/components/element-standard.php:19, src/components/element-video.php:25
+#: src/components/element-link.php:13, src/components/element-standard.php:13, src/components/element-video.php:13
 msgid "Featured"
 msgstr ""
 
-#: src/components/element-standard.php:37, src/components/element-video.php:43
-msgid "Weiter lesen"
+#: src/components/element-link.php:28
+msgid "Visit site"
+msgstr ""
+
+#: src/components/element-standard.php:28
+msgid "Read more"
+msgstr ""
+
+#: src/components/element-video.php:28
+msgid "Watch video"
 msgstr ""
 
 #: src/components/site-contact.php:25
@@ -196,17 +204,7 @@ msgstr ""
 msgid "In This Section"
 msgstr ""
 
-#: src/inc/template-tags.php:143
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr ""
-
-#: src/inc/template-tags.php:148
-msgctxt "post author"
-msgid "by %s"
-msgstr ""
-
-#: src/search.php:22
+#: src/search.php:23
 msgid "Search results for &#x201c;%s&#x201d;:"
 msgstr ""
 

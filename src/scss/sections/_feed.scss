@@ -1,0 +1,92 @@
+// ==== CATEGORY ==== //
+
+// Style posts here, that appear on category, archive, blog or section pages.
+
+// 1. Container
+// 2. Image
+// 3. Body
+
+// 1. Container //
+
+.feed-post {
+  align-items: center;
+}
+
+.feed-imageWrapper {
+  position: relative;
+
+  &::before {
+    display: block;
+    width: 100%;
+    padding-top: 50%;
+    content: "";
+  }
+
+  @include mappy-bp(m) {
+    &::before {
+      padding-top: 100%;
+    }
+  }
+}
+
+// 2. Image //
+
+.feed-image {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+// 3. Body //
+
+.feed-body {
+  @include mappy-bp(m) {
+    position: relative;
+  }
+}
+
+.feed-headline {
+  @include font(header-m);
+  @include line-header($secondary);
+}
+
+.feed-text {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.feed-link {
+  @include font(button);
+
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: palette($secondary);
+  color: palette($secondary);
+}
+
+
+
+
+
+
+
+
+.sticky .featured {
+  display: inline-block;
+  margin-bottom: vr(0.5);
+  padding: 0.1rem 0.5rem;
+  background: linear-gradient(90deg, palette(purple), palette(pink));
+  color: palette(white);
+  font-size: ms(-2);
+  font-weight: $sans-medium;
+  letter-spacing: 0.06rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+}

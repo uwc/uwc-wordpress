@@ -88,13 +88,11 @@ wp_head();
 		</header>
 
 		<div id="search" class="search-overlay">
-
-			<div class="search-field">
-
-				<?php get_search_form(); ?>
-
+			<div class="pure-ctnr">
+				<div class="search-field box-2-2">
+					<?php get_search_form(); ?>
+				</div>
 			</div>
-
 		</div>
 
 		<div id="content" class="content">

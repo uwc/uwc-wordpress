@@ -11,120 +11,17 @@
   margin-bottom: 2rem;
 }
 
-// 1. Text + Image //
+// 1. Text + Image /
 
 .section-textImage {
-  align-items: center;
-
-  // Colors
-
-  &[data-color="blue"] {
-    .textImage-headline {
-      @include line-header(blue);
-    }
-
-    .textImage-link {
-      border-bottom-color: palette(blue);
-      color: palette(blue);
-    }
+  .feed-headline {
+    @include line-header($primary);
   }
 
-  &[data-color="turquoise"] {
-    .textImage-headline {
-      @include line-header(turquoise);
-    }
-
-    .textImage-link {
-      border-bottom-color: palette(turquoise);
-      color: palette(turquoise);
-    }
+  .feed-link {
+    border-bottom-color: palette($primary);
+    color: palette($primary);
   }
-
-  &[data-color="purple"] {
-    .textImage-headline {
-      @include line-header(purple);
-    }
-
-    .textImage-link {
-      border-bottom-color: palette(purple);
-      color: palette(purple);
-    }
-  }
-
-  &[data-color="pink"] {
-    .textImage-headline {
-      @include line-header(pink);
-    }
-
-    .textImage-link {
-      border-bottom-color: palette(pink);
-      color: palette(pink);
-    }
-  }
-
-  &[data-color="orange"] {
-    .textImage-headline {
-      @include line-header(orange);
-    }
-
-    .textImage-link {
-      border-bottom-color: palette(orange);
-      color: palette(orange);
-    }
-  }
-}
-
-.textImage-photo {
-  position: relative;
-
-  &::before {
-    display: block;
-    width: 100%;
-    padding-top: 50%;
-    content: "";
-  }
-
-  @include mappy-bp(m) {
-    &::before {
-      padding-top: 100%;
-    }
-  }
-}
-
-.textImage-image {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.textImage-body {
-
-  @include mappy-bp(m) {
-    position: relative;
-  }
-}
-
-.textImage-headline {
-  @include font(header-m);
-}
-
-.textImage-text {
-  width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.textImage-link {
-  @include font(button);
-
-  border-bottom-width: 3px;
-  border-bottom-style: solid;
 }
 
 // 2. Quote //
@@ -207,92 +104,30 @@
 
 .section-cta {
   text-align: center;
-
-  &[data-color="blue"] {
-    .cta-button {
-      @include button(blue);
-    }
-  }
-
-  &[data-color="turquoise"] {
-    .cta-button {
-      @include button(turquoise);
-    }
-  }
-
-  &[data-color="purple"] {
-    .cta-button {
-      @include button(purple);
-    }
-  }
-
-  &[data-color="pink"] {
-    .cta-button {
-      @include button(pink);
-    }
-  }
-
-  &[data-color="orange"] {
-    .cta-button {
-      @include button(orange);
-    }
-  }
 }
+
+.cta-button {
+  @include button(blue);
+}
+
 
 // 4. Video //
 
 .section-video {
   @include clearfix;
 
-  &[data-color="blue"] {
-    .video-headline {
-      @include mappy-bp(s) {
-        @include line-header(blue);
-      }
-    }
-  }
-
-  &[data-color="turquoise"] {
-    .video-headline {
-      @include mappy-bp(s) {
-        @include line-header(turquoise);
-      }
-    }
-  }
-
-  &[data-color="purple"] {
-    .video-headline {
-      @include mappy-bp(s) {
-        @include line-header(purple);
-      }
-    }
-  }
-
-  &[data-color="pink"] {
-    .video-headline {
-      @include mappy-bp(s) {
-        @include line-header(pink);
-      }
-    }
-  }
-
-  &[data-color="orange"] {
-    .video-headline {
-      @include mappy-bp(s) {
-        @include line-header(orange);
-      }
+  .video-container {
+    @include mappy-bp(max-width s) {
+      flex-direction: column-reverse;
     }
   }
 }
 
-.video-container {
-  @include mappy-bp(max-width s) {
-    flex-direction: column-reverse;
-  }
-}
+
 
 .video-headline {
   @include font(header-m);
+  @include line-header(blue);
 }
 
 .video-wrapper {
