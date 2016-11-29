@@ -2,21 +2,25 @@
 
 // Define all global layouts and layout styles here.
 
-// 1. Breakpoints
+// 1. Variables
 // 2. Helpers
 // 3. ctnr()
 // 4. Basics
 
 
-// 1. Breakpoints //
+// 1. Variables //
 
 $breakpoints: (
-  x-small: 359px,
-  small: 577px,
-  medium: 769px,
-  large: 1025px,
-  x-large: 1441px
+  xs: 359px,
+  s: 568px,
+  m: 768px,
+  l: 1024px,
+  xl: 1280px,
+  xxl: 1441px
 );
+
+$container-width: 52rem;
+
 
 // 2. Helpers //
 
@@ -28,39 +32,99 @@ $breakpoints: (
   }
 }
 
+.box-1 {
+  padding: .5rem 0;
+}
+
+.box-1-1 {
+  padding: .5rem;
+}
+
+.box-1-2 {
+  padding: .5rem 1rem;
+}
+
+.box-1-4 {
+  padding: .5rem 2rem;
+}
+
+.box-2 {
+  padding: 1rem 0;
+}
+
+.box-2-1 {
+  padding: 1rem .5rem;
+}
+
+.box-2-2 {
+  padding: 1rem;
+}
+
+.box-2-4 {
+  padding: 1rem 2rem;
+}
+
+.box-3 {
+  padding: 1.5rem 0;
+}
+
+.box-4 {
+  padding: 2rem 0;
+}
+
+.box-4-1 {
+  padding: 2rem .5rem;
+}
+
+.box-4-2 {
+  padding: 2rem 1rem;
+}
+
+.box-4-4 {
+  padding: 2rem;
+}
+
+
+
+.pure-ctnr,
+%pure-ctnr {
+  @include clearfix;
+
+  width: 100%;
+  max-width: $container-width;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mappy-bp(xs l) {
+    width: calc(100% - 2rem);
+  }
+
+  @include mappy-bp(l) {
+    width: calc(100% - 4rem);
+  }
+}
+
+
 // 3. ctnr() //
 
-$content-width: 50rem;
-
-// Content can take on three different widths: full, three and two.
+// Content width, see Pure for the grid.
 @mixin ctnr($width: null) {
   @if $width == null {
     @warn "Mixin ctnr() received no input! Please provide a width.";
   }
 
-  @else if $width == "full" {
-    @include clearfix;
-
-    display: block;
-    width: 100vw;
-    max-width: 100%;
-    clear: both;
-  }
-
   @else if $width == "three" {
-    @include clearfix;
-
-    display: block;
     width: calc(100% - 2rem);
-    max-width: $content-width;
+    max-width: $container-width;
     margin-right: auto;
     margin-left: auto;
 
-    @include mappy-bp(x-small large) {
+    @include mappy-bp(xs l) {
       width: calc(100% - 4rem);
     }
 
-    @include mappy-bp(large) {
+    @include mappy-bp(l) {
       width: calc(100% - 8rem);
     }
   }
@@ -71,9 +135,9 @@ $content-width: 50rem;
     display: block;
     width: 100%;
 
-    @include mappy-bp(medium) {
-      width: 66%;
-      max-width: $content-width / 3 * 2;
+    @include mappy-bp(m) {
+      width: 66.6%;
+      max-width: $container-width / 3 * 2;
       padding-left: 1rem;
       float: right;
     }
@@ -85,9 +149,9 @@ $content-width: 50rem;
     display: block;
     width: 100%;
 
-    @include mappy-bp(medium) {
-      width: 33%;
-      max-width: $content-width / 3;
+    @include mappy-bp(m) {
+      width: 33.3%;
+      max-width: $container-width / 3;
       padding-right: 1rem;
       float: left;
     }

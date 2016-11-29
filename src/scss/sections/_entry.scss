@@ -13,10 +13,6 @@
   @include clearfix;
 }
 
-.content-main {
-  @include ctnr(three);
-}
-
 .content-entry {
   @include ctnr(two);
 }
@@ -68,8 +64,8 @@
   @include clearfix;
 
   position: relative;
-  padding-top: vr(0.75);
-  padding-bottom: vr(1.5);
+  padding-top: 1rem;
+  padding-bottom: 4rem;
   clear: both;
 
   .nav-previous {
@@ -79,7 +75,6 @@
 
     a {
       @include font(button);
-      @include link-arrow(left, purple);
     }
   }
 
@@ -106,7 +101,6 @@
 
     a {
       @include font(button);
-      @include link-arrow(right, purple);
 
       text-align: right;
     }

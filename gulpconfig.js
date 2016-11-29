@@ -159,8 +159,10 @@ module.exports = {
   update: {
     // Copies dependencies from package managers to `_scss` and renames them to allow for them to be imported as a Sass file.
     src: [
-      bower + 'normalize-css/normalize.css',
-      modules + 'open-color/open-color.scss',
+      bower + 'pure/base-min.css',
+      bower + 'pure/grids-min.css',
+      bower + 'pure/grids-responsive-min.css',
+      bower + 'open-color/open-color.scss',
       bower + 'slick-lightbox/dist/slick-lightbox.css',
       bower + 'slick-carousel/slick/slick.css',
       bower + 'slick-carousel/slick/slick-theme.css'

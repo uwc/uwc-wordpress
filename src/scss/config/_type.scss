@@ -18,7 +18,7 @@ $sans-bold: 700;
 $ms-base: 1rem;
 $ms-ratio: 1.2;
 
-$typi: (null: (16px, 1.75), medium: 18px, large: 20px, x-large: 24px);
+$typi: (null: (16px, 1.75), m: 18px, l: 20px, xxl: 24px);
 
 // 2. Lines //
 
@@ -37,92 +37,24 @@ $typi: (null: (16px, 1.75), medium: 18px, large: 20px, x-large: 24px);
 @mixin line-link($bg-color: white, $bg-shade: base, $txt-color: $primary) {
   $selection-color: palette(blue, lighter);
 
+  background-image: linear-gradient(palette($bg-color, $bg-shade), palette($bg-color, $bg-shade)), linear-gradient(palette($bg-color, $bg-shade), palette($bg-color, $bg-shade)), linear-gradient(palette($txt-color), palette($txt-color));
   background-repeat: no-repeat, no-repeat, repeat-x;
-  background-position: 0% 90%, 100% 90%, 0% 90%;
-  background-size: .05em 1px, .05em 1px, 1px 1px;
+  background-position: 0% 100%, 100% 100%, 0% 100%;
+  background-size: .05em 2px, .1em 2px, 1px 2px;
   color: palette($txt-color);
+  text-shadow: .03em 0 palette($bg-color, $bg-shade), -.03em 0 palette($bg-color, $bg-shade), 0 .03em palette($bg-color, $bg-shade), 0 -.03em palette($bg-color, $bg-shade), .06em 0 palette($bg-color, $bg-shade), -.06em 0 palette($bg-color, $bg-shade), .09em 0 palette($bg-color, $bg-shade), -.09em 0 palette($bg-color, $bg-shade), .12em 0 palette($bg-color, $bg-shade), -.12em 0 palette($bg-color, $bg-shade), .15em 0 palette($bg-color, $bg-shade), -.15em 0 palette($bg-color, $bg-shade);
 
-  &:hover,
-  &:focus {
-    background-image: linear-gradient(palette($bg-color, $bg-shade), palette($bg-color, $bg-shade)), linear-gradient(palette($bg-color, $bg-shade), palette($bg-color, $bg-shade)), linear-gradient(palette($txt-color), palette($txt-color));
-    text-shadow: .03em 0 palette($bg-color, $bg-shade), -.03em 0 palette($bg-color, $bg-shade), 0 .03em palette($bg-color, $bg-shade), 0 -.03em palette($bg-color, $bg-shade), .06em 0 palette($bg-color, $bg-shade), -.06em 0 palette($bg-color, $bg-shade), .09em 0 palette($bg-color, $bg-shade), -.09em 0 palette($bg-color, $bg-shade), .12em 0 palette($bg-color, $bg-shade), -.12em 0 palette($bg-color, $bg-shade), .15em 0 palette($bg-color, $bg-shade), -.15em 0 palette($bg-color, $bg-shade);
-
-    &::selection {
-      background: $selection-color;
-      text-shadow: .03em 0 $selection-color, -.03em 0 $selection-color, 0 .03em $selection-color, 0 -.03em $selection-color, .06em 0 $selection-color, -.06em 0 $selection-color, .09em 0 $selection-color, -.09em 0 $selection-color, .12em 0 $selection-color, -.12em 0 $selection-color, .15em 0 $selection-color, -.15em 0 $selection-color;
-    }
-
-    &::before,
-    &::after,
-    *,
-    *::before,
-    *::after {
-      text-shadow: none;
-    }
-  }
-}
-
-@mixin link-arrow($direction: none, $color: none) {
-  transform: translate(0, 0) translateZ(0);
-  transition: color $anim-s;
-  color: palette($color);
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    color: palette($color, light);
+  &::selection {
+    background: $selection-color;
+    text-shadow: .03em 0 $selection-color, -.03em 0 $selection-color, 0 .03em $selection-color, 0 -.03em $selection-color, .06em 0 $selection-color, -.06em 0 $selection-color, .09em 0 $selection-color, -.09em 0 $selection-color, .12em 0 $selection-color, -.12em 0 $selection-color, .15em 0 $selection-color, -.15em 0 $selection-color;
   }
 
-  @if $direction == right {
-    &::after {
-      display: inline-block;
-      padding-left: vr(0.2);
-      transform: translate(0, 0);
-      transition: transform $anim-s;
-      color: inherit;
-      content: "→";
-    }
-
-    &:hover::after,
-    &:focus::after {
-      transform: translate(0.35rem, 0);
-    }
-  }
-  @else if $direction == left {
-    &::before {
-      display: inline-block;
-      padding-right: vr(0.2);
-      transform: translate(0, 0);
-      transition: transform $anim-s;
-      color: inherit;
-      content: "←";
-    }
-
-    &:hover::before,
-    &:focus::before {
-      transform: translate(-0.35rem, 0);
-    }
-  }
-  @else if $direction == down {
-    &::after {
-      display: inline-block;
-      padding-left: vr(0.2);
-      transform: translate(0, 0);
-      transition: transform $anim-s;
-      color: inherit;
-      content: "↓";
-    }
-
-    &:hover::after,
-    &:focus::after {
-      transform: translate(0, 0.35rem);
-    }
-  }
-  @else {
-    @warn "Mixin link-arrow() received invalid input! This direction does not exist.";
-
-    color: purple;
-    font-size: ms(10);
+  &::before,
+  &::after,
+  *,
+  *::before,
+  *::after {
+    text-shadow: none;
   }
 }
 
@@ -198,7 +130,7 @@ $typi: (null: (16px, 1.75), medium: 18px, large: 20px, x-large: 24px);
   }
 
   @else if $style == "header-s" {
-    font-size: ms(2);
+    font-size: ms(1);
     font-weight: $sans-bold;
     line-height: 1.2;
     word-wrap: break-word;
@@ -222,10 +154,9 @@ $typi: (null: (16px, 1.75), medium: 18px, large: 20px, x-large: 24px);
   }
 
   @else if $style == "button" {
-    font-size: ms(-1);
-    font-weight: $sans-medium;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    font-size: ms(0);
+    font-weight: $sans-bold;
+    letter-spacing: 0.04em;
     cursor: pointer;
     word-wrap: break-word;
   }
@@ -245,9 +176,19 @@ $typi: (null: (16px, 1.75), medium: 18px, large: 20px, x-large: 24px);
 html {
   @include typi-base;
 
+  word-wrap: break-word;
+}
+
+// Apply the primary font stack to the Pure grid units along with `html`, `button`, `input`, `select`, and `textarea`.
+// Pure Grids use specific font stacks to ensure the greatest OS/browser compatibility.
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class *= "pure-u"] {
   font-family: $sans;
   font-weight: $sans-normal;
-  word-wrap: break-word;
 }
 
 a {
@@ -314,7 +255,7 @@ big {
 
 hr {
   height: 1px;
-  margin: 0 0 vr(1);
+  margin: 0 0 2rem;
   border: 0;
   background-color: palette(gray, light);
 }

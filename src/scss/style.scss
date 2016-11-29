@@ -6,7 +6,7 @@ Theme URI: https://github.com/uwc/uwc-wordpress
 Author: Connor Baer
 Author URI: http://madebyconnor.io
 Description: A WordPress theme for UWC websites.
-Version: 2.0.0.6
+Version: 2.0.0.7
 License: GPL-3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready
@@ -41,13 +41,15 @@ GitHub Branch: master
 // Open Color: Color scheme for UI design, from https://github.com/yeun/open-color.
 @import "deps/open-color";
 
-// Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/.
-@import "deps/normalize";
+// PureCSS: A set of small, responsive CSS modules that you can use in every web project, from http://purecss.io/
+@import "deps/base-min";
+@import "deps/grids-min";
+@import "deps/grids-responsive-min";
 
 // Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/.
 @import "deps/reset";
 
-// A lightbox wrapper for Ken's amazing slick carousel, https://mreq.github.io/slick-lightbox/.
+// Slick Lightbox: A lightbox wrapper for Ken's amazing slick carousel, https://mreq.github.io/slick-lightbox/.
 @import "deps/slick";
 @import "deps/slick-theme";
 @import "deps/slick-lightbox";
@@ -64,7 +66,6 @@ GitHub Branch: master
 
 //  Styles required by WordPress core.
 @import "patterns/wordpress";
-@import "patterns/buttons";
 @import "patterns/forms";
 @import "patterns/menus";
 @import "patterns/overlays";
@@ -74,7 +75,7 @@ GitHub Branch: master
 @import "sections/search";
 @import "sections/widgets";
 @import "sections/navigation";
-@import "sections/header";
+@import "sections/hero";
 @import "sections/section";
 @import "sections/entry";
 @import "sections/category";

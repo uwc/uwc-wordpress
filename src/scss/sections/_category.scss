@@ -14,11 +14,11 @@
   align-items: stretch;
   margin-bottom: vr(1);
 
-  @include mappy-bp(max-width small) {
+  @include mappy-bp(max-width s) {
     flex-wrap: wrap;
   }
 
-  @include mappy-bp(small) {
+  @include mappy-bp(s) {
     flex-direction: row-reverse;
     border: 1px solid palette(gray, light);
     background-color: palette(white);
@@ -47,7 +47,7 @@
     margin-bottom: vr(0.5);
     color: palette(blue);
 
-    @include mappy-bp(max-width small) {
+    @include mappy-bp(max-width s) {
       margin-top: vr(0.75);
     }
   }
@@ -55,13 +55,11 @@
   .category-link {
     @include font(button);
 
-    @include link-arrow(right, pink);
-
     display: inline-block;
     margin-top: vr(0.5);
   }
 
-  @include mappy-bp(small) {
+  @include mappy-bp(s) {
     padding: vr(0.75) vr(1);
   }
 }
@@ -79,7 +77,7 @@
   background-size: cover;
 }
 
-@include mappy-bp(max-width small) {
+@include mappy-bp(max-width s) {
   .category-image {
     width: 100%;
     height: vr(8);
@@ -87,7 +85,7 @@
 }
 
 
-@include mappy-bp(small) {
+@include mappy-bp(s) {
   .category-image {
     flex: 1 1 14rem;
   }

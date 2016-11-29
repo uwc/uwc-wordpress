@@ -1,66 +1,58 @@
 // ==== HEADER ==== //
 
-.header {
-  .header-outer {
-    @include ctnr(three);
-  }
-
-  .header-title {
+.hero {
+  .hero-title {
     @include font(title);
 
     margin-bottom: 1rem;
   }
 
-  .header-summary p {
+  .hero-summary p {
     @include font(body-l);
   }
 }
 
-.header-noFeatured {
-  .header-outer {
-    margin-top: 4.5rem;
-    margin-bottom: 3.5rem;
-  }
+.hero-noFeatured {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 
-  .header-title {
+  .hero-title {
     @include line-header($primary);
   }
 
-  .header-summary p {
+  .hero-summary p {
     color: palette(gray, dark);
   }
 }
 
-.header-featured {
-  @include ctnr(full);
+.hero-featured {
   @include overlay-transparent(blue, turquoise);
 
   height: 32rem;
   min-height: 60vh;
   max-height: 80vh;
-  margin-bottom: 2rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
-  .header-outer {
+  .hero-outer {
     position: relative;
     height: 100%;
     z-index: 15;
   }
 
-  .header-inner {
+  .hero-inner {
     position: absolute;
-    bottom: 2rem;
+    bottom: 0;
     width: 100%;
   }
 
-  .header-title {
+  .hero-title {
     @include line-header(white);
   }
 
-  .header-title,
-  .header-summary p {
+  .hero-title,
+  .hero-summary p {
     @include overlay-text;
   }
 }

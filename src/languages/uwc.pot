@@ -85,7 +85,7 @@ msgstr ""
 msgid "Ask a question"
 msgstr ""
 
-#: src/footer.php:32
+#: src/footer.php:35
 msgid "All rights reserved."
 msgstr ""
 
@@ -142,7 +142,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/header.php:66
+#: src/header.php:67
 msgid "Menu"
 msgstr ""
 

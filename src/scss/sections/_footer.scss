@@ -10,20 +10,12 @@
 // 1. General //
 
 .footer {
-  @include ctnr(full);
-
   position: relative;
   margin-top: 2rem;
   box-shadow: 0 -2px 8px -2px palette(gray, light);
 }
 
 // 2. Metabar //
-
-.footer-metabar {
-  @include ctnr(three);
-
-  padding-top: 2rem;
-}
 
 .footer-tagline {
   @include font(header-m);
@@ -40,7 +32,7 @@
 .footer-social {
   width: 100%;
 
-  @include mappy-bp(medium) {
+  @include mappy-bp(m) {
     width: 50%;
   }
 }
@@ -48,13 +40,11 @@
 // 3. Widgets //
 
 .footer-widgets {
-  @include ctnr(three);
-
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0 2rem;
+  padding-top: 1rem;
 
-  @include mappy-bp(max-width medium) {
+  @include mappy-bp(max-width m) {
     flex-wrap: wrap;
   }
 }
@@ -62,7 +52,7 @@
 .footer-widget:first-child {
   width: 100%;
 
-  @include mappy-bp(medium) {
+  @include mappy-bp(m) {
     width: calc(50% - 1rem);
   }
 }
@@ -72,7 +62,7 @@
   width: calc(50% - 1rem);
   margin-top: 1rem;
 
-  @include mappy-bp(medium) {
+  @include mappy-bp(m) {
     width: calc(25% - 1.5rem);
     margin-top: 0;
   }
@@ -83,14 +73,9 @@
 .footer-info {
   @include font(body-s);
 
-  padding: .5rem 0;
   background-color: palette(gray, lighter);
   color: palette(gray);
   font-size: ms(-2);
-}
-
-.footer-wrapper {
-  @include ctnr(three);
 }
 
 .footer-legal {

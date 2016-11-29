@@ -32,11 +32,12 @@
     "mappy-breakpoints": "^0.2.3",
     "html5shiv": "^3.7.3",
     "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#^9.1.4",
-    "responsive-nav": "viljamis/responsive-nav.js#^1.0.39",
     "headroom.js": "https://npmcdn.com/headroom.js/bower.zip",
-    "normalize-css": "^4.1.1"
-  },
-  "dependencies": {
-    "slick-lightbox": "^0.2.1"
+    "slick-lightbox": "^0.2.1",
+    "pure": "^0.6.0",
+    "open-color": "^1.4.1",
+    "responsive-nav": "^1.0.39",
+    "normalize-css": "^5.0.0",
+    "pure": "^0.6.0"
   }
 }

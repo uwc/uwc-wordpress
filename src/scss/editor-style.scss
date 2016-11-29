@@ -28,8 +28,8 @@ body#tinymce.wp-editor {
   // Open Color: Color scheme for UI design, from https://github.com/yeun/open-color.
   @import "deps/open-color";
 
-  // Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/.
-  @import "deps/normalize";
+  // PureCSS: A set of small, responsive CSS modules that you can use in every web project, from http://purecss.io/
+  @import "deps/base-min";
 
   // Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/.
   @import "deps/reset";
@@ -52,7 +52,7 @@ body#tinymce.wp-editor {
   @import "sections/content";
 
   // Apply fundamental styles to editor.
-  @include ctnr(three);
+  @extend %pure-ctnr;
 
   color: palette(gray, dark);
   font-family: $sans;

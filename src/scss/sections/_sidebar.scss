@@ -166,6 +166,4 @@
 
 .contact-link {
   @include font(button);
-
-  @include link-arrow(right, pink);
 }

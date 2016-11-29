@@ -7,172 +7,335 @@
 // 5. Newsfeed
 
 .section {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 // 1. Text + Image //
 
 .section-textImage {
-  @include clearfix;
+  align-items: center;
 
-  .section-imageOuter {
-    @include ctnr(one);
+  // Colors
 
-    // @include mappy-bp(medium large) {
-    //   width: 50%;
-    //   max-width: $content-width / 2;
-    //   padding-right: 1rem;
-    //   float: left;
-    // }
-  }
+  &[data-color="blue"] {
+    .textImage-headline {
+      @include line-header(blue);
+    }
 
-  .section-imageInner {
-    position: relative;
-
-    &::before {
-      display: block;
-      width: 100%;
-      padding-top: 100%;
-      content: "";
+    .textImage-link {
+      border-bottom-color: palette(blue);
+      color: palette(blue);
     }
   }
 
-  .section-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-
-  .section-bodyOuter {
-    @include ctnr(two);
-
-    // @include mappy-bp(medium large) {
-    //   width: 50%;
-    //   max-width: $content-width / 2;
-    //   padding-left: 1rem;
-    //   float: right;
-    // }
-  }
-
-  .section-bodyInner {
-
-    @include mappy-bp(medium) {
-      position: relative;
-
-      &::before {
-        display: block;
-        width: 100%;
-        padding-top: 49%;
-        content: "";
-      }
+  &[data-color="turquoise"] {
+    .textImage-headline {
+      @include line-header(turquoise);
     }
 
-    @include mappy-bp(large) {
-      &::before {
-        padding-top: 49%;
-      }
+    .textImage-link {
+      border-bottom-color: palette(turquoise);
+      color: palette(turquoise);
     }
   }
 
-  .section-body {
-    @include mappy-bp(medium) {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      left: 0;
-      transform: translateY(-50%);
+  &[data-color="purple"] {
+    .textImage-headline {
+      @include line-header(purple);
+    }
+
+    .textImage-link {
+      border-bottom-color: palette(purple);
+      color: palette(purple);
     }
   }
 
-  .section-headline {
-    @include font(header-m);
-    @include line-header($primary);
+  &[data-color="pink"] {
+    .textImage-headline {
+      @include line-header(pink);
+    }
+
+    .textImage-link {
+      border-bottom-color: palette(pink);
+      color: palette(pink);
+    }
   }
 
-  .section-text {
-    // @include font(body-s);
+  &[data-color="orange"] {
+    .textImage-headline {
+      @include line-header(orange);
+    }
 
+    .textImage-link {
+      border-bottom-color: palette(orange);
+      color: palette(orange);
+    }
+  }
+}
+
+.textImage-photo {
+  position: relative;
+
+  &::before {
+    display: block;
     width: 100%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    padding-top: 50%;
+    content: "";
   }
 
-  .section-link {
-    @include button;
+  @include mappy-bp(m) {
+    &::before {
+      padding-top: 100%;
+    }
   }
+}
+
+.textImage-image {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.textImage-body {
+
+  @include mappy-bp(m) {
+    position: relative;
+  }
+}
+
+.textImage-headline {
+  @include font(header-m);
+}
+
+.textImage-text {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.textImage-link {
+  @include font(button);
+
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
 }
 
 // 2. Quote //
 
 .section-quote {
-  blockquote {
-    @include font(body-l);
-
-    color: palette(orange);
-    font-weight: $sans-normal;
-
-    cite {
-      display: inline-block;
-      width: 100%;
+  &[data-color="turquoise-blue"] {
+    .quote-background {
+      @include overlay-opaque(turquoise, blue);
     }
   }
+
+  &[data-color="orange-turquoise"] {
+    .quote-background {
+      @include overlay-opaque(orange, turquoise);
+    }
+  }
+
+  &[data-color="pink-orange"] {
+    .quote-background {
+      @include overlay-opaque(pink, orange);
+    }
+  }
+
+  &[data-color="purple-pink"] {
+    .quote-background {
+      @include overlay-opaque(purple, pink);
+    }
+  }
+
+  &[data-color="blue-purple"] {
+    .quote-background {
+      @include overlay-opaque(blue, purple);
+    }
+  }
+}
+
+.quote-background {
+  width: 100%;
+  height: 32rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include mappy-bp(m) {
+    height: 16rem;
+  }
+}
+
+.quote-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.quote-blockquote {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 15;
+
+  p {
+    @include font(body-l);
+
+    color: palette(white);
+    font-weight: $sans-normal;
+  }
+}
+
+.quote-citation {
+  @include font(body-s);
+
+  display: inline-block;
+  width: 100%;
+  color: palette(white);
+  font-weight: $sans-medium;
+  text-align: right;
 }
 
 // 3. Call To Action //
 
 .section-cta {
-  @include ctnr(two);
-
   text-align: center;
 
-  a {
-    @include button;
+  &[data-color="blue"] {
+    .cta-button {
+      @include button(blue);
+    }
+  }
+
+  &[data-color="turquoise"] {
+    .cta-button {
+      @include button(turquoise);
+    }
+  }
+
+  &[data-color="purple"] {
+    .cta-button {
+      @include button(purple);
+    }
+  }
+
+  &[data-color="pink"] {
+    .cta-button {
+      @include button(pink);
+    }
+  }
+
+  &[data-color="orange"] {
+    .cta-button {
+      @include button(orange);
+    }
   }
 }
 
-// 4. Video + Google Maps//
+// 4. Video //
 
-.section-video,
-.section-googleMaps {
+.section-video {
   @include clearfix;
 
-  .section-videoOuter,
-  .section-googleMapsOuter {
-    @include ctnr(two);
+  &[data-color="blue"] {
+    .video-headline {
+      @include mappy-bp(s) {
+        @include line-header(blue);
+      }
+    }
   }
 
-  .section-videoInner,
-  .section-googleMapsInner {
-    position: relative;
-    padding-bottom: 56.25%;
-    overflow: hidden;
+  &[data-color="turquoise"] {
+    .video-headline {
+      @include mappy-bp(s) {
+        @include line-header(turquoise);
+      }
+    }
   }
+
+  &[data-color="purple"] {
+    .video-headline {
+      @include mappy-bp(s) {
+        @include line-header(purple);
+      }
+    }
+  }
+
+  &[data-color="pink"] {
+    .video-headline {
+      @include mappy-bp(s) {
+        @include line-header(pink);
+      }
+    }
+  }
+
+  &[data-color="orange"] {
+    .video-headline {
+      @include mappy-bp(s) {
+        @include line-header(orange);
+      }
+    }
+  }
+}
+
+.video-container {
+  @include mappy-bp(max-width s) {
+    flex-direction: column-reverse;
+  }
+}
+
+.video-headline {
+  @include font(header-m);
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
 
   iframe,
   object,
-  embed,
-  .acf-map {
+  embed {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
   }
+}
 
-  .section-header {
-    @include font(body-s);
+// 5. Google Maps //
 
+
+.section-googleMaps {
+  .googleMaps-headline {
+    @include font(header-m);
+
+    padding-bottom: 1rem;
+  }
+
+  .acf-map {
+    width: 100%;
+    height: 16rem;
+  }
+
+  .googleMaps-header {
+    @include font(header-s);
+  }
+
+  a .googleMaps-header {
     color: palette(blue);
   }
 
-  a .section-header {
-    @include link-underline(blue);
+  .googleMaps-body {
+    @include font(body-s);
   }
 }
 
@@ -181,13 +344,12 @@
   max-width: inherit;
 }
 
-// 5. Newsfeed //
+// 7. Newsfeed //
 
 .section-news {
-  display: flex;
   justify-content: space-between;
 
-  @include mappy-bp(max-width medium) {
+  @include mappy-bp(max-width m) {
     flex-wrap: wrap;
   }
 }
@@ -198,24 +360,15 @@
 }
 
 .news-1 {
-  width: 100%;
   height: 17rem;
-
-  @include mappy-bp(medium) {
-    width: calc(50% - .5rem);
-  }
 }
 
 .news-2,
 .news-3 {
-  width: 100%;
-  height: 8.5rem;
-  margin-top: 1rem;
+  height: 9rem;
 
-  @include mappy-bp(medium) {
-    width: calc(25% - .75rem);
+  @include mappy-bp(m) {
     height: 17rem;
-    margin-top: 0;
   }
 }
 
@@ -224,7 +377,6 @@
 
   width: 100%;
   height: 100%;
-  transition: transform $anim-m;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -232,24 +384,29 @@
   &::after {
     height: 75%;
 
-    @include mappy-bp(max-width small) {
+    @include mappy-bp(max-width s) {
       height: 100%;
     }
   }
 }
 
 .news-wrapper {
+  height: 100%;
+}
+
+.news-outer {
+  position: relative;
+  height: 100%;
+  z-index: 15;
+}
+
+.news-inner {
   position: absolute;
   bottom: 0;
-  width: 100%;
-  padding: .75rem 1rem;
-  z-index: 15;
 }
 
 .news-headline {
   @include overlay-text;
-
-  margin-bottom: .5rem;
 
   .news-1 & {
     @include font(header-m);

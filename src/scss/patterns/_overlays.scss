@@ -5,8 +5,8 @@
 @mixin overlay-opaque($color1, $color2) {
   $background1: palette($color1, light);
   $background2: palette($color2, light);
-  $foreground1: transparentize(palette($color1, light), .12);
-  $foreground2: transparentize(palette($color2, light), .12);
+  $foreground1: transparentize(palette($color1, light), .16);
+  $foreground2: transparentize(palette($color2, light), .16);
 
   position: relative;
 
@@ -18,7 +18,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, $background1, $background2);
+    background: linear-gradient(45deg, $background1, $background2);
     content: "";
     z-index: -10;
   }
@@ -31,7 +31,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, $foreground1, $foreground2);
+    background: linear-gradient(45deg, $foreground1, $foreground2);
     content: "";
     z-index: 10;
   }
@@ -70,7 +70,7 @@
     content: "";
     z-index: 10;
 
-    @include mappy-bp(max-width small) {
+    @include mappy-bp(max-width s) {
       height: 75%;
     }
   }

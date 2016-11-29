@@ -29,12 +29,17 @@ get_header(); ?>
 
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
+			?>
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
+			<div class="content-main pure-ctnr">
+
+				<?php
+
+					/*
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
 				if ( is_page() && $post->post_parent > 0 ) {
 					get_template_part( 'components/element', 'section' );
 				} else {
@@ -42,16 +47,16 @@ get_header(); ?>
 					get_template_part( 'components/element', $format );
 				}
 
-			endwhile;
+				endwhile;
 
-			uwc_website_paginated();
+				uwc_website_paginated();
 
-		else :
+			else :
 
-			get_template_part( 'components/content', 'none' );
+				get_template_part( 'components/content', 'none' );
 
-		endif; ?>
-
+			endif; ?>
+			</div>
 		</main>
 	</div>
 <?php
