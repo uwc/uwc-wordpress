@@ -16,25 +16,11 @@ get_header(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<?php if ( has_post_thumbnail() ) : ?>
-				<header class="header header-featured" style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)">
-			<?php else : ?>
-				<header class="header header-noFeatured">
-			<?php endif; ?>
-					<div class="header-outer">
-						<div class="header-inner">
-							<?php
-							if ( is_page() || is_single() ) {
-								the_title( '<h1 class="header-title">', '</h1>' );
-							} else {
-								the_title( '<h2 class="header-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-							} ?>
-							<h2 class="header-summary"><?php the_excerpt(); ?></h2>
-						</div>
-					</div>
-				</header>
+			<?php
+			get_template_part( 'components/site', 'hero' );
+			?>
 
-				<div class="content-main">
+				<div class="content-main pure-ctnr">
 				<?php
 				$text = get_the_content();
 				uwc_website_content_navigation( $text );

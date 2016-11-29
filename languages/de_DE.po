@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: UWC WordPress\n"
-"Report-Msgid-Bugs-To: https://github.com/uwc/uwc/issues\n"
+"Report-Msgid-Bugs-To: https://github.com/uwc/uwc-wordpress/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-11-25 05:36+0000\n"
+"PO-Revision-Date: 2016-11-29 19:05+0100\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -49,7 +49,7 @@ msgstr[1] "%1$s Kommentare zu &ldquo;%2$s&rdquo;"
 msgid "Comments are closed."
 msgstr "Es können keine Kommentare abgegeben werden."
 
-#: src/components/content-link.php:13, src/components/element-link.php:37
+#: src/components/content-link.php:13
 msgid "Continue reading"
 msgstr "Weiter lesen"
 
@@ -83,14 +83,22 @@ msgstr "„%s“ weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 msgid "Pages:"
 msgstr "Seiten: "
 
-#: src/components/element-link.php:19, src/components/element-standard.php:19,
-#: src/components/element-video.php:25
+#: src/components/element-link.php:13, src/components/element-standard.php:13,
+#: src/components/element-video.php:13
 msgid "Featured"
 msgstr "Featured"
 
-#: src/components/element-standard.php:37, src/components/element-video.php:43
-msgid "Weiter lesen"
+#: src/components/element-link.php:28
+msgid "Visit site"
+msgstr "Seite besuchen"
+
+#: src/components/element-standard.php:28
+msgid "Read more"
 msgstr "Weiter lesen"
+
+#: src/components/element-video.php:28
+msgid "Watch video"
+msgstr "Video ansehen"
 
 #: src/components/site-contact.php:25
 msgid "Contact us"
@@ -100,7 +108,7 @@ msgstr "Kontaktieren Sie uns"
 msgid "Ask a question"
 msgstr "Nachricht senden"
 
-#: src/footer.php:32
+#: src/footer.php:35
 msgid "All rights reserved."
 msgstr "Alle Rechte vorbehalten."
 
@@ -157,7 +165,7 @@ msgstr "Zum Inhalt springen"
 msgid "Search"
 msgstr "Suche"
 
-#: src/header.php:66
+#: src/header.php:67
 msgid "Menu"
 msgstr "Menü"
 
@@ -225,17 +233,7 @@ msgstr "Nächste Seite"
 msgid "In This Section"
 msgstr "Auf Dieser Seite"
 
-#: src/inc/template-tags.php:143
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr "Gepostet am %s"
-
-#: src/inc/template-tags.php:148
-msgctxt "post author"
-msgid "by %s"
-msgstr "von %s."
-
-#: src/search.php:22
+#: src/search.php:23
 msgid "Search results for &#x201c;%s&#x201d;:"
 msgstr "Suchergebnisse für &#x201c;%s&#x201d;:"
 
@@ -248,6 +246,17 @@ msgstr "Suche nach:"
 msgctxt "placeholder"
 msgid "Search..."
 msgstr "Suchen…"
+
+#~ msgid "Weiter lesen"
+#~ msgstr "Weiter lesen"
+
+#~ msgctxt "post date"
+#~ msgid "Posted on %s"
+#~ msgstr "Gepostet am %s"
+
+#~ msgctxt "post author"
+#~ msgid "by %s"
+#~ msgstr "von %s."
 
 #~ msgid "Footer center"
 #~ msgstr "Fußzeile mitte"

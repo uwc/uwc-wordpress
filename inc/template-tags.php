@@ -122,76 +122,35 @@ if ( ! function_exists( 'uwc_website_content_navigation' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'uwc_website_posted_on' ) ) :
+if ( ! function_exists( 'uwc_website_post_thumbnail' ) ) :
 	/**
-	 * Prints HTML with meta information for the current post-date/time and author.
+	 * Display Image from the_post_thumbnail or the first image of a post else display a default image.
+	 *
+	 * @param string $size Choose the thumbnail size from "thumbnail", "medium", "large", "full" or your own defined size using filters.
 	 */
-	function uwc_website_posted_on() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	function uwc_website_post_thumbnail( $size = 'full' ) {
+		if ( has_post_thumbnail() ) {
+			$image_id = get_post_thumbnail_id();
+			$image = wp_get_attachment_image_src( $image_id, $size );
+			$image_url = $image[0];
+		} elseif ( get_post_gallery() ) {
+			$gallery = get_post_gallery( get_the_ID(), false );
+			$image_url = $gallery['src'][0];
+		} else {
+			global $post, $posts;
+			$image_url = '';
+			ob_start();
+			ob_end_clean();
+			$output = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
+			if ( ! empty( $matches[1][0] ) ) {
+				$image_url = $matches[1][0];
+			}
 		}
 
-		$time_string = sprintf( $time_string,
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( 'c' ) ),
-			esc_html( get_the_modified_date() )
-		);
+		if ( empty( $image_url ) ) {
+			return false;
+		}
 
-			$posted_on = sprintf(
-				esc_html_x( 'Posted on %s', 'post date', 'uwc' ),
-				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-			);
-
-			$byline = sprintf(
-				esc_html_x( 'by %s', 'post author', 'uwc' ),
-				'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-			);
-
-			echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
+		return $image_url;
 	}
 endif;
-
-/**
- * Returns true if a blog has more than 1 category.
- *
- * @return bool
- */
-function uwc_website_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'uwc_website_categories' ) ) ) {
-		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
-
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
-
-		set_transient( 'uwc_website_categories', $all_the_cool_cats );
-	}
-
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so uwc_website_categorized_blog should return true.
-		return true;
-	}
-	// This blog has only 1 category so uwc_website_categorized_blog should return false.
-	return false;
-}
-
-/**
- * Flush out the transients used in uwc_website_categorized_blog.
- */
-function uwc_website_category_transient_flusher() {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-	// Like, beat it. Dig?
-	delete_transient( 'uwc_website_categories' );
-}
-add_action( 'edit_category', 'uwc_website_category_transient_flusher' );
-add_action( 'save_post',     'uwc_website_category_transient_flusher' );

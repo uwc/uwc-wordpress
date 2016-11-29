@@ -9,6 +9,8 @@
 
 ?>
 
-<section class="section section-cta">
-	<a href="<?php the_sub_field( 'cta_url' ) ?>"><?php the_sub_field( 'cta_text' ) ?></a>
+<section class="section section-cta pure-ctnr">
+	<div class="box-2-2">
+		<a class="cta-button" href="<?php the_sub_field( 'cta_url' ) ?>"><?php the_sub_field( 'cta_text' ) ?></a>
+	</div>
 </section>

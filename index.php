@@ -24,17 +24,19 @@ get_header(); ?>
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 				</header>
-			<?php
-			endif;
+			<?php endif; ?>
 
+			<div class="content-main pure-ctnr">
+
+			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
+					/*
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
 				if ( is_page() && $post->post_parent > 0 ) {
 					get_template_part( 'components/element', 'section' );
 				} else {
@@ -42,16 +44,16 @@ get_header(); ?>
 					get_template_part( 'components/element', $format );
 				}
 
-			endwhile;
+				endwhile;
 
-			uwc_website_paginated();
+				uwc_website_paginated();
 
-		else :
+			else :
 
-			get_template_part( 'components/content', 'none' );
+				get_template_part( 'components/content', 'none' );
 
-		endif; ?>
-
+			endif; ?>
+			</div>
 		</main>
 	</div>
 <?php

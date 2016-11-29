@@ -21,37 +21,22 @@ get_header(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<?php if ( has_post_thumbnail() ) : ?>
-					<header class="header header-featured" style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)">
-				<?php else : ?>
-					<header class="header header-noFeatured">
-				<?php endif; ?>
-						<div class="header-outer">
-							<div class="header-inner">
-								<?php
-								if ( is_page() || is_single() ) {
-									the_title( '<h1 class="header-title">', '</h1>' );
-								} else {
-									the_title( '<h2 class="header-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-								} ?>
-								<h2 class="header-summary"><?php the_excerpt(); ?></h2>
-							</div>
-						</div>
-					</header>
-
-					<div class="content-main">
 					<?php
-					$text = get_the_content();
-					uwc_website_content_navigation( $text );
+					get_template_part( 'components/site', 'hero' );
 
 					/**
 					 * Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					if ( is_page() && $post->post_parent <= 0 ) {
+					if ( is_page() && $post->post_parent <= 0 ) :
 						get_template_part( 'components/content', 'section' );
-					} else {
+					else : ?>
+						<div class="content-main pure-ctnr">
+
+						<?php
+						$text = get_the_content();
+						uwc_website_content_navigation( $text );
 						$format = get_post_format() ?: 'standard';
 						get_template_part( 'components/content', $format );
 
@@ -69,8 +54,8 @@ get_header(); ?>
 						if ( comments_open() || get_comments_number() ) :
 							comments_template();
 							endif;
-							endif;
-					}
+						endif;
+					endif;
 
 					endwhile; // End of the loop.
 					?>

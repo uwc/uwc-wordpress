@@ -21,22 +21,17 @@ $posts = get_posts(array(
 $count = count( $posts );
 
 if ( $taxonomies && $count >= 3 ) {
-	echo '<section class="section section-news">';
-	$index = 1;
-	foreach ( $posts as $post ) {
-		$featured = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
-		$featured_url = $featured[0];
+	echo '<section class="section section-news pure-g pure-ctnr box-1-1">';
 
-		echo '<article class="news-post news-' . intval( $index ) . '"><a href="' . esc_url( get_permalink( $post->ID ) ) . '">';
-		if ( has_post_thumbnail( $post->ID ) ) {
-			echo '<div class="news-background" style="background-image: url(';
-			echo esc_url( $featured_url );
-			echo ')"></div>';
-		} else {
-			echo '<div class="news-background"></div>';
-		}
-		echo '<div class="news-wrapper">';
-		echo '<h4 class="news-date">' . get_the_date( '', $post->ID ) . '</h4><h2 class="news-headline">' . get_the_title( $post->ID ) . '</h2></div></a></article>';
+	$index = 1;
+
+	foreach ( $posts as $post ) {
+
+		echo '<article class="news-post news-' . intval( $index ) . ( 1 === intval( $index ) ? ' pure-u-1-1 pure-u-md-1-2 pure-u-lg-1-2' : ' pure-u-1-1 pure-u-md-1-4 pure-u-lg-1-4' ) . ' box-1-1"><a href="' . esc_url( get_permalink( $post->ID ) ) . '">';
+		echo '<div class="news-background"' . ( uwc_website_post_thumbnail() ? ' style="background-image: url(' . esc_url( uwc_website_post_thumbnail( 'medium' ) ) . ')"' : '' ) . '>';
+		echo '<div class="box-2-2 news-wrapper"><div class="news-outer"><div class="news-inner">';
+		echo '<h4 class="news-date">' . get_the_date( '', $post->ID ) . '</h4><h2 class="news-headline">' . get_the_title( $post->ID ) . '</h2></div></div></div></div></a></article>';
+
 		$index++;
 	}
 	echo '</section>';
