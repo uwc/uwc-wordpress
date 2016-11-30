@@ -37,10 +37,9 @@ get_header(); ?>
 						<?php
 						$text = get_the_content();
 						uwc_website_content_navigation( $text );
+
 						$format = get_post_format() ?: 'standard';
 						get_template_part( 'components/content', $format );
-
-						get_sidebar();
 
 						uwc_website_page_navigation(); ?>
 

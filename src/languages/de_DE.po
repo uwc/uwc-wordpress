@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UWC WordPress\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-wordpress/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-11-29 19:05+0100\n"
+"PO-Revision-Date: 2016-11-30 00:57+0100\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -112,47 +112,39 @@ msgstr "Nachricht senden"
 msgid "All rights reserved."
 msgstr "Alle Rechte vorbehalten."
 
-#: src/functions.php:62
+#: src/functions.php:63
 msgid "UWC"
 msgstr "UWC"
 
-#: src/functions.php:67
+#: src/functions.php:68
 msgid "UWC Germany"
 msgstr "UWC Deutschland"
 
-#: src/functions.php:73
+#: src/functions.php:74
 msgid "Primary Menu"
 msgstr "Hauptmenü"
 
-#: src/functions.php:74
+#: src/functions.php:75
 msgid "Social Links Menu"
 msgstr "Social Links Menü"
 
-#: src/functions.php:135
-msgid "Sidebar"
-msgstr "Seitenleiste"
-
-#: src/functions.php:137
-msgid "Add widgets here to appear in your sidebar."
-msgstr "Widgets, die in der Seitenleiste erscheinen sollen, hier einfügen."
-
-#: src/functions.php:144
+#: src/functions.php:136
 msgid "Footer 1"
 msgstr "Fußzeile 1"
 
-#: src/functions.php:146, src/functions.php:155, src/functions.php:164
+#: src/functions.php:138, src/functions.php:147, src/functions.php:156
 msgid "Add widgets here to appear in your footer."
 msgstr "Widgets, die in der Fußzeile erscheinen sollen, hier einfügen."
 
-#: src/functions.php:153
+#: src/functions.php:145
 msgid "Footer 2"
 msgstr "Fußzeile 2"
 
-#: src/functions.php:162
+#: src/functions.php:154
 msgid "Footer 3"
 msgstr "Fußzeile 3"
 
-#: src/functions.php:184
+#: src/functions.php:176
 msgctxt "Source Sans Pro font: on or off"
 msgid "on"
 msgstr "on"
@@ -230,8 +222,8 @@ msgid "Next page"
 msgstr "Nächste Seite"
 
 #: src/inc/template-tags.php:116
-msgid "In This Section"
-msgstr "Auf Dieser Seite"
+msgid "Content"
+msgstr "Inhalt"
 
 #: src/search.php:23
 msgid "Search results for &#x201c;%s&#x201d;:"
@@ -246,6 +238,15 @@ msgstr "Suche nach:"
 msgctxt "placeholder"
 msgid "Search..."
 msgstr "Suchen…"
+
+#~ msgid "Sidebar"
+#~ msgstr "Seitenleiste"
+
+#~ msgid "Add widgets here to appear in your sidebar."
+#~ msgstr "Widgets, die in der Seitenleiste erscheinen sollen, hier einfügen."
+
+#~ msgid "In This Section"
+#~ msgstr "Auf Dieser Seite"
 
 #~ msgid "Weiter lesen"
 #~ msgstr "Weiter lesen"

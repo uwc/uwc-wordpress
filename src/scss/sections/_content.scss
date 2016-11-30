@@ -15,7 +15,7 @@
 h1 {
   @include font(header-l);
 
-  margin-top: 1rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   color: palette(blue);
 }
@@ -52,13 +52,13 @@ p {
   margin-top: 1rem;
   margin-bottom: 1rem;
 
+  a {
+    @include link-underline(pink);
+  }
+
   img {
     max-width: 100%;
   }
-}
-
-a {
-  @include link-underline(pink);
 }
 
 // 3. Quotes

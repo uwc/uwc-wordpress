@@ -26,30 +26,28 @@
   max-width: 100vw;
   margin: 1rem calc((100vw - 100%) / -2);
 
-  @include mappy-bp(l) {
-    width: 56rem !important;
-    max-width: calc(100vw - 8rem);
+  @include mappy-bp(m) {
+    width: $container-width - 2rem !important;
+    max-width: calc(100vw - 4rem);
     margin-top: 1rem;
-    margin-right: -10rem;
+    margin-right: 0;
     margin-bottom: 1rem;
-    margin-left: -10rem;
+    margin-left: calc(((100% + 2rem) / 3) * -1);
+  }
+
+  @include mappy-bp(l) {
+    max-width: calc(100vw - 6rem);
   }
 }
 
-.aligncenter img {
-  width: 100%;
-  max-width: 100%;
-  margin: 1rem auto;
-}
-
 figure.alignright {
-  max-width: 100%;
+  max-width: 66%;
   margin: .5rem 0 .5rem 1rem;
   float: right;
 }
 
 figure.alignleft {
-  max-width: 100%;
+  max-width: 66%;
   margin: .5rem 1rem .5rem 0;
   float: left;
 }
@@ -60,20 +58,48 @@ figure.alignleft {
   margin-bottom: 1rem;
 }
 
-.wp-caption.alignnone,
-.wp-caption.aligncenter {
+.wp-caption.alignnone {
   min-width: 100%;
   margin-top: 1rem;
   margin-bottom: 2rem;
-  text-align: center;
+  text-align: left;
 }
 
+.wp-caption.alignright,
 .wp-caption.alignleft {
   text-align: left;
 }
 
-.wp-caption.alignright {
-  text-align: right;
+.wp-caption.aligncenter {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+
+  @include mappy-bp(m) {
+    @include clearfix;
+
+    width: $container-width - 2rem !important;
+    max-width: calc(100vw - 4rem);
+
+    margin-right: 0;
+    margin-bottom: 1rem;
+    margin-left: calc(((100% + 2rem) / 3) * -1);
+
+    img {
+      width: calc(((100% + 2rem) * .75) - 2rem);
+      float: right;
+    }
+
+    figcaption {
+      width: calc(((100% + 2rem) * .25) - 2rem);
+      float: left;
+      text-align: right;
+    }
+  }
+
+  @include mappy-bp(l) {
+    max-width: calc(100vw - 6rem);
+  }
 }
 
 .wp-caption .wp-caption-text,
@@ -81,8 +107,6 @@ figure.alignleft {
   @include font(body-s);
 
   color: palette(gray);
-  font-style: italic;
-  line-height: 1.3;
 }
 
 // 3. Media //

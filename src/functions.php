@@ -45,10 +45,11 @@ if ( ! function_exists( 'uwc_website_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		set_post_thumbnail_size( 1440 );
 
 		// Enable support for custom header used for logo.
 		add_theme_support( 'custom-header', array(
-			'default-image'          => get_template_directory_uri() . '/images/uwc.png',
+			'default-image'          => get_template_directory_uri() . '/images/header-uwc.png',
 			'width'                  => 210,
 			'height'                 => 32,
 			'flex-width'             => true,
@@ -57,13 +58,13 @@ if ( ! function_exists( 'uwc_website_setup' ) ) :
 
 		register_default_headers( array(
 			'uwc' => array(
-				'url'           => '%s/images/uwc.png',
-				'thumbnail_url' => '%s/images/uwc-thumbnail.png',
+				'url'           => '%s/images/header-uwc.png',
+				'thumbnail_url' => '%s/images/header-uwc-thumbnail.png',
 				'description'   => __( 'UWC', 'uwc' ),
 			),
 			'uwcde' => array(
-				'url'           => '%s/images/uwcde.png',
-				'thumbnail_url' => '%s/images/uwcde-thumbnail.png',
+				'url'           => '%s/images/header-uwcde.png',
+				'thumbnail_url' => '%s/images/header-uwcde-thumbnail.png',
 				'description'   => __( 'UWC Germany', 'uwc' ),
 			),
 		) );
@@ -131,15 +132,6 @@ add_action( 'after_setup_theme', 'uwc_website_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function uwc_website_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'uwc' ),
-		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar.', 'uwc' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
 	register_sidebar( array(
 		'name'          => __( 'Footer 1', 'uwc' ),
 		'id'            => 'sidebar-2',

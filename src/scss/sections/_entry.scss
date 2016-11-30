@@ -14,17 +14,33 @@
 }
 
 .content-entry {
-  @include ctnr(two);
+  @include clearfix;
+
+  display: block;
+  width: 100%;
+  margin-top: -1rem;
+
+  @include mappy-bp(m) {
+    width: 75%;
+    max-width: $container-width * .75;
+    float: right;
+  }
 }
 
 // 2. Anchors //
 
 .anchors {
-  @include ctnr(one);
+  @include clearfix;
 
-  width: inherit;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  display: block;
+  width: 100%;
+  color: palette(gray, dark);
+
+  @include mappy-bp(m) {
+    width: 25%;
+    max-width: $container-width * .25;
+    float: left;
+  }
 }
 
 .anchors-header {
@@ -33,14 +49,8 @@
   margin-bottom: .5rem;
 }
 
-.anchor-links {
-  margin-left: 1rem;
-}
-
 .anchor-link {
   @include font(body-s);
-
-  list-style: decimal;
 }
 
 // 3. Shariff //

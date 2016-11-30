@@ -39,28 +39,43 @@ module.exports = {
   },
 
   images: {
-    src: [src + 'images/*(*.png|*.jpg|*.jpeg)'],
+    src: [src + 'images/*.{png,jpg,jpeg}'],
     responsive: {
-      // Convert all images to JPEG format.
-      '*': [{
-        // image.jpg is 30 pixels tall.
+      // Resize all header images.
+      'header-*.*': [{
         height: 96,
         withoutEnlargement: false,
+        // Convert to JPEG format.
+        format: 'png',
+        rename: {
+          extname: '.png'
+        }
       }, {
-        // image-thumbnail.jpg is 320 pixels wide.
         width: 640,
         withoutEnlargement: false,
+        // Convert to JPEG format.
+        format: 'png',
         rename: {
           suffix: '-thumbnail',
-        },
-      },],
+          extname: '.png'
+        }
+      } ],
+      'featured-*.*': [{
+        width: 720,
+        withoutEnlargement: false,
+        // Convert to JPEG format.
+        format: 'jpeg',
+        rename: {
+          extname: '.jpg'
+        }
+      } ]
     },
     imagemin: {
       optimizationLevel: 7,
       progressive: true,
       interlaced: true
     },
-    dest: build + 'images/',
+    dest: build + 'images/'
   },
 
   scripts: {

@@ -97,47 +97,39 @@ msgstr ""
 msgid "All rights reserved."
 msgstr ""
 
-#: src/functions.php:62
+#: src/functions.php:63
 msgid "UWC"
 msgstr ""
 
-#: src/functions.php:67
+#: src/functions.php:68
 msgid "UWC Germany"
 msgstr ""
 
-#: src/functions.php:73
+#: src/functions.php:74
 msgid "Primary Menu"
 msgstr ""
 
-#: src/functions.php:74
+#: src/functions.php:75
 msgid "Social Links Menu"
 msgstr ""
 
-#: src/functions.php:135
-msgid "Sidebar"
-msgstr ""
-
-#: src/functions.php:137
-msgid "Add widgets here to appear in your sidebar."
-msgstr ""
-
-#: src/functions.php:144
+#: src/functions.php:136
 msgid "Footer 1"
 msgstr ""
 
-#: src/functions.php:146, src/functions.php:155, src/functions.php:164
+#: src/functions.php:138, src/functions.php:147, src/functions.php:156
 msgid "Add widgets here to appear in your footer."
 msgstr ""
 
-#: src/functions.php:153
+#: src/functions.php:145
 msgid "Footer 2"
 msgstr ""
 
-#: src/functions.php:162
+#: src/functions.php:154
 msgid "Footer 3"
 msgstr ""
 
-#: src/functions.php:184
+#: src/functions.php:176
 msgctxt "Source Sans Pro font: on or off"
 msgid "on"
 msgstr ""
@@ -201,7 +193,7 @@ msgid "Next page"
 msgstr ""
 
 #: src/inc/template-tags.php:116
-msgid "In This Section"
+msgid "Content"
 msgstr ""
 
 #: src/search.php:23

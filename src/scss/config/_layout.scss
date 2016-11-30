@@ -84,14 +84,11 @@ $container-width: 52rem;
   padding: 2rem;
 }
 
-
-
 .pure-ctnr,
 %pure-ctnr {
   @include clearfix;
 
   width: 100%;
-  max-width: $container-width;
   height: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -102,6 +99,7 @@ $container-width: 52rem;
 
   @include mappy-bp(l) {
     width: calc(100% - 4rem);
+    max-width: $container-width;
   }
 }
 
@@ -138,7 +136,6 @@ $container-width: 52rem;
     @include mappy-bp(m) {
       width: 66.6%;
       max-width: $container-width / 3 * 2;
-      padding-left: 1rem;
       float: right;
     }
   }
@@ -194,6 +191,7 @@ body {
   max-width: 80rem;
   margin: 0 auto;
   padding-top: 6rem;
+  background-color: #fff;
 
   @include mappy-bp(s) {
     padding-top: 5rem;

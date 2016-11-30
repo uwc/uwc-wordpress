@@ -89,5 +89,4 @@ get_header(); ?>
 	</div><!-- .content-area -->
 
 <?php
-get_sidebar();
 get_footer();

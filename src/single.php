@@ -24,6 +24,7 @@ get_header(); ?>
 				<?php
 				$text = get_the_content();
 				uwc_website_content_navigation( $text );
+				do_shortcode( '[shariff]' );
 
 				/**
 				 * Include the Post-Format-specific template for the content.
@@ -32,8 +33,6 @@ get_header(); ?>
 				 */
 				$format = get_post_format() ? : 'standard';
 				get_template_part( 'components/content', $format );
-
-				get_sidebar();
 
 				the_post_navigation( array(
 					'in_same_term' => true,

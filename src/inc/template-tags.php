@@ -113,7 +113,7 @@ if ( ! function_exists( 'uwc_website_content_navigation' ) ) :
 			}
 		}
 		if ( count( $items ) !== 0 ) {
-			echo '<nav class="anchors"><h6 class="anchors-header">', esc_html__( 'In This Section', 'uwc' ), '</h6><ul class="anchor-links">';
+			echo '<nav class="anchors box-2-2"><h6 class="anchors-header">', esc_html__( 'Content', 'uwc' ), '</h6><ul class="anchor-links">';
 			foreach ( $items as $item ) {
 				echo '<li class="anchor-link"><a href="#', esc_html( urlencode( $item ) ), '" title="', esc_html( $item ), '" data-scroll>', esc_html( $item ), '</a></li>';
 			}
@@ -129,28 +129,34 @@ if ( ! function_exists( 'uwc_website_post_thumbnail' ) ) :
 	 * @param string $size Choose the thumbnail size from "thumbnail", "medium", "large", "full" or your own defined size using filters.
 	 */
 	function uwc_website_post_thumbnail( $size = 'full' ) {
+		// Check for built-in post thumbnail. If it exists, return its url.
 		if ( has_post_thumbnail() ) {
 			$image_id = get_post_thumbnail_id();
 			$image = wp_get_attachment_image_src( $image_id, $size );
 			$image_url = $image[0];
-		} elseif ( get_post_gallery() ) {
+			return $image_url;
+		}
+
+		// Get the first image in the post. If one exists, return its url.
+		global $post;
+		$image_url = '';
+		ob_start();
+		ob_end_clean();
+		preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
+		if ( ! empty( $matches[1][0] ) ) {
+			$image_url = $matches[1][0];
+			return $image_url;
+		}
+
+		// Check for a gallery. If one exists, return the url of its first image.
+		if ( get_post_gallery() ) {
 			$gallery = get_post_gallery( get_the_ID(), false );
 			$image_url = $gallery['src'][0];
-		} else {
-			global $post, $posts;
-			$image_url = '';
-			ob_start();
-			ob_end_clean();
-			$output = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
-			if ( ! empty( $matches[1][0] ) ) {
-				$image_url = $matches[1][0];
-			}
+			return $image_url;
 		}
 
-		if ( empty( $image_url ) ) {
-			return false;
-		}
-
+		// If we have gotten this far, no image is associated with the post, so we return the url of the default image.
+		$image_url = get_template_directory_uri() . '/images/featured-default.jpg';
 		return $image_url;
 	}
 endif;
