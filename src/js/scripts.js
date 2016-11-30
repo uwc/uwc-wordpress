@@ -69,7 +69,7 @@
       $( '#js-body' ).toggleClass( '-search-open' );
 
       function focusInput() {
-        $( '.site-search' ).find( 'input' ).focus();
+        $( '#search' ).find( 'input' ).focus();
       }
 
       // Set timeout to accommodate for the fade in animation.

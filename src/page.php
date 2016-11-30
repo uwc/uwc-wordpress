@@ -34,14 +34,23 @@ get_header(); ?>
 					else : ?>
 						<div class="content-main pure-ctnr">
 
-						<?php
-						$text = get_the_content();
-						uwc_website_content_navigation( $text );
+							<div class="content-sidebar">
 
+							<?php
+							$text = get_the_content();
+							uwc_website_content_navigation( $text );
+
+							get_sidebar();
+							?>
+
+							</div>
+
+						<?php
 						$format = get_post_format() ?: 'standard';
 						get_template_part( 'components/content', $format );
 
-						uwc_website_page_navigation(); ?>
+						uwc_website_page_navigation();
+						?>
 
 						</div>
 

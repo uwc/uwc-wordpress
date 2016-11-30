@@ -2,15 +2,29 @@
 
 // Style post and page elements here.
 
+// ! See '_content.scss' for the content styling!
+
 // 1. Content
 // 2. Anchors
-// 3. Shariff
-// 4. Footer
+// 3. Footer
 
 // 1. Content //
 
-.content {
+.content-main {
   @include clearfix;
+}
+
+.content-sidebar {
+  @include clearfix;
+
+  display: block;
+  width: 100%;
+
+  @include mappy-bp(m) {
+    width: 25%;
+    max-width: $container-width * .25;
+    float: left;
+  }
 }
 
 .content-entry {
@@ -30,17 +44,7 @@
 // 2. Anchors //
 
 .anchors {
-  @include clearfix;
-
-  display: block;
-  width: 100%;
   color: palette(gray, dark);
-
-  @include mappy-bp(m) {
-    width: 25%;
-    max-width: $container-width * .25;
-    float: left;
-  }
 }
 
 .anchors-header {
@@ -53,33 +57,13 @@
   @include font(body-s);
 }
 
-// 3. Shariff //
+// 3. Footer //
 
-// See '_content.scss' for the content styling!
-
-.shariff {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  transition: $anim-s;
-
-  a::after {
-    display: none;
-  }
-}
-
-// 4. Footer //
-
-.post-navigation {
-  @include ctnr(two);
-  @include clearfix;
-
+.entry-navigation {
   position: relative;
-  padding-top: 1rem;
-  padding-bottom: 4rem;
   clear: both;
 
   .nav-previous {
-    position: relative;
     float: left;
     z-index: 100;
 
@@ -105,7 +89,6 @@
   }
 
   .nav-next {
-    position: relative;
     float: right;
     z-index: 100;
 

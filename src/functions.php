@@ -133,6 +133,15 @@ add_action( 'after_setup_theme', 'uwc_website_content_width', 0 );
  */
 function uwc_website_widgets_init() {
 	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar', 'uwc' ),
+		'id'            => 'sidebar-1',
+		'description'   => __( 'Add widgets here to appear in your sidebar.', 'uwc' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
 		'name'          => __( 'Footer 1', 'uwc' ),
 		'id'            => 'sidebar-2',
 		'description'   => __( 'Add widgets here to appear in your footer.', 'uwc' ),
@@ -161,6 +170,16 @@ function uwc_website_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'uwc_website_widgets_init' );
+
+/**
+ * Register Foo_Widget widget.
+ *
+ * @link https://codex.wordpress.org/Widgets_API
+ */
+function register_foo_widget() {
+	register_widget( 'Foo_Widget' );
+}
+add_action( 'widgets_init', 'register_foo_widget' );
 
 if ( ! function_exists( 'uwc_website_fonts_url' ) ) :
 	/**
@@ -230,6 +249,10 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
+/**
+ * Custom widgets.
+ */
+require get_template_directory() . '/inc/widgets.php';
 /**
  * Customizer additions.
  */

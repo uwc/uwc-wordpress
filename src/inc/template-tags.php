@@ -22,15 +22,15 @@ if ( ! function_exists( 'uwc_website_page_navigation' ) ) :
 		$previous = $current - 1;
 		$next = $current + 1;
 
-		echo '<nav class="post-navigation">';
+		echo '<nav class="entry-navigation box-2">';
 		echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
 		if ( ! empty( $previous ) ) {
-			echo '<div class="nav-previous">';
+			echo '<div class="nav-previous box-2-2">';
 			echo '<a href="' . esc_url( $pagelist[ $previous ]->url ) . '" title="' . esc_html( $pagelist[ $previous ]->title ) . '">' . esc_html( $pagelist[ $previous ]->title ) . '</a>';
 			echo '</div>';
 		}
 		if ( ! empty( $next ) ) {
-			echo '<div class="nav-next">';
+			echo '<div class="nav-next box-2-2">';
 			echo '<a href="' . esc_url( $pagelist[ $next ]->url ) . '" title="' . esc_html( $pagelist[ $next ]->title ) . '">' . esc_html( $pagelist[ $next ]->title ) . '</a>';
 			echo '</div>';
 		}
@@ -92,7 +92,6 @@ if ( ! function_exists( 'uwc_website_paginated' ) ) :
 		}
 	}
 endif;
-
 
 if ( ! function_exists( 'uwc_website_content_navigation' ) ) :
 	/**

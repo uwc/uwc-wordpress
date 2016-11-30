@@ -2,10 +2,6 @@
 
 // Mixins, functions, and other non-declarative things.
 
-.widget-area {
-  @include ctnr(two);
-}
-
 .widget {
   @include font(body-s);
 

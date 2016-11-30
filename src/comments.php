@@ -19,7 +19,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area pure-ctnr box-2-2">
 
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
@@ -27,9 +27,9 @@ if ( post_password_required() ) {
 				$comments_number = get_comments_number();
 			if ( 1 === $comments_number ) {
 				/* translators: %s: post title */
-				printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'uwc' ), get_the_title() );
+				printf( esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'uwc' ), get_the_title() );
 			} else {
-				printf(
+				echo esc_html( sprintf(
 					/* translators: 1: number of comments, 2: post title */
 					_nx(
 						'%1$s thought on &ldquo;%2$s&rdquo;',
@@ -40,7 +40,7 @@ if ( post_password_required() ) {
 					),
 					number_format_i18n( $comments_number ),
 					get_the_title()
-				);
+				) );
 			}
 			?>
 		</h2>
@@ -65,7 +65,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-	<p class="no-comments"><?php _e( 'Comments are closed.', 'uwc' ); ?></p>
+	<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'uwc' ); ?></p>
 	<?php endif; ?>
 
 	<?php

@@ -27,7 +27,7 @@
 } ?>
 				</div>
 
-				<?php get_sidebar(); ?>
+				<?php get_sidebar( 'footer' ); ?>
 
 			</div>
 			<div class="footer-info">

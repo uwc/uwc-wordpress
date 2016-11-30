@@ -114,22 +114,30 @@ msgid "Social Links Menu"
 msgstr ""
 
 #: src/functions.php:136
-msgid "Footer 1"
+msgid "Sidebar"
 msgstr ""
 
-#: src/functions.php:138, src/functions.php:147, src/functions.php:156
-msgid "Add widgets here to appear in your footer."
+#: src/functions.php:138
+msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
 #: src/functions.php:145
-msgid "Footer 2"
+msgid "Footer 1"
+msgstr ""
+
+#: src/functions.php:147, src/functions.php:156, src/functions.php:165
+msgid "Add widgets here to appear in your footer."
 msgstr ""
 
 #: src/functions.php:154
+msgid "Footer 2"
+msgstr ""
+
+#: src/functions.php:163
 msgid "Footer 3"
 msgstr ""
 
-#: src/functions.php:176
+#: src/functions.php:195
 msgctxt "Source Sans Pro font: on or off"
 msgid "on"
 msgstr ""
@@ -192,8 +200,28 @@ msgstr ""
 msgid "Next page"
 msgstr ""
 
-#: src/inc/template-tags.php:116
+#: src/inc/template-tags.php:115
 msgid "Content"
+msgstr ""
+
+#: src/inc/widgets.php:13
+msgid "Widget Title"
+msgstr ""
+
+#: src/inc/widgets.php:14
+msgid "A Foo Widget"
+msgstr ""
+
+#: src/inc/widgets.php:31
+msgid "Hello, World!"
+msgstr ""
+
+#: src/inc/widgets.php:43
+msgid "New title"
+msgstr ""
+
+#: src/inc/widgets.php:46
+msgid "Title:"
 msgstr ""
 
 #: src/search.php:23
