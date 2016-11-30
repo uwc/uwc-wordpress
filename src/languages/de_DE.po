@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UWC WordPress\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-wordpress/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-11-30 00:57+0100\n"
+"PO-Revision-Date: 2016-11-30 01:51+0100\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -129,22 +129,30 @@ msgid "Social Links Menu"
 msgstr "Social Links Menü"
 
 #: src/functions.php:136
+msgid "Sidebar"
+msgstr "Seitenleiste"
+
+#: src/functions.php:138
+msgid "Add widgets here to appear in your sidebar."
+msgstr "Widgets, die in der Seitenleiste erscheinen sollen, hier einfügen."
+
+#: src/functions.php:145
 msgid "Footer 1"
 msgstr "Fußzeile 1"
 
-#: src/functions.php:138, src/functions.php:147, src/functions.php:156
+#: src/functions.php:147, src/functions.php:156, src/functions.php:165
 msgid "Add widgets here to appear in your footer."
 msgstr "Widgets, die in der Fußzeile erscheinen sollen, hier einfügen."
 
-#: src/functions.php:145
+#: src/functions.php:154
 msgid "Footer 2"
 msgstr "Fußzeile 2"
 
-#: src/functions.php:154
+#: src/functions.php:163
 msgid "Footer 3"
 msgstr "Fußzeile 3"
 
-#: src/functions.php:176
+#: src/functions.php:195
 msgctxt "Source Sans Pro font: on or off"
 msgid "on"
 msgstr "on"
@@ -221,9 +229,29 @@ msgstr "Vorherige Seite"
 msgid "Next page"
 msgstr "Nächste Seite"
 
-#: src/inc/template-tags.php:116
+#: src/inc/template-tags.php:115
 msgid "Content"
 msgstr "Inhalt"
+
+#: src/inc/widgets.php:13
+msgid "Widget Title"
+msgstr "Widget Titel"
+
+#: src/inc/widgets.php:14
+msgid "A Foo Widget"
+msgstr "Ein Foo Widget"
+
+#: src/inc/widgets.php:31
+msgid "Hello, World!"
+msgstr "Hallo Welt!"
+
+#: src/inc/widgets.php:43
+msgid "New title"
+msgstr "Neuer Titel"
+
+#: src/inc/widgets.php:46
+msgid "Title:"
+msgstr "Titel:"
 
 #: src/search.php:23
 msgid "Search results for &#x201c;%s&#x201d;:"
@@ -238,12 +266,6 @@ msgstr "Suche nach:"
 msgctxt "placeholder"
 msgid "Search..."
 msgstr "Suchen…"
-
-#~ msgid "Sidebar"
-#~ msgstr "Seitenleiste"
-
-#~ msgid "Add widgets here to appear in your sidebar."
-#~ msgstr "Widgets, die in der Seitenleiste erscheinen sollen, hier einfügen."
 
 #~ msgid "In This Section"
 #~ msgstr "Auf Dieser Seite"
