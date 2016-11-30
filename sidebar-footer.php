@@ -1,6 +1,8 @@
 <?php
 /**
- * The template for the content bottom widget areas on posts and pages
+ * The sidebar containing the main widget area in the footer.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package UWC
  */

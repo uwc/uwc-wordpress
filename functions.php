@@ -45,10 +45,11 @@ if ( ! function_exists( 'uwc_website_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		set_post_thumbnail_size( 1440 );
 
 		// Enable support for custom header used for logo.
 		add_theme_support( 'custom-header', array(
-			'default-image'          => get_template_directory_uri() . '/images/uwc.png',
+			'default-image'          => get_template_directory_uri() . '/images/header-uwc.png',
 			'width'                  => 210,
 			'height'                 => 32,
 			'flex-width'             => true,
@@ -57,13 +58,13 @@ if ( ! function_exists( 'uwc_website_setup' ) ) :
 
 		register_default_headers( array(
 			'uwc' => array(
-				'url'           => '%s/images/uwc.png',
-				'thumbnail_url' => '%s/images/uwc-thumbnail.png',
+				'url'           => '%s/images/header-uwc.png',
+				'thumbnail_url' => '%s/images/header-uwc-thumbnail.png',
 				'description'   => __( 'UWC', 'uwc' ),
 			),
 			'uwcde' => array(
-				'url'           => '%s/images/uwcde.png',
-				'thumbnail_url' => '%s/images/uwcde-thumbnail.png',
+				'url'           => '%s/images/header-uwcde.png',
+				'thumbnail_url' => '%s/images/header-uwcde-thumbnail.png',
 				'description'   => __( 'UWC Germany', 'uwc' ),
 			),
 		) );
@@ -170,6 +171,16 @@ function uwc_website_widgets_init() {
 }
 add_action( 'widgets_init', 'uwc_website_widgets_init' );
 
+/**
+ * Register Foo_Widget widget.
+ *
+ * @link https://codex.wordpress.org/Widgets_API
+ */
+function register_foo_widget() {
+	register_widget( 'Foo_Widget' );
+}
+add_action( 'widgets_init', 'register_foo_widget' );
+
 if ( ! function_exists( 'uwc_website_fonts_url' ) ) :
 	/**
 	 * Register Google fonts for UWC WordPress.
@@ -238,6 +249,10 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
+/**
+ * Custom widgets.
+ */
+require get_template_directory() . '/inc/widgets.php';
 /**
  * Customizer additions.
  */
