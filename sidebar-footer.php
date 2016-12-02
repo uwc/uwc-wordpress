@@ -13,7 +13,7 @@ if ( ! is_active_sidebar( 'sidebar-2' ) && ! is_active_sidebar( 'sidebar-3' ) &&
 
 // If we get this far, we have widgets. Let's do this.
 ?>
-<aside id="content-bottom-widgets" class="footer-widgets pure-ctnr box-1-2" role="complementary">
+<aside id="content-bottom-widgets" class="widget-footer pure-ctnr box-1-2" role="complementary">
 	<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
 		<?php dynamic_sidebar( 'sidebar-2' ); ?>
 	<?php endif; ?>

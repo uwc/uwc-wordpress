@@ -16,7 +16,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'feed-post pure-g' ); ?>>
 	<div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3 box-2-2">
 		<div class="feed-imageWrapper">
-			<a class="feed-image" href="<?php echo esc_url( get_field( 'link_url' ) ); ?>" rel="bookmark" style="background-image: url('<?php echo esc_url( uwc_website_post_thumbnail( 'medium' ) ); ?>')"></a>
+			<a class="feed-image" href="<?php echo esc_url( get_field( 'link_url' ) ); ?>" rel="bookmark" style="background-image: url('<?php echo esc_url( uwc_post_thumbnail( 'medium' ) ); ?>')"></a>
 		</div>
 	</div>
 	<div class="pure-u-1 pure-u-md-2-3 pure-u-lg-2-3  box-2-2">

@@ -13,11 +13,11 @@
  * See: https://jetpack.me/support/infinite-scroll/
  * See: https://jetpack.me/support/responsive-videos/
  */
-function uwc_website_jetpack_setup() {
+function uwc_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => 'uwc_website_infinite_scroll_render',
+		'render'    => 'uwc_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
@@ -31,12 +31,12 @@ function uwc_website_jetpack_setup() {
 	add_image_size( 'uwc-website-logo', 200, 200 );
 	add_theme_support( 'site-logo', array( 'size' => 'uwc-website-logo' ) );
 }
-add_action( 'after_setup_theme', 'uwc_website_jetpack_setup' );
+add_action( 'after_setup_theme', 'uwc_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function uwc_website_infinite_scroll_render() {
+function uwc_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) {
@@ -50,7 +50,7 @@ function uwc_website_infinite_scroll_render() {
 /**
  * Return early if Site Logo is not available.
  */
-function uwc_website_the_site_logo() {
+function uwc_the_site_logo() {
 	if ( ! function_exists( 'jetpack_the_site_logo' ) ) {
 		return;
 	}
@@ -60,7 +60,7 @@ function uwc_website_the_site_logo() {
 /**
  * Return early if Social Menu is not available.
  */
-function uwc_website_social_menu() {
+function uwc_social_menu() {
 	if ( ! function_exists( 'jetpack_social_menu' ) ) {
 		return;
 	}

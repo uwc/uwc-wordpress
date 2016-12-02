@@ -1,17 +1,23 @@
 <?php
 /**
- * Adds Foo_Widget widget.
+ * Custom widgets for this theme.
+ *
+ * @package UWC
  */
-class Foo_Widget extends WP_Widget {
+
+/**
+ * Adds uwc_contact_widget widget.
+ */
+class UWC_Author_Widget extends WP_Widget {
 
 	/**
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
 		parent::__construct(
-			'foo_widget', // Base ID.
-			esc_html__( 'Widget Title', 'uwc' ), // Name.
-			array( 'description' => esc_html__( 'A Foo Widget', 'uwc' ) ) // Args.
+			'uwc_author_widget', // Base ID.
+			esc_html__( 'Author Info (UWC)', 'uwc' ), // Name.
+			array( 'description' => esc_html__( 'Display information about the post/page author.', 'uwc' ) ) // Args.
 		);
 	}
 
@@ -24,12 +30,14 @@ class Foo_Widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-		echo $args['before_widget'];
-		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
-		}
-		echo esc_html__( 'Hello, World!', 'uwc' );
-		echo $args['after_widget'];
+		echo wp_kses_post( $args['before_widget'] );
+		echo wp_kses_post( $args['before_title'] ) . wp_kses_post( apply_filters( 'widget_title', $instance['title'] ) ) . wp_kses_post( $args['after_title'] );
+		echo '<h3 class="contact-header">' . wp_kses_post( get_the_author_meta( 'display_name' ) ) . '</h3>';
+		echo '<p class="contact-body">' . nl2br( wp_kses_post( get_the_author_meta( 'description' ) ) ) . '</p>';
+		?>
+		<a class="contact-link" href="mailto:<?php the_author_meta( 'user_email' ) ?>"><?php esc_html_e( 'Send message', 'uwc' ) ?></a>
+		<?php
+		echo wp_kses_post( $args['after_widget'] );
 	}
 
 	/**

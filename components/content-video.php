@@ -9,7 +9,7 @@
 
 ?>
 
-<div class="content-entry">
+<div class="content-entry box-2-2">
 	<?php
 
 		the_content( sprintf(

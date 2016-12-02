@@ -13,10 +13,10 @@
  *
  * @param int $length Length of the excerpt.
  */
-function uwc_website_excerpt_length( $length ) {
+function uwc_excerpt_length( $length ) {
 	return 32;
 }
-add_filter( 'excerpt_length', 'uwc_website_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'uwc_excerpt_length', 999 );
 
 /**
  * Filter the excerpt "read more" string.
@@ -24,10 +24,10 @@ add_filter( 'excerpt_length', 'uwc_website_excerpt_length', 999 );
  * @param string $more "Read more" excerpt string.
  * @return string (Maybe) modified "read more" excerpt string.
  */
-function uwc_website_excerpt_more( $more ) {
+function uwc_excerpt_more( $more ) {
 	return '...';
 }
-add_filter( 'excerpt_more', 'uwc_website_excerpt_more' );
+add_filter( 'excerpt_more', 'uwc_excerpt_more' );
 
 /**
  * Wrap the inserted image html with <figure> if the current image has no caption.
@@ -35,7 +35,7 @@ add_filter( 'excerpt_more', 'uwc_website_excerpt_more' );
  * @param html $content The post/page content as html.
  * @return html Post/page content modified to wrap images in figure tags.
  */
-function uwc_website_content_images( $content ) {
+function uwc_content_images( $content ) {
 	$content = preg_replace(
 		'/<p>\\s*?(<img\\s*?class=\"(.*?)\".*?>)?\\s*<\\/p>/s',
 		'<figure class="$2$3">$1</figure>',
@@ -43,7 +43,7 @@ function uwc_website_content_images( $content ) {
 	);
 	return $content;
 }
-add_filter( 'the_content', 'uwc_website_content_images' );
+add_filter( 'the_content', 'uwc_content_images' );
 
 /**
  * Replace spaces with dashes in anchor tags.
@@ -51,7 +51,7 @@ add_filter( 'the_content', 'uwc_website_content_images' );
  * @param html $content The post/page content as html.
  * @return html Post/page content modified to urlencode anchor ids.
  */
-function uwc_website_content_anchors( $content ) {
+function uwc_content_anchors( $content ) {
 	$content = preg_replace_callback(
 		'/<a id=\"([^\"]*)\"><\/a>/iU',
 		function ( $matches ) {
@@ -61,7 +61,7 @@ function uwc_website_content_anchors( $content ) {
 	);
 	return $content;
 }
-add_filter( 'the_content', 'uwc_website_content_anchors' );
+add_filter( 'the_content', 'uwc_content_anchors' );
 
 /**
  * Output a submenu with the child pages of the current page.
@@ -70,7 +70,7 @@ add_filter( 'the_content', 'uwc_website_content_anchors' );
  * @param array $sorted_menu_items The sorted menu defined in the wp_nav_menu.
  * @param array $args The arguments defined in the wp_nav_menu call.
  */
-function uwc_website_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
+function uwc_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
 	if ( ! isset( $args->sub_menu ) ) {
 		return $sorted_menu_items;
 	}
@@ -101,4 +101,4 @@ function uwc_website_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
 	}
 	return $sorted_menu_items;
 }
-add_filter( 'wp_nav_menu_objects', 'uwc_website_wp_nav_menu_objects_sub_menu', 10, 2 );
+add_filter( 'wp_nav_menu_objects', 'uwc_wp_nav_menu_objects_sub_menu', 10, 2 );

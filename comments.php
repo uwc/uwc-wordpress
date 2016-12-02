@@ -19,10 +19,10 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area pure-ctnr box-2-2">
+<div id="comments" class="comments-area pure-ctnr box-2">
 
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h2 class="comments-title box-2-2">
 			<?php
 				$comments_number = get_comments_number();
 			if ( 1 === $comments_number ) {

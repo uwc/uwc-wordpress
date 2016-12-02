@@ -40,7 +40,7 @@ get_header(); ?>
 
 				endwhile;
 
-				uwc_website_paginated();
+				uwc_paginated();
 
 			else :
 

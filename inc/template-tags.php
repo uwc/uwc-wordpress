@@ -7,11 +7,11 @@
  * @package UWC
  */
 
-if ( ! function_exists( 'uwc_website_page_navigation' ) ) :
+if ( ! function_exists( 'uwc_page_navigation' ) ) :
 	/**
 	 * Prints HTML with links to previous and next pages for the current page.
 	 */
-	function uwc_website_page_navigation() {
+	function uwc_page_navigation() {
 		$menu_location = 'primary';
 		$locations = get_nav_menu_locations();
 		$menu = wp_get_nav_menu_object( $locations[ $menu_location ] );
@@ -22,15 +22,15 @@ if ( ! function_exists( 'uwc_website_page_navigation' ) ) :
 		$previous = $current - 1;
 		$next = $current + 1;
 
-		echo '<nav class="entry-navigation box-2">';
+		echo '<nav class="entry-navigation">';
 		echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
 		if ( ! empty( $previous ) ) {
-			echo '<div class="nav-previous box-2-2">';
+			echo '<div class="nav-previous">';
 			echo '<a href="' . esc_url( $pagelist[ $previous ]->url ) . '" title="' . esc_html( $pagelist[ $previous ]->title ) . '">' . esc_html( $pagelist[ $previous ]->title ) . '</a>';
 			echo '</div>';
 		}
 		if ( ! empty( $next ) ) {
-			echo '<div class="nav-next box-2-2">';
+			echo '<div class="nav-next">';
 			echo '<a href="' . esc_url( $pagelist[ $next ]->url ) . '" title="' . esc_html( $pagelist[ $next ]->title ) . '">' . esc_html( $pagelist[ $next ]->title ) . '</a>';
 			echo '</div>';
 		}
@@ -38,13 +38,13 @@ if ( ! function_exists( 'uwc_website_page_navigation' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'uwc_website_paginated' ) ) :
+if ( ! function_exists( 'uwc_paginated' ) ) :
 	/**
 	 * Pagination for archive, taxonomy, category, tag and search results pages.
 	 *
 	 * @global $wp_query http://codex.wordpress.org/Class_Reference/WP_Query
 	 */
-	function uwc_website_paginated() {
+	function uwc_paginated() {
 		global $wp_query;
 		$big = 99999999; // This needs to be an unlikely integer.
 
@@ -93,13 +93,13 @@ if ( ! function_exists( 'uwc_website_paginated' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'uwc_website_content_navigation' ) ) :
+if ( ! function_exists( 'uwc_content_navigation' ) ) :
 	/**
 	 * Adds content navigation to pages and posts that have anchor tags.
 	 *
 	 * @param string $text The page/post content to be parsed.
 	 */
-	function uwc_website_content_navigation( $text ) {
+	function uwc_content_navigation( $text ) {
 
 		$dom = new DOMDocument();
 		$dom -> loadHTML( '<?xml encoding="utf-8" ?>' . $text );
@@ -112,22 +112,22 @@ if ( ! function_exists( 'uwc_website_content_navigation' ) ) :
 			}
 		}
 		if ( count( $items ) !== 0 ) {
-			echo '<nav class="anchors box-2-2"><h6 class="anchors-header">', esc_html__( 'Content', 'uwc' ), '</h6><ul class="anchor-links">';
+			echo '<nav class="widget anchors"><h2 class="widget-title">', esc_html__( 'In This Section', 'uwc' ), '</h2><ol class="anchors-list">';
 			foreach ( $items as $item ) {
-				echo '<li class="anchor-link"><a href="#', esc_html( urlencode( $item ) ), '" title="', esc_html( $item ), '" data-scroll>', esc_html( $item ), '</a></li>';
+				echo '<li class="anchors-link"><a class="anchors-item" href="#', esc_html( urlencode( $item ) ), '" title="', esc_html( $item ), '" data-scroll>', esc_html( $item ), '</a></li>';
 			}
-			echo '</ul></nav>';
+			echo '</ol></nav>';
 		}
 	}
 endif;
 
-if ( ! function_exists( 'uwc_website_post_thumbnail' ) ) :
+if ( ! function_exists( 'uwc_post_thumbnail' ) ) :
 	/**
 	 * Display Image from the_post_thumbnail or the first image of a post else display a default image.
 	 *
 	 * @param string $size Choose the thumbnail size from "thumbnail", "medium", "large", "full" or your own defined size using filters.
 	 */
-	function uwc_website_post_thumbnail( $size = 'full' ) {
+	function uwc_post_thumbnail( $size = 'full' ) {
 		// Check for built-in post thumbnail. If it exists, return its url.
 		if ( has_post_thumbnail() ) {
 			$image_id = get_post_thumbnail_id();
@@ -151,6 +151,11 @@ if ( ! function_exists( 'uwc_website_post_thumbnail' ) ) :
 		if ( get_post_gallery() ) {
 			$gallery = get_post_gallery( get_the_ID(), false );
 			$image_url = $gallery['src'][0];
+			return $image_url;
+		}
+
+		if ( get_theme_mod( 'featured' ) ) {
+			$image_url = get_theme_mod( 'featured' );
 			return $image_url;
 		}
 
