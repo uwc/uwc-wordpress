@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UWC WordPress\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-wordpress/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-12-02 20:57+0000\n"
+"PO-Revision-Date: 2016-12-02 21:39+0000\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -103,14 +103,6 @@ msgstr "Weiter lesen"
 #: src/components/element-video.php:28
 msgid "Watch video"
 msgstr "Video ansehen"
-
-#: src/components/site-contact.php:25
-msgid "Contact us"
-msgstr "Kontaktieren Sie uns"
-
-#: src/components/site-contact.php:50
-msgid "Ask a question"
-msgstr "Nachricht senden"
 
 #: src/footer.php:35
 msgid "All rights reserved."
@@ -279,6 +271,12 @@ msgstr "Suche nach:"
 msgctxt "placeholder"
 msgid "Enter a search term..."
 msgstr "Suchbegriff eingeben..."
+
+#~ msgid "Contact us"
+#~ msgstr "Kontaktieren Sie uns"
+
+#~ msgid "Ask a question"
+#~ msgstr "Nachricht senden"
 
 #~ msgid "Content"
 #~ msgstr "Inhalt"
