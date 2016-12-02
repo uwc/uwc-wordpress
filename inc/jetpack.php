@@ -26,36 +26,8 @@ function uwc_jetpack_setup() {
 
 	// Add theme support for Social Menus.
 	add_theme_support( 'jetpack-social-menu' );
-
-	// Add theme support for site logos.
-	add_image_size( 'uwc-website-logo', 200, 200 );
-	add_theme_support( 'site-logo', array( 'size' => 'uwc-website-logo' ) );
 }
 add_action( 'after_setup_theme', 'uwc_jetpack_setup' );
-
-/**
- * Custom render function for Infinite Scroll.
- */
-function uwc_infinite_scroll_render() {
-	while ( have_posts() ) {
-		the_post();
-		if ( is_search() ) {
-			get_template_part( 'components/post/content', 'search' );
-			return;
-		}
-		get_template_part( 'components/post/content', get_post_format() );
-	}
-}
-
-/**
- * Return early if Site Logo is not available.
- */
-function uwc_the_site_logo() {
-	if ( ! function_exists( 'jetpack_the_site_logo' ) ) {
-		return;
-	}
-	jetpack_the_site_logo();
-}
 
 /**
  * Return early if Social Menu is not available.
