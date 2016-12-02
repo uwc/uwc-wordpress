@@ -89,14 +89,6 @@ msgstr ""
 msgid "Watch video"
 msgstr ""
 
-#: src/components/site-contact.php:25
-msgid "Contact us"
-msgstr ""
-
-#: src/components/site-contact.php:50
-msgid "Ask a question"
-msgstr ""
-
 #: src/footer.php:35
 msgid "All rights reserved."
 msgstr ""
