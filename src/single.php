@@ -21,11 +21,16 @@ get_header(); ?>
 			?>
 
 				<div class="content-main pure-ctnr">
-				<?php
-				$text = get_the_content();
-				uwc_website_content_navigation( $text );
-				do_shortcode( '[shariff]' );
+					<div class="content-sidebar">
 
+					<?php
+					$text = get_the_content();
+					uwc_content_navigation( $text );
+					?>
+
+					</div>
+
+				<?php
 				/**
 				 * Include the Post-Format-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
@@ -33,6 +38,8 @@ get_header(); ?>
 				 */
 				$format = get_post_format() ? : 'standard';
 				get_template_part( 'components/content', $format );
+
+				get_sidebar();
 
 				the_post_navigation( array(
 					'in_same_term' => true,

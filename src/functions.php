@@ -14,7 +14,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-if ( ! function_exists( 'uwc_website_setup' ) ) :
+if ( ! function_exists( 'uwc_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -22,7 +22,7 @@ if ( ! function_exists( 'uwc_website_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function uwc_website_setup() {
+	function uwc_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -109,10 +109,10 @@ if ( ! function_exists( 'uwc_website_setup' ) ) :
 		 * This theme styles the visual editor to resemble the theme style,
 		 * specifically font, colors, icons, and column width.
 		 */
-		add_editor_style( array( 'editor-style.css', uwc_website_fonts_url() ) );
+		add_editor_style( array( 'editor-style.css', uwc_fonts_url() ) );
 	}
 endif;
-add_action( 'after_setup_theme', 'uwc_website_setup' );
+add_action( 'after_setup_theme', 'uwc_setup' );
 
 /**
  * Sets the maximum media width for embed media in pixels, based on the theme's design and stylesheet.
@@ -121,17 +121,17 @@ add_action( 'after_setup_theme', 'uwc_website_setup' );
  *
  * @global int $content_width
  */
-function uwc_website_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'uwc_website_content_width', 1280 );
+function uwc_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'uwc_content_width', 1280 );
 }
-add_action( 'after_setup_theme', 'uwc_website_content_width', 0 );
+add_action( 'after_setup_theme', 'uwc_content_width', 0 );
 
 /**
  * Register widget areas.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function uwc_website_widgets_init() {
+function uwc_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'uwc' ),
 		'id'            => 'sidebar-1',
@@ -145,16 +145,16 @@ function uwc_website_widgets_init() {
 		'name'          => __( 'Footer 1', 'uwc' ),
 		'id'            => 'sidebar-2',
 		'description'   => __( 'Add widgets here to appear in your footer.', 'uwc' ),
-		'before_widget' => '<section id="%1$s" class="widget footer-widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title footer-widgetTitle">',
+		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Footer 2', 'uwc' ),
 		'id'            => 'sidebar-3',
 		'description'   => __( 'Add widgets here to appear in your footer.', 'uwc' ),
-		'before_widget' => '<section id="%1$s" class="widget footer-widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title footer-widgetTitle">',
 		'after_title'   => '</h2>',
@@ -169,25 +169,25 @@ function uwc_website_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'uwc_website_widgets_init' );
+add_action( 'widgets_init', 'uwc_widgets_init' );
 
 /**
  * Register Foo_Widget widget.
  *
  * @link https://codex.wordpress.org/Widgets_API
  */
-function register_foo_widget() {
-	register_widget( 'Foo_Widget' );
+function register_uwc_widgets() {
+	register_widget( 'UWC_Author_Widget' );
 }
-add_action( 'widgets_init', 'register_foo_widget' );
+add_action( 'widgets_init', 'register_uwc_widgets' );
 
-if ( ! function_exists( 'uwc_website_fonts_url' ) ) :
+if ( ! function_exists( 'uwc_fonts_url' ) ) :
 	/**
 	 * Register Google fonts for UWC WordPress.
 	 *
 	 * @return string Google fonts URL for the theme.
 	 */
-	function uwc_website_fonts_url() {
+	function uwc_fonts_url() {
 		$fonts_url = '';
 		$fonts     = array();
 		$subsets   = 'latin,latin-ext';
@@ -210,17 +210,17 @@ endif;
  *
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
  */
-function uwc_website_javascript_detection() {
+function uwc_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>";
 }
-add_action( 'wp_head', 'uwc_website_javascript_detection', 0 );
+add_action( 'wp_head', 'uwc_javascript_detection', 0 );
 
 /**
  * Enqueue scripts and styles.
  */
-function uwc_website_scripts() {
+function uwc_scripts() {
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'uwc-website-fonts', uwc_website_fonts_url(), array( 'jquery' ) );
+	wp_enqueue_style( 'uwc-website-fonts', uwc_fonts_url(), array( 'jquery' ) );
 	// Add Google Maps scripts, used in the main stylesheet.
 	wp_enqueue_script( 'uwc-website-googlemaps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBV8fzdHyCXxCzT7kCqc1UCRKx4mROcm64', array(), null, true );
 	// Theme stylesheet.
@@ -231,15 +231,15 @@ function uwc_website_scripts() {
 	// Theme scripts.
 	wp_enqueue_script( 'uwc-website-script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ) );
 }
-add_action( 'wp_enqueue_scripts', 'uwc_website_scripts' );
+add_action( 'wp_enqueue_scripts', 'uwc_scripts' );
 
 /**
  * Register Google Maps API key to enable Google Maps embeds with Advanced Custom Fields.
  */
-function uwc_website_acf_init() {
+function uwc_acf_init() {
 	acf_update_setting( 'google_api_key', 'AIzaSyBV8fzdHyCXxCzT7kCqc1UCRKx4mROcm64' );
 }
-add_action( 'acf/init', 'uwc_website_acf_init' );
+add_action( 'acf/init', 'uwc_acf_init' );
 
 /**
  * Custom template tags for this theme.

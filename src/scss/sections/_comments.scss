@@ -1,3 +1,152 @@
 // ==== COMMENTS ==== //
 
 // Style the comment section here.
+
+// 1. General
+// 2. Comments
+// 3. Form
+
+// 1. General //
+
+.comments-title,
+.comment-reply-title {
+  @include font(header-m);
+}
+
+
+.no-comments {
+  @include font(body-l);
+
+  margin: 0;
+  padding: 2rem 1rem;
+}
+
+.comment-navigation + .no-comments {
+  padding-top: 0;
+  border-top: 0;
+}
+
+// 2. Comments //
+
+.comment,
+.pingback,
+.trackback {
+  padding: 0 1rem;
+}
+
+.comment-body {
+  margin: 1rem 0;
+  padding: 1rem 0;
+  border-bottom: 2px solid palette(gray, lighter);
+}
+
+.comment-author {
+  margin-bottom: 0.25rem;
+  color: palette(gray, darker);
+
+  .avatar {
+    position: relative;
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: .5rem;
+    float: left;
+  }
+}
+
+.bypostauthor {
+  background-color: palette(gray, lighter);
+}
+
+.comment-metadata,
+.pingback .edit-link {
+  @include font(body-s);
+
+  color: palette(gray);
+}
+
+.comment-metadata {
+  margin-bottom: 1rem;
+}
+
+.comment-metadata a,
+.pingback .comment-edit-link {
+  @include line-link;
+}
+
+.comment-metadata .edit-link,
+.pingback .edit-link {
+  display: inline-block;
+}
+
+.comment-metadata .edit-link::before,
+.pingback .edit-link::before {
+  display: inline-block;
+  padding: 0 .5rem;
+  content: "/";
+  opacity: 0.7;
+}
+
+// 3. Form //
+
+.comment-respond {
+  padding: 2rem 0;
+}
+
+.comment-reply-title,
+.comment-form {
+  padding: 1rem;
+}
+
+.must-log-in {
+  padding: 1rem;
+
+  a {
+    @include line-link;
+  }
+}
+
+.comment-form label,
+.comment-notes,
+.comment-awaiting-moderation,
+.logged-in-as,
+.form-allowed-tags {
+  @include font(body-s);
+
+  margin-bottom: .5rem;
+  color: palette(gray);
+}
+
+.comment-form label {
+  display: none;
+}
+
+.comment-form-comment textarea {
+  width: 100%;
+  margin: 1rem 0;
+  padding: .5rem 1rem;
+  border: 2px solid palette(gray, light);
+  outline: none;
+  background: none;
+  color: palette(gray, darker);
+  line-height: 1.75;
+  text-align: left;
+  resize: none;
+}
+
+.form-allowed-tags code {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.form-submit {
+  margin-bottom: 0;
+
+  .submit {
+    @include button($primary);
+  }
+}
+
+.required {
+  @include font(body-s);
+
+  color: palette($primary);
+}

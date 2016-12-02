@@ -6,10 +6,12 @@
 
 // 1. Content
 // 2. Anchors
-// 3. Footer
+// 3. Password Protected
+// 4. Footer
 
 // 1. Content //
 
+.content,
 .content-main {
   @include clearfix;
 }
@@ -19,6 +21,7 @@
 
   display: block;
   width: 100%;
+  padding: 0 1rem;
 
   @include mappy-bp(m) {
     width: 25%;
@@ -28,8 +31,6 @@
 }
 
 .content-entry {
-  @include clearfix;
-
   display: block;
   width: 100%;
   margin-top: -1rem;
@@ -44,57 +45,110 @@
 // 2. Anchors //
 
 .anchors {
-  color: palette(gray, dark);
+  padding: 1rem 0;
+
+  @include mappy-bp(m) {
+    border-bottom: 2px solid palette(gray, light);
+  }
 }
 
-.anchors-header {
-  @include font(body-l);
-
+.anchors-link {
   margin-bottom: .5rem;
+  line-height: 1.25;
 }
 
-.anchor-link {
-  @include font(body-s);
+@include mappy-bp(max-width m) {
+  .anchors-list {
+    padding-left: 1rem;
+    border-left: 2px solid palette($primary);
+  }
+
+  .anchors-link {
+    margin-bottom: .5rem;
+  }
+
+  .anchors-item {
+    @include font(body-m);
+  }
 }
 
-// 3. Footer //
 
-.entry-navigation {
+// 3. Password Protected //
+
+.post-password-form {
+  label {
+    @include font(body-s);
+
+    display: block;
+    margin: 1rem 0;
+    color: palette(gray);
+  }
+
+  input[type="password"] {
+    width: 100%;
+    padding: .25rem .5rem;
+    border: 2px solid palette(gray, light);
+    outline: none;
+    background: none;
+    color: palette(gray, darker);
+    line-height: 1.75;
+    text-align: left;
+    resize: none;
+  }
+
+  input[type="submit"] {
+    @include button($primary);
+  }
+}
+
+
+// 4. Footer //
+
+.entry-navigation,
+.post-navigation {
+  @include clearfix;
+
   position: relative;
+  padding: 1rem 0;
   clear: both;
 
-  .nav-previous {
-    float: left;
+  .nav-previous,
+  .nav-next {
+    padding: 1rem;
     z-index: 100;
 
     a {
       @include font(button);
+
+      border-bottom: 3px solid palette($primary);
+      color: palette($primary);
     }
   }
 
+  .nav-previous {
+    float: left;
+  }
+
   .nav-numbers {
-    @include font(body-s);
+    @include font(button);
 
     position: absolute;
     right: 0;
     left: 0;
     width: 100%;
+    padding: 1rem;
+    color: palette(gray);
     text-align: center;
 
     a {
-      @include font(button);
-
-      color: palette(purple);
+      color: palette($primary);
     }
   }
 
   .nav-next {
     float: right;
-    z-index: 100;
 
-    a {
-      @include font(button);
-
+    .nav-link {
       text-align: right;
     }
   }

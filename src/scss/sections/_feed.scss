@@ -65,9 +65,7 @@
 .feed-link {
   @include font(button);
 
-  border-bottom-width: 3px;
-  border-bottom-style: solid;
-  border-bottom-color: palette($secondary);
+  border-bottom: 3px solid palette($secondary);
   color: palette($secondary);
 }
 

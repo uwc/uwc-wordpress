@@ -4,8 +4,7 @@
 
 // 1. General
 // 2. Metabar
-// 3. Widgets
-// 4. Meta
+// 3. Meta
 
 // 1. General //
 
@@ -37,38 +36,7 @@
   }
 }
 
-// 3. Widgets //
-
-.footer-widgets {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 1rem;
-
-  @include mappy-bp(max-width m) {
-    flex-wrap: wrap;
-  }
-}
-
-.footer-widget:first-child {
-  width: 100%;
-
-  @include mappy-bp(m) {
-    width: calc(50% - 1rem);
-  }
-}
-
-.footer-widget:nth-child(2),
-.footer-widget:nth-child(3) {
-  width: calc(50% - 1rem);
-  margin-top: 1rem;
-
-  @include mappy-bp(m) {
-    width: calc(25% - 1.5rem);
-    margin-top: 0;
-  }
-}
-
-// 4. Meta //
+// 3. Meta //
 
 .footer-info {
   @include font(body-s);

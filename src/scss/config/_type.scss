@@ -34,63 +34,31 @@ $typi: (null: (16px, 1.75), m: 18px, l: 20px, xxl: 24px);
   }
 }
 
-@mixin line-link($bg-color: white, $bg-shade: base, $txt-color: $primary) {
-  $selection-color: palette(blue, lighter);
+@mixin line-link($txt-color: $primary, $bg-color: white, $bg-shade: base) {
+  $selection-color: #accef7;
 
-  background-image: linear-gradient(palette($bg-color, $bg-shade), palette($bg-color, $bg-shade)), linear-gradient(palette($bg-color, $bg-shade), palette($bg-color, $bg-shade)), linear-gradient(palette($txt-color), palette($txt-color));
   background-repeat: no-repeat, no-repeat, repeat-x;
-  background-position: 0% 100%, 100% 100%, 0% 100%;
-  background-size: .05em 2px, .1em 2px, 1px 2px;
+  background-position: 0% 90%, 100% 90%, 0% 90%;
+  background-size: .05em 1px, .05em 1px, 1px 1px;
   color: palette($txt-color);
-  text-shadow: .03em 0 palette($bg-color, $bg-shade), -.03em 0 palette($bg-color, $bg-shade), 0 .03em palette($bg-color, $bg-shade), 0 -.03em palette($bg-color, $bg-shade), .06em 0 palette($bg-color, $bg-shade), -.06em 0 palette($bg-color, $bg-shade), .09em 0 palette($bg-color, $bg-shade), -.09em 0 palette($bg-color, $bg-shade), .12em 0 palette($bg-color, $bg-shade), -.12em 0 palette($bg-color, $bg-shade), .15em 0 palette($bg-color, $bg-shade), -.15em 0 palette($bg-color, $bg-shade);
-
-  &::selection {
-    background: $selection-color;
-    text-shadow: .03em 0 $selection-color, -.03em 0 $selection-color, 0 .03em $selection-color, 0 -.03em $selection-color, .06em 0 $selection-color, -.06em 0 $selection-color, .09em 0 $selection-color, -.09em 0 $selection-color, .12em 0 $selection-color, -.12em 0 $selection-color, .15em 0 $selection-color, -.15em 0 $selection-color;
-  }
-
-  &::before,
-  &::after,
-  *,
-  *::before,
-  *::after {
-    text-shadow: none;
-  }
-}
-
-@mixin link-underline($color: none) {
-  position: relative;
-  z-index: 1;
-  color: palette($color);
-  display: inline-block;
-  cursor: pointer;
-  transition: color $anim-s;
-
-  &::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    transform: translate(0, 2px);
-    transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
-    background-color: palette($color, light);
-    content: "";
-    opacity: 0;
-    visibility: hidden;
-    z-index: -1;
-  }
 
   &:hover,
   &:focus {
-    color: palette($color, light);
-  }
+    background-image: linear-gradient(palette($bg-color, $bg-shade), palette($bg-color, $bg-shade)), linear-gradient(palette($bg-color, $bg-shade), palette($bg-color, $bg-shade)), linear-gradient(palette($txt-color), palette($txt-color));
+    text-shadow: .03em 0 palette($bg-color, $bg-shade), -.03em 0 palette($bg-color, $bg-shade), 0 .03em palette($bg-color, $bg-shade), 0 -.03em palette($bg-color, $bg-shade), .06em 0 palette($bg-color, $bg-shade), -.06em 0 palette($bg-color, $bg-shade), .09em 0 palette($bg-color, $bg-shade), -.09em 0 palette($bg-color, $bg-shade), .12em 0 palette($bg-color, $bg-shade), -.12em 0 palette($bg-color, $bg-shade), .15em 0 palette($bg-color, $bg-shade), -.15em 0 palette($bg-color, $bg-shade);
 
-  &:hover::after,
-  &:focus::after {
-    transform: translate(0, -2px);
-    opacity: 1;
-    visibility: visible;
+    &::selection {
+      background: $selection-color;
+      text-shadow: .03em 0 $selection-color, -.03em 0 $selection-color, 0 .03em $selection-color, 0 -.03em $selection-color, .06em 0 $selection-color, -.06em 0 $selection-color, .09em 0 $selection-color, -.09em 0 $selection-color, .12em 0 $selection-color, -.12em 0 $selection-color, .15em 0 $selection-color, -.15em 0 $selection-color;
+    }
+
+    &::before,
+    &::after,
+    *,
+    *::before,
+    *::after {
+      text-shadow: none;
+    }
   }
 }
 
@@ -223,7 +191,7 @@ pre {
   margin: 0 0 1.75em;
   padding: 1.75em;
   border: 1px solid palette(gray, light);
-  font-size: ms(1);
+  font-size: ms(-1);
   line-height: 1.3125;
   white-space: pre;
   overflow: auto;
@@ -261,8 +229,9 @@ hr {
 }
 
 cite {
+  @include font(body-s);
+
   color: palette(gray);
-  font-size: ms(0);
 
   &::before {
     content: "\2014\00a0";

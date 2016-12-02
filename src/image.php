@@ -37,7 +37,7 @@ get_header(); ?>
 						 *
 						 * @param string $image_size Image size. Default 'large'.
 						 */
-						$image_size = apply_filters( 'uwc_website_attachment_size', 'large' );
+						$image_size = apply_filters( 'uwc_attachment_size', 'large' );
 
 						echo wp_get_attachment_image( get_the_ID(), $image_size );
 					?>

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UWC WordPress\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-wordpress/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-11-30 01:51+0100\n"
+"PO-Revision-Date: 2016-12-02 20:57+0000\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -53,24 +53,28 @@ msgstr "Es können keine Kommentare abgegeben werden."
 msgid "Continue reading"
 msgstr "Weiter lesen"
 
-#: src/components/content-none.php:14
+#: src/components/content-none.php:20, src/search.php:23
+msgid "Search results for &#x201c;%s&#x201d;:"
+msgstr "Suchergebnisse für &#x201c;%s&#x201d;:"
+
+#: src/components/content-none.php:26
 msgid "Nothing Found"
 msgstr "Es wurde nichts gefunden."
 
-#: src/components/content-none.php:18
+#: src/components/content-none.php:30
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 "Sind Sie bereit, Ihren ersten Beitrag zu veröffentlichen? <a "
 "href=“%s”>Beginnen Sie hier</a>."
 
-#: src/components/content-none.php:23
+#: src/components/content-none.php:34
 msgid "Sorry, but nothing matched your search terms."
 msgstr ""
 "Es tut uns leid. Ihre Suche ergab keinen Treffer. Bitte versuchen Sie es mit "
 "einem anderen Begriff!"
 
-#: src/components/content-none.php:26
+#: src/components/content-none.php:37
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
 msgstr "Es konnte leider nichts gefunden werden."
 
@@ -204,22 +208,34 @@ msgstr ""
 "UWC WordPress setzt mindestens WordPress Version 4.4 voraus. Du nutzt "
 "Version %s. Bitte aktualisiere und probiere es dann noch einmal."
 
-#: src/inc/customizer.php:22
+#: src/inc/customizer.php:25
 msgid "Theme Options"
 msgstr "Allgemeine Optionen"
 
-#: src/inc/customizer.php:28
-msgid "Disable comments"
-msgstr "Kommentare deaktivieren"
+#: src/inc/customizer.php:33
+msgid "Disable Comments"
+msgstr "Kommentare Deaktivieren"
 
-#: src/inc/customizer.php:32
+#: src/inc/customizer.php:37
 msgid ""
-"Check the box to hide comments on the frontend. Comments are NOT deleted and "
-"can thus be unhidden at any time."
+"Check the box to hide comments on the website. Comments are NOT deleted from "
+"the database and can thus be unhidden at any time."
 msgstr ""
 "Aktivieren Sie das Kästchen um Kommentare auf der Webseite zu verbergen. Die "
-"Kommentare werden NICHT gelöscht und können somit jederzeit wieder "
-"eingeblendet werden."
+"Kommentare werden NICHT aus der Datenbank gelöscht und können somit "
+"jederzeit wieder eingeblendet werden."
+
+#: src/inc/customizer.php:46
+msgid "Placeholder Image"
+msgstr "Platzhalter Bild"
+
+#: src/inc/customizer.php:49
+msgid ""
+"Select or upload a placeholder image that is displayed on feed pages when a "
+"post contains no image."
+msgstr ""
+"Wählen Sie ein Platzhalter-Bild aus, welches auf Blogroll-Seiten angezeigt "
+"wird, wenn ein Beitrag kein Bild enthält."
 
 #: src/inc/template-tags.php:61
 msgid "Previous page"
@@ -230,32 +246,29 @@ msgid "Next page"
 msgstr "Nächste Seite"
 
 #: src/inc/template-tags.php:115
-msgid "Content"
-msgstr "Inhalt"
+msgid "In This Section"
+msgstr "Auf Dieser Seite"
 
-#: src/inc/widgets.php:13
-msgid "Widget Title"
-msgstr "Widget Titel"
+#: src/inc/widgets.php:19
+msgid "Author Info (UWC)"
+msgstr "Autor Informationen (UWC)"
 
-#: src/inc/widgets.php:14
-msgid "A Foo Widget"
-msgstr "Ein Foo Widget"
+#: src/inc/widgets.php:20
+msgid "Display information about the post/page author."
+msgstr ""
+"Anzeigen von Informationen über den Autor des Beitrages oder der Seite."
 
-#: src/inc/widgets.php:31
-msgid "Hello, World!"
-msgstr "Hallo Welt!"
+#: src/inc/widgets.php:38
+msgid "Send message"
+msgstr "Nachricht senden"
 
-#: src/inc/widgets.php:43
+#: src/inc/widgets.php:51
 msgid "New title"
 msgstr "Neuer Titel"
 
-#: src/inc/widgets.php:46
+#: src/inc/widgets.php:54
 msgid "Title:"
 msgstr "Titel:"
-
-#: src/search.php:23
-msgid "Search results for &#x201c;%s&#x201d;:"
-msgstr "Suchergebnisse für &#x201c;%s&#x201d;:"
 
 #: src/searchform.php:9
 msgctxt "label"
@@ -264,11 +277,24 @@ msgstr "Suche nach:"
 
 #: src/searchform.php:10
 msgctxt "placeholder"
-msgid "Search..."
-msgstr "Suchen…"
+msgid "Enter a search term..."
+msgstr "Suchbegriff eingeben..."
 
-#~ msgid "In This Section"
-#~ msgstr "Auf Dieser Seite"
+#~ msgid "Content"
+#~ msgstr "Inhalt"
+
+#~ msgctxt "placeholder"
+#~ msgid "Search..."
+#~ msgstr "Suchen…"
+
+#~ msgid "Widget Title"
+#~ msgstr "Widget Titel"
+
+#~ msgid "A Foo Widget"
+#~ msgstr "Ein Foo Widget"
+
+#~ msgid "Hello, World!"
+#~ msgstr "Hallo Welt!"
 
 #~ msgid "Weiter lesen"
 #~ msgstr "Weiter lesen"

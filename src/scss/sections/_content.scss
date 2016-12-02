@@ -52,8 +52,12 @@ p {
   margin-top: 1rem;
   margin-bottom: 1rem;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   a {
-    @include link-underline(pink);
+    @include line-link($secondary);
   }
 
   img {
@@ -68,13 +72,12 @@ blockquote {
 
   margin-top: 2rem;
   margin-bottom: 2rem;
-  color: palette(orange);
 
   &::before,
   &::after {
     display: block;
     width: 8rem;
-    height: 1px;
+    height: 2px;
     background-color: palette(gray, light);
     content: "";
     z-index: 10;
@@ -83,6 +86,7 @@ blockquote {
   p {
     margin-right: 0;
     margin-left: 0;
+    color: palette($primary);
   }
 
   cite,

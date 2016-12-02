@@ -9,7 +9,7 @@
 
 ?>
 
-<div class="content-entry">
+<div class="content-entry box-2-2">
 	<?php echo '<p><a href="' . esc_url( get_field( 'link_url' ) ) . '" rel="bookmark" target="_blank">' . esc_html__( 'Continue reading', 'uwc' ) . '...</a></p>'; ?>
 </div>
 

@@ -17,16 +17,31 @@
     list-style-type: none;
 
     > a {
-      @include link-underline(blue);
+      @include line-header($primary);
 
+      transition: color $anim-s;
       color: palette(gray, dark);
       font-weight: $sans-medium;
 
+      &:hover,
+      &:focus {
+        color: palette($primary);
+      }
+
       &::after {
-        bottom: -2px;
-        width: 60px;
-        max-width: 66%;
-        height: 3px;
+        margin-top: 0;
+        transform: translate(0, 2px);
+        transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+      }
+
+      &:hover::after,
+      &:focus::after {
+        transform: translate(0, -2px);
+        opacity: 1;
+        visibility: visible;
       }
     }
   }

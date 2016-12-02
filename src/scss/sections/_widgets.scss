@@ -1,6 +1,12 @@
 // ==== WIDGETS ==== //
 
-// Mixins, functions, and other non-declarative things.
+// Style the sidebar widgets here.
+
+// 1. General
+// 2. Sidebar
+// 3. Footer
+
+// 1. General
 
 .widget {
   @include font(body-s);
@@ -12,5 +18,73 @@
 
     margin-bottom: 0.5rem;
     color: palette(gray, dark);
+  }
+
+  a {
+    @include line-link;
+  }
+}
+
+// 2. Sidebar //
+
+.widget-sidebar {
+  display: block;
+  width: 100%;
+  padding: 0 1rem;
+  background-color: palette(white);
+
+  @include mappy-bp(m) {
+    width: 25%;
+    max-width: $container-width * .25;
+    float: left;
+  }
+
+  .widget {
+    padding: 1rem 0;
+    border-bottom: 2px solid palette(gray, light);
+  }
+}
+
+.contact-header {
+  margin-bottom: .25rem;
+  font-size: ms(0);
+}
+
+.contact-body {
+  margin-bottom: .25rem;
+}
+
+.contact-link {
+  @include line-link($primary);
+}
+
+// 3. Footer //
+
+.widget-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+
+  @include mappy-bp(max-width m) {
+    flex-wrap: wrap;
+  }
+
+  .widget:first-child {
+    width: 100%;
+
+    @include mappy-bp(m) {
+      width: calc(50% - 1rem);
+    }
+  }
+
+  .widget:nth-child(2),
+  .widget:nth-child(3) {
+    width: calc(50% - 1rem);
+    margin-top: 1rem;
+
+    @include mappy-bp(m) {
+      width: calc(25% - 1.5rem);
+      margin-top: 0;
+    }
   }
 }
