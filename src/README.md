@@ -21,7 +21,7 @@ Requires at least: WordPress 4.4, PHP 5.5
 
 Tested up to: WordPress 4.6.1, PHP 7.0
 
-Version: 2.0.0
+Version: 2.0.1
 
 License: [GPL-3.0](#Copyright)
 
@@ -63,7 +63,7 @@ HTML5 Shiv v3.7.3, Copyright 2014 Alexander Farkas Licenses: MIT/GPL2 Source: ht
 
 Modular Scale v.2.1.3, Copyright 2015 Scott Kellum (@scottkellum), Adam Stacoviak (@adamstac) and Mason Wendell (@codingdesigner) License: MIT Source: https://github.com/modularscale/modularscale-sass
 
-normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal License: MIT Source: https://necolas.github.io/normalize.css/
+Pure, Copyright 2013 Yahoo! Inc. License: BSD Source: https://github.com/yahoo/pure/
 
 Responsive Nav, Copyright 2013 Viljami Salminen License: MIT Source:
 https://github.com/viljamis/responsive-nav.js

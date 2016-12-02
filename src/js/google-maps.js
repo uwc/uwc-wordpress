@@ -6,12 +6,12 @@
   /*
    *  This function will render a Google Map onto the selected jQuery element
    *
-   *  @type	function
-   *  @date	8/11/2013
-   *  @since	4.3.0
+   *  @type  function
+   *  @date  8/11/2013
+   *  @since  4.3.0
    *
-   *  @param	$el (jQuery element)
-   *  @return	n/a
+   *  @param  $el (jQuery element)
+   *  @return  n/a
    */
 
   function newMap( $el ) {
@@ -32,88 +32,88 @@
           'stylers': [
             {
               'color': '#faf5ed'
-		            },
+                },
             {
               'lightness': '0'
-		            },
+                },
             {
               'gamma': '1'
-		            }
-		        ]
-		    },
+                }
+            ]
+        },
         {
           'featureType': 'poi.park',
           'elementType': 'geometry.fill',
           'stylers': [
             {
               'color': '#bae5a6'
-		            }
-		        ]
-		    },
+                }
+            ]
+        },
         {
           'featureType': 'road',
           'elementType': 'all',
           'stylers': [
             {
               'weight': '1.00'
-		            },
+                },
             {
               'gamma': '1.8'
-		            },
+                },
             {
               'saturation': '0'
-		            }
-		        ]
-		    },
+                }
+            ]
+        },
         {
           'featureType': 'road',
           'elementType': 'geometry.fill',
           'stylers': [
             {
               'hue': '#ffb200'
-		            }
-		        ]
-		    },
+                }
+            ]
+        },
         {
           'featureType': 'road.arterial',
           'elementType': 'geometry.fill',
           'stylers': [
             {
               'lightness': '0'
-		            },
+                },
             {
               'gamma': '1'
-		            }
-		        ]
-		    },
+                }
+            ]
+        },
         {
           'featureType': 'transit.station.airport',
           'elementType': 'all',
           'stylers': [
             {
               'hue': '#b000ff'
-		            },
+                },
             {
               'saturation': '23'
-		            },
+                },
             {
               'lightness': '-4'
-		            },
+                },
             {
               'gamma': '0.80'
-		            }
-		        ]
-		    },
+                }
+            ]
+        },
         {
           'featureType': 'water',
           'elementType': 'all',
           'stylers': [
             {
               'color': '#a0daf2'
-		            }
-		        ]
-		    }
-		]
+                }
+            ]
+        }
+    ]
     };
 
     // Create map.
@@ -140,13 +140,13 @@
   /*
    *  This function will add a marker to the selected Google Map
    *
-   *  @type	function
-   *  @date	8/11/2013
-   *  @since	4.3.0
+   *  @type  function
+   *  @date  8/11/2013
+   *  @since  4.3.0
    *
-   *  @param	$marker (jQuery element)
-   *  @param	map (Google Map object)
-   *  @return	n/a
+   *  @param  $marker (jQuery element)
+   *  @param  map (Google Map object)
+   *  @return  n/a
    */
 
   function addMarker( $marker, map ) {
@@ -184,12 +184,12 @@
   /*
    *  This function will center the map, showing all markers attached to this map
    *
-   *  @type	function
-   *  @date	8/11/2013
-   *  @since	4.3.0
+   *  @type  function
+   *  @date  8/11/2013
+   *  @since  4.3.0
    *
-   *  @param	map (Google Map object)
-   *  @return	n/a
+   *  @param  map (Google Map object)
+   *  @return  n/a
    */
 
   function centerMap( map ) {
@@ -221,12 +221,12 @@
   /*
    *  This function will render each map when the document is ready (page has loaded)
    *
-   *  @type	function
-   *  @date	8/11/2013
-   *  @since	5.0.0
+   *  @type  function
+   *  @date  8/11/2013
+   *  @since  5.0.0
    *
-   *  @param	n/a
-   *  @return	n/a
+   *  @param  n/a
+   *  @return  n/a
    */
 
   // Global var.
