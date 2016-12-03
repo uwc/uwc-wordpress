@@ -89,6 +89,10 @@ msgstr ""
 msgid "Watch video"
 msgstr ""
 
+#: src/components/module-newsfeed.php:24
+msgid "Latest News"
+msgstr ""
+
 #: src/footer.php:35
 msgid "All rights reserved."
 msgstr ""
@@ -176,23 +180,23 @@ msgstr ""
 msgid "UWC WordPress requires at least WordPress version 4.4. You are running version %s. Please upgrade and try again."
 msgstr ""
 
-#: src/inc/customizer.php:25
+#: src/inc/customizer.php:24
 msgid "Theme Options"
 msgstr ""
 
-#: src/inc/customizer.php:33
+#: src/inc/customizer.php:32
 msgid "Disable Comments"
 msgstr ""
 
-#: src/inc/customizer.php:37
+#: src/inc/customizer.php:36
 msgid "Check the box to hide comments on the website. Comments are NOT deleted from the database and can thus be unhidden at any time."
 msgstr ""
 
-#: src/inc/customizer.php:46
+#: src/inc/customizer.php:45
 msgid "Placeholder Image"
 msgstr ""
 
-#: src/inc/customizer.php:49
+#: src/inc/customizer.php:48
 msgid "Select or upload a placeholder image that is displayed on feed pages when a post contains no image."
 msgstr ""
 

@@ -19,7 +19,7 @@ Requires at least: WordPress 4.4, PHP 5.5
 
 Tested up to: WordPress 4.6.1, PHP 7.0
 
-Version: 2.0.1
+Version: 2.1.0
 
 License: [GPL-3.0](#Copyright)
 
@@ -30,7 +30,7 @@ Tags: custom-menu, editor-style, featured-image-header, featured-images, post-fo
 
 **This theme can only be installed on self-hosted WordPress installations and not on sites that are hosted on wordpress.com.** I provide managed hosting for UWC websites. Drop me a line at [hello@madebyconnor.io](mailto:hello@madebyconnor.io) if you're interested.
 
-1. UWCde Website is not listed publicly on wordpress.org. Therefore you have to install the [GitHub Updater](https://github.com/afragen/github-updater) plugin to install the theme and receive future updates. Follow the instructions in the [readme file](https://github.com/afragen/github-updater#upload) to install the plugin, then come back here.
+1. UWCde Website is not yet listed on wordpress.org. Therefore you have to install the [GitHub Updater](https://github.com/afragen/github-updater) plugin to install the theme and receive future updates. Follow the instructions in the [readme file](https://github.com/afragen/github-updater#upload) to install the plugin, then come back here.
 2. In WordPress, navigate to 'Settings' > 'GitHub Updater', then select 'Install Theme' from the tabs at the top.
 3. Paste the url `https://github.com/uwc/uwc-wordpress` into the field 'Theme URI'. You can leave the other fields as they are and click on the 'Install Theme' button.
 4. Click on the 'Activate' button to use your new theme right away.

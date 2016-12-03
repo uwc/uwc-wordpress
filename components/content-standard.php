@@ -24,12 +24,3 @@
 		) );
 	?>
 </div>
-
-<?php if ( $tags = get_the_tags() ) {
-	echo '<p class="post-tags">';
-	foreach ( $tags as $tag ) {
-		$sep = ( end( $tags ) === $tag ) ? '' : ', ';
-		echo '<a href="' . esc_url( get_term_link( $tag, $tag->taxonomy ) ) . '">#' . esc_html( $tag->name ) . '</a>' . esc_html( $sep );
-	}
-	echo '</p>';
-}
