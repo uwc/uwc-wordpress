@@ -6,7 +6,7 @@ Theme URI: https://github.com/uwc/uwc-wordpress
 Author: Connor Baer
 Author URI: http://madebyconnor.io
 Description: A WordPress theme for UWC websites.
-Version: 2.0.1
+Version: 2.1.0
 License: GPL-3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready
@@ -84,6 +84,15 @@ GitHub Branch: master
 .content-entry,
 .comment-content {
   @import "sections/content";
+
+  // HACK: Align items with the sidebar at the top of the content.
+  > *:first-child {
+    margin-top: 1rem !important;
+  }
+
+  > *:last-child {
+    margin-bottom: 0 !important;
+  }
 }
 
 @import "sections/comments";

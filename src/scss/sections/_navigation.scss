@@ -136,12 +136,8 @@
 
   svg {
     transition: fill $anim-s;
-    vertical-align: top;
+    vertical-align: bottom;
     fill: palette(gray);
-
-    @include mappy-bp(s) {
-      vertical-align: text-top;
-    }
 
     &:hover,
     &:focus {

@@ -11,21 +11,21 @@
   @include font(button);
 
   display: inline-block;
-  padding: .25rem 1rem;
-  transition: border-color $anim-s, background-color $anim-s, color $anim-s;
-  background-color: palette(white);
-  color: palette($color);
+  padding: .25rem 1rem .2rem;
+  transition: background-color $anim-s, color $anim-s;
+  background-color: palette($color);
+  color: palette(white);
   outline: none;
   overflow: hidden;
+  line-height: inherit;
   text-decoration: none;
   text-transform: uppercase;
-  border: 2px solid palette($color);
+  border: 3px solid palette($color);
 
   &:hover,
   &:focus {
-    border-color: palette($color, light);
-    background-color: palette($color, light);
-    color: palette(white);
+    background-color: palette(white);
+    color: palette($color);
   }
 }
 

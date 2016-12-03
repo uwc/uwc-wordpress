@@ -13,7 +13,7 @@
 	<div class="box-2-2">
 	<?php
 	if ( get_sub_field( 'gm_headline' ) ) {
-		echo '<h2 class="googleMaps-headline">' . esc_html( get_sub_field( 'gm_headline' ) ) . '</h2>';
+		echo '<h2 class="googleMaps-header">' . esc_html( get_sub_field( 'gm_headline' ) ) . '</h2>';
 	}
 	if ( have_rows( 'locations' ) ) : ?>
 		<div class="acf-map">
@@ -25,7 +25,7 @@
 			<div class="marker" data-lat="<?php echo esc_html( $location['lat'] ); ?>" data-lng="<?php echo esc_html( $location['lng'] ); ?>">
 				<?php
 				if ( get_sub_field( 'link_url' ) ) {
-					echo '<a href="' . esc_url( get_sub_field( 'link_url' ) ) . '"><h4 class="section-header">' . esc_html( get_sub_field( 'title' ) ) . '</h4></a>';
+					echo '<a href="' . esc_url( get_sub_field( 'link_url' ) ) . '"><h4 class="section-headline">' . esc_html( get_sub_field( 'title' ) ) . '</h4></a>';
 				} else {
 					echo '<h4 class="googleMaps-header">' . esc_html( get_sub_field( 'title' ) ) . '</h4>';
 				}

@@ -21,7 +21,7 @@ $posts = get_posts(array(
 $count = count( $posts );
 
 if ( $taxonomies && $count >= 3 ) {
-	echo '<section class="section section-news pure-g pure-ctnr box-1-1">';
+	echo '<section class="section section-news pure-ctnr"><h2 class="news-header">' . esc_html__( 'Latest News', 'uwc' ) . '</h2><div class="pure-g box-1-1">';
 
 	$index = 1;
 
@@ -34,5 +34,5 @@ if ( $taxonomies && $count >= 3 ) {
 
 		$index++;
 	}
-	echo '</section>';
+	echo '</div></section>';
 }

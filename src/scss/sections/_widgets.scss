@@ -11,7 +11,7 @@
 .widget {
   @include font(body-s);
 
-  color: palette(gray, dark);
+  color: palette(gray);
 
   .widget-title {
     @include font(body-l);
@@ -40,8 +40,10 @@
   }
 
   .widget {
-    padding: 1rem 0;
-    border-bottom: 2px solid palette(gray, light);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid palette(gray, light);
   }
 }
 

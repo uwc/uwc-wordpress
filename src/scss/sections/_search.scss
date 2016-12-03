@@ -34,7 +34,7 @@
 
 .search-field {
   position: relative;
-  top: 30%;
+  top: calc(50% + 2rem);
   width: 100%;
   transform: translate(0, -50%);
 }

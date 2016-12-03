@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UWC WordPress\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-wordpress/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-12-02 21:39+0000\n"
+"PO-Revision-Date: 2016-12-03 15:09+0000\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -104,6 +104,10 @@ msgstr "Weiter lesen"
 msgid "Watch video"
 msgstr "Video ansehen"
 
+#: src/components/module-newsfeed.php:24
+msgid "Latest News"
+msgstr "Neuigkeiten"
+
 #: src/footer.php:35
 msgid "All rights reserved."
 msgstr "Alle Rechte vorbehalten."
@@ -200,15 +204,15 @@ msgstr ""
 "UWC WordPress setzt mindestens WordPress Version 4.4 voraus. Du nutzt "
 "Version %s. Bitte aktualisiere und probiere es dann noch einmal."
 
-#: src/inc/customizer.php:25
+#: src/inc/customizer.php:24
 msgid "Theme Options"
 msgstr "Allgemeine Optionen"
 
-#: src/inc/customizer.php:33
+#: src/inc/customizer.php:32
 msgid "Disable Comments"
 msgstr "Kommentare Deaktivieren"
 
-#: src/inc/customizer.php:37
+#: src/inc/customizer.php:36
 msgid ""
 "Check the box to hide comments on the website. Comments are NOT deleted from "
 "the database and can thus be unhidden at any time."
@@ -217,11 +221,11 @@ msgstr ""
 "Kommentare werden NICHT aus der Datenbank gelöscht und können somit "
 "jederzeit wieder eingeblendet werden."
 
-#: src/inc/customizer.php:46
+#: src/inc/customizer.php:45
 msgid "Placeholder Image"
 msgstr "Platzhalter Bild"
 
-#: src/inc/customizer.php:49
+#: src/inc/customizer.php:48
 msgid ""
 "Select or upload a placeholder image that is displayed on feed pages when a "
 "post contains no image."

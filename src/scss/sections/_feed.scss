@@ -65,8 +65,15 @@
 .feed-link {
   @include font(button);
 
+  transition: border-bottom-color $anim-s, color $anim-s;
   border-bottom: 3px solid palette($secondary);
   color: palette($secondary);
+
+  &:hover,
+  &:focus {
+    border-bottom-color: palette($secondary, light);
+    color: palette($secondary, light);
+  }
 }
 
 

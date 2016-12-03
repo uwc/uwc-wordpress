@@ -25,7 +25,7 @@
 				<h2 class="feed-headline"><?php the_title(); ?></h2>
 			</a>
 			<p class="feed-text"><?php echo esc_html( get_the_excerpt() ); ?></p>
-			<a href="<?php esc_url( get_permalink() ); ?>" class="feed-link"><?php echo esc_html__( 'Watch video', 'uwc' ); ?></a>
+			<a href="<?php echo esc_url( get_permalink() ); ?>" class="feed-link"><?php echo esc_html__( 'Watch video', 'uwc' ); ?></a>
 		</div>
 	</div>
 </article> <!-- // post-## -->

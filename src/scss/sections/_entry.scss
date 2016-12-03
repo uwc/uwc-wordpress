@@ -21,6 +21,7 @@
 
   display: block;
   width: 100%;
+  margin-top: .5rem;
   padding: 0 1rem;
 
   @include mappy-bp(m) {
@@ -44,11 +45,16 @@
 
 // 2. Anchors //
 
-.anchors {
-  padding: 1rem 0;
+.anchors,
+.post-tags {
+  @include mappy-bp(max-width m) {
+    padding-bottom: 1rem;
+  }
 
   @include mappy-bp(m) {
-    border-bottom: 2px solid palette(gray, light);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid palette(gray, light);
   }
 }
 
@@ -70,6 +76,10 @@
   .anchors-item {
     @include font(body-m);
   }
+}
+
+.post-tags a {
+  @include line-link(gray);
 }
 
 
@@ -114,14 +124,22 @@
 
   .nav-previous,
   .nav-next {
+    max-width: 50%;
     padding: 1rem;
     z-index: 100;
 
     a {
       @include font(button);
 
+      transition: border-bottom-color $anim-s, color $anim-s;
       border-bottom: 3px solid palette($primary);
       color: palette($primary);
+
+      &:hover,
+      &:focus {
+        border-bottom-color: palette($primary, light);
+        color: palette($primary, light);
+      }
     }
   }
 
@@ -139,6 +157,7 @@
     padding: 1rem;
     color: palette(gray);
     text-align: center;
+    z-index: 10;
 
     a {
       color: palette($primary);
@@ -152,11 +171,4 @@
       text-align: right;
     }
   }
-}
-
-.post-tags {
-  @include ctnr(two);
-  @include font(body-s);
-
-  color: palette(gray);
 }
