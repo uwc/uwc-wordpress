@@ -32,6 +32,8 @@
 // 2. Inputs //
 
 textarea {
+  @include font(body);
+
   max-width: 100%;
   resize: vertical;
 }
