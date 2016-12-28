@@ -19,7 +19,7 @@ Requires at least: WordPress 4.4, PHP 5.5
 
 Tested up to: WordPress 4.6.1, PHP 7.0
 
-Version: 2.1.2
+Version: 2.1.3
 
 License: [GPL-3.0](#Copyright)
 
