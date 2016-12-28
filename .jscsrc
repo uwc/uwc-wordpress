@@ -2,9 +2,7 @@
   "preset": "wordpress",
   "fileExtensions": [".js"],
   "excludeFiles": [
-    "js/**.min.js",
-    "gulpconfig.js",
-    "gulpfile.js/"
+    "js/**.min.js"
   ],
   "requireVarDeclFirst": false
 }

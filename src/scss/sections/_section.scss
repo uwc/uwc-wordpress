@@ -3,8 +3,10 @@
 // 1. Text + Image
 // 2. Quote
 // 3. Call To Action
-// 4. Video + Google Maps
-// 5. Newsfeed
+// 4. Video
+// 5. Google Maps
+// 6. Logo
+// 7. Newsfeed
 
 .section {
   margin-top: 2rem;
@@ -182,6 +184,39 @@
 // Fixes potential theme css conflict.
 .acf-map img {
   max-width: inherit;
+}
+
+// 6. Logo //
+
+.section-logo {
+  @include clearfix;
+}
+
+.logo-headline {
+  @include font(header-m);
+
+  + .logo-wrapper {
+    text-align: left;
+  }
+}
+
+.logo-wrapper {
+  text-align: center;
+}
+
+.logo-link {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-right: 2rem;
+  text-align: center;
+}
+
+.logo-image {
+  max-width: 100%;
+  max-height: 4rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 // 7. Newsfeed //
