@@ -24,7 +24,6 @@ var pkg  = require('./package.json'), // Allows access to the project metadata f
   build = './' + project + '/', // A temporary directory containing a development version of your theme; delete it anytime.
   dist    = './dist/', // The distribution package that you'll be uploading to your server; delete it anytime.
   assets  = './assets/', // A staging area for assets that require processing before landing in the source folder (example: icons before being added to a sprite sheet).
-  bower   = './bower_components/', // Bower packages.
   modules = './node_modules/' // NPM packages.
 ;
 
@@ -37,7 +36,7 @@ module.exports = {
   browsersync: {
     files: [ build + '/**', '!' + build + '/**.map' ], // Exclude map files.
     port: 5000, // Port number for the live version of the site; default: 3000.
-    proxy: 'http://local.' + project + '/', // We need to use a proxy instead of the built-in server because WordPress has to do some server-side rendering for the theme to work.
+    proxy: 'https://at.uwc.dev/', // We need to use a proxy instead of the built-in server because WordPress has to do some server-side rendering for the theme to work.
     notify: false, // In-line notifications (the blocks of text saying whether you are connected to the BrowserSync server or not).
     ui: false, // Set to false if you don't need the browsersync UI.
     open: false, // Set to false if you don't like the browser window opening automatically.
@@ -65,10 +64,10 @@ module.exports = {
   update: {
     // Copies dependencies from package managers to `_scss` and renames them to allow for them to be imported as a Sass file.
     src: [
-      bower + 'normalize-css/normalize.css',
-      bower + 'slick-lightbox/dist/slick-lightbox.css',
-      bower + 'slick-carousel/slick/slick.css',
-      bower + 'slick-carousel/slick/slick-theme.css'
+      modules + 'normalize.css/normalize.css',
+      modules + 'slick-lightbox/dist/slick-lightbox.css',
+      modules + 'slick-carousel/slick/slick.css',
+      modules + 'slick-carousel/slick/slick-theme.css'
     ],
     dest: src + 'scss/deps',
     rename: {
@@ -101,7 +100,7 @@ module.exports = {
       }
     },
     libsass: { // Requires the libsass implementation of Sass (included in this package).
-      includePaths: [ './src/scss', bower, modules ], // Adds Bower and npm directories to the load path so you can @import directly.
+      includePaths: [ './src/scss', modules, modules ], // Adds modules and npm directories to the load path so you can @import directly.
       precision: 6,
       onError: function( err ) {
         return console.log( err );
@@ -131,16 +130,16 @@ module.exports = {
         src + 'js/skip-link-focus-fix.js'
       ],
       navigation: [
-        bower + 'responsive-nav/responsive-nav.js',
-        bower + 'headroom.js/dist/headroom.js',
-        bower + 'smooth-scroll/dist/js/smooth-scroll.js'
+        modules + 'responsive-nav/responsive-nav.js',
+        modules + 'headroom.js/dist/headroom.js',
+        modules + 'smooth-scroll/dist/js/smooth-scroll.js'
       ],
       lightbox: [
-        bower + 'slick-carousel/slick/slick.min.js',
-        bower + 'slick-lightbox/dist/slick-lightbox.min.js'
+        modules + 'slick-carousel/slick/slick.min.js',
+        modules + 'slick-lightbox/dist/slick-lightbox.min.js'
       ],
       ie: [
-        bower + 'html5shiv/dist/html5shiv.js'
+        modules + 'html5shiv/dist/html5shiv.js'
       ],
       customizer: [
         src + 'js/customizer.js'

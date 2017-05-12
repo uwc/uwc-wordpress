@@ -34,12 +34,12 @@ gulp.task('wordpress-fonts', function() {
 // Lint theme php files with phpcbf, then copy to the `build` folder.
 gulp.task('wordpress-php', function () {
   return gulp.src(config.php.src)
-  .pipe(plugins.phpcbf({
-    bin: config.php.bin,
-    standard: config.php.standard,
-    warningSeverity: config.php.warningSeverity
-  }))
-  .on('error', plugins.util.log)
+  // .pipe(plugins.phpcbf({
+  //   bin: config.php.bin,
+  //   standard: config.php.standard,
+  //   warningSeverity: config.php.warningSeverity
+  // }))
+  // .on('error', plugins.util.log)
   .pipe(gulp.dest(config.php.dest));
 });
 

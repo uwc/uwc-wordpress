@@ -17,7 +17,7 @@ body#tinymce.wp-editor {
   // 1. Dependencies //
 
   // Modular scale calculator built into your Sass, from http://www.modularscale.com/.
-  @import "modular-scale/stylesheets/modular-scale";
+  @import "modularscale-sass/stylesheets/modularscale";
 
   // Typi: a sass mixin to make responsive typography easy, from https://github.com/zellwk/typi.
   @import "typi/scss/typi";

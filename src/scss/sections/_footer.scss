@@ -20,21 +20,23 @@
   @include font(header-m);
   @include line-header($primary);
 
-  float: left;
-}
-
-.footer-social {
-  float: right;
-}
-
-.footer-tagline,
-.footer-social {
   width: 100%;
+  float: left;
 
   @include mappy-bp(m) {
-    width: 50%;
+    width: 75%;
   }
 }
+
+.footer-social {
+  width: 100%;
+  float: right;
+
+  @include mappy-bp(m) {
+    width: 25%;
+  }
+}
+
 
 // 3. Meta //
 
