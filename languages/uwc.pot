@@ -1,4 +1,4 @@
-# Copyright (C) 2016 uwc
+# Copyright (C) 2017 uwc
 # This file is distributed under the same license as the uwc package.
 msgid ""
 msgstr ""
@@ -7,8 +7,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Connor Bär <hello@connorbaer.io>\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Connor Bär <hello@connorbaer.co>\n"
 "Language-Team: Made by Connor. <hi@madebyconnor.co>\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -184,31 +184,35 @@ msgstr ""
 msgid "Select or upload a placeholder image that is displayed on feed pages when a post contains no image."
 msgstr ""
 
-#: src/inc/template-tags.php:61
+#: src/inc/template-tags.php:63
 msgid "Previous page"
 msgstr ""
 
-#: src/inc/template-tags.php:63
+#: src/inc/template-tags.php:65
 msgid "Next page"
 msgstr ""
 
-#: src/inc/template-tags.php:115
+#: src/inc/template-tags.php:119
 msgid "In This Section"
 msgstr ""
 
-#: src/inc/theme.php:56
+#: src/inc/theme.php:58
 msgid "UWC"
 msgstr ""
 
-#: src/inc/theme.php:61
+#: src/inc/theme.php:63
 msgid "UWC Germany"
 msgstr ""
 
-#: src/inc/theme.php:67
+#: src/inc/theme.php:68
+msgid "UWC Austria"
+msgstr ""
+
+#: src/inc/theme.php:74
 msgid "Primary Menu"
 msgstr ""
 
-#: src/inc/theme.php:68
+#: src/inc/theme.php:75
 msgid "Social Links Menu"
 msgstr ""
 

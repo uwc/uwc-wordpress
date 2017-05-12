@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UWC WordPress\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-wordpress/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-12-28 15:31+0100\n"
+"PO-Revision-Date: 2016-12-28 22:48+0100\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -112,47 +112,31 @@ msgstr "Neuigkeiten"
 msgid "All rights reserved."
 msgstr "Alle Rechte vorbehalten."
 
-#: src/functions.php:63
-msgid "UWC"
-msgstr "UWC"
-
-#: src/functions.php:68
-msgid "UWC Germany"
-msgstr "UWC Deutschland"
-
-#: src/functions.php:74
-msgid "Primary Menu"
-msgstr "Hauptmenü"
-
-#: src/functions.php:75
-msgid "Social Links Menu"
-msgstr "Social Links Menü"
-
-#: src/functions.php:136
+#: src/functions.php:41
 msgid "Sidebar"
 msgstr "Seitenleiste"
 
-#: src/functions.php:138
+#: src/functions.php:43
 msgid "Add widgets here to appear in your sidebar."
 msgstr "Widgets, die in der Seitenleiste erscheinen sollen, hier einfügen."
 
-#: src/functions.php:145
+#: src/functions.php:50
 msgid "Footer 1"
 msgstr "Fußzeile 1"
 
-#: src/functions.php:147, src/functions.php:156, src/functions.php:165
+#: src/functions.php:52, src/functions.php:61, src/functions.php:70
 msgid "Add widgets here to appear in your footer."
 msgstr "Widgets, die in der Fußzeile erscheinen sollen, hier einfügen."
 
-#: src/functions.php:154
+#: src/functions.php:59
 msgid "Footer 2"
 msgstr "Fußzeile 2"
 
-#: src/functions.php:163
+#: src/functions.php:68
 msgid "Footer 3"
 msgstr "Fußzeile 3"
 
-#: src/functions.php:195
+#: src/functions.php:100
 msgctxt "Source Sans Pro font: on or off"
 msgid "on"
 msgstr "on"
@@ -244,6 +228,22 @@ msgstr "Nächste Seite"
 #: src/inc/template-tags.php:115
 msgid "In This Section"
 msgstr "Auf Dieser Seite"
+
+#: src/inc/theme.php:56
+msgid "UWC"
+msgstr "UWC"
+
+#: src/inc/theme.php:61
+msgid "UWC Germany"
+msgstr "UWC Deutschland"
+
+#: src/inc/theme.php:67
+msgid "Primary Menu"
+msgstr "Hauptmenü"
+
+#: src/inc/theme.php:68
+msgid "Social Links Menu"
+msgstr "Social Links Menü"
 
 #: src/inc/widgets.php:19
 msgid "Author Info (UWC)"
