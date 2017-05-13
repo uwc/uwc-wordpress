@@ -4,7 +4,6 @@
 
 A WordPress theme for [UWC](http://uwc.org) websites.
 
-
 # Contents
 
 - [Overview](#Overview)
@@ -12,21 +11,19 @@ A WordPress theme for [UWC](http://uwc.org) websites.
 - [Contribute](#Contribute)
 - [Copyright](#Copyright)
 
-
 # Overview
 
-Contributors: [Connor Bär](http://madebyconnor.de)
+Contributors: [Connor Bär](https://madebyconnor.co)
 
-Requires at least: WordPress 4.4, PHP 5.5
+Requires at least: WordPress 4.4, PHP 7.0
 
-Tested up to: WordPress 4.6.1, PHP 7.0
+Tested up to: WordPress 4.7.4, PHP 7.0
 
-Version: 2.1.3
+Version: 2.1.5
 
 License: [GPL-3.0](#Copyright)
 
 Tags: custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready
-
 
 # Installation
 
@@ -39,11 +36,9 @@ Tags: custom-menu, editor-style, featured-image-header, featured-images, post-fo
 5. Go to the [UWC Documentation](https://docs.uwc.io) for a guide on how to use this theme.
 6. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
-
 # Contribute
 
 Interested in contributing to the development of this theme? I look forward to your pull requests und issues. Or drop me a line at [hello@connorbaer.io](mailto:hello@connorbaer.io).
-
 
 # Copyright
 
@@ -53,22 +48,20 @@ This program is free software: you can redistribute it and/or modify it under th
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
----
+--------------------------------------------------------------------------------
 
-### UWC Website bundles the following third-party resources:
+## UWC Website bundles the following third-party resources:
 
-Headroom.js, Copyright 2013 Nick Williams License: MIT Source: https://github.com/WickyNilliams/headroom.js
+Headroom.js, Copyright 2013 Nick Williams License: MIT Source: <https://github.com/WickyNilliams/headroom.js>
 
-HTML5 Shiv v3.7.3, Copyright 2014 Alexander Farkas Licenses: MIT/GPL2 Source: https://github.com/aFarkas/html5shiv
+HTML5 Shiv v3.7.3, Copyright 2014 Alexander Farkas Licenses: MIT/GPL2 Source: <https://github.com/aFarkas/html5shiv>
 
-Modular Scale v.2.1.3, Copyright 2015 Scott Kellum (@scottkellum), Adam Stacoviak (@adamstac) and Mason Wendell (@codingdesigner) License: MIT Source: https://github.com/modularscale/modularscale-sass
+Modular Scale v.2.1.3, Copyright 2015 Scott Kellum (@scottkellum), Adam Stacoviak (@adamstac) and Mason Wendell (@codingdesigner) License: MIT Source: <https://github.com/modularscale/modularscale-sass>
 
-Pure, Copyright 2013 Yahoo! Inc. License: BSD Source: https://github.com/yahoo/pure/
+Pure, Copyright 2013 Yahoo! Inc. License: BSD Source: <https://github.com/yahoo/pure/>
 
-Responsive Nav, Copyright 2013 Viljami Salminen License: MIT Source:
-https://github.com/viljamis/responsive-nav.js
+Responsive Nav, Copyright 2013 Viljami Salminen License: MIT Source: <https://github.com/viljamis/responsive-nav.js>
 
-slick-lightbox, Copyright 2014 Petr Marek License: MIT Source: https://github.com/mreq/slick-lightbox
+slick-lightbox, Copyright 2014 Petr Marek License: MIT Source: <https://github.com/mreq/slick-lightbox>
 
-Smooth Scroll, Copyright 2016 Go Make Things, LLC License: MIT Source:
-https://github.com/cferdinandi/smooth-scroll
+Smooth Scroll, Copyright 2016 Go Make Things, LLC License: MIT Source: <https://github.com/cferdinandi/smooth-scroll>
