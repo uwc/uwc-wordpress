@@ -107,6 +107,10 @@ ul,
 ol {
   margin-bottom: 1rem;
   padding-left: 1rem;
+
+  a {
+    @include line-link($secondary);
+  }
 }
 
 ul {

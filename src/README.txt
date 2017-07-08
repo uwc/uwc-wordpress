@@ -17,7 +17,7 @@ Requires at least: WordPress 4.4, PHP 7.0
 
 Tested up to: WordPress 4.7.4, PHP 7.0
 
-Version: 2.1.5
+Version: 2.1.6
 
 License: [GPL-3.0](#Copyright)
 

@@ -34,7 +34,7 @@
 				<div class="pure-ctnr box-1-2">
 					<span class="footer-legal">&#xa9; <?php bloginfo( 'name' ); ?>. <?php echo esc_html__( 'All rights reserved.', 'uwc' ); ?></span>
 					<span class="footer-author"><a href="<?php $my_theme = wp_get_theme();
-					echo esc_url( $my_theme->get( 'AuthorURI' ) ); ?>" rel="designer" target="_blank">Made by Connor.</a></span>
+					echo esc_url( $my_theme->get( 'AuthorURI' ) ); ?>" rel="designer" target="_blank">Design entwickelt von Connor Bär.</a></span>
 				</div>
 			</div>
 		</footer>

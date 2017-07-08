@@ -30,7 +30,7 @@ Tags: custom-menu, editor-style, featured-image-header, featured-images, post-fo
 
 # Installation
 
-**This theme can only be installed on self-hosted WordPress installations and not on sites that are hosted on wordpress.com.** I provide managed hosting for UWC websites. Drop me a line at [hello@madebyconnor.io](mailto:hello@madebyconnor.io) if you're interested.
+**This theme can only be installed on self-hosted WordPress installations and not on sites that are hosted on wordpress.com.** I provide managed hosting for UWC websites. Drop me a line at [hello@madebyconnor.co](mailto:hello@madebyconnor.co) if you're interested.
 
 1. UWCde Website is not yet listed on wordpress.org. Therefore you have to install the [GitHub Updater](https://github.com/afragen/github-updater) plugin to install the theme and receive future updates. Follow the instructions in the [readme file](https://github.com/afragen/github-updater#upload) to install the plugin, then come back here.
 2. In WordPress, navigate to 'Settings' > 'GitHub Updater', then select 'Install Theme' from the tabs at the top.
@@ -42,12 +42,12 @@ Tags: custom-menu, editor-style, featured-image-header, featured-images, post-fo
 
 # Contribute
 
-Interested in contributing to the development of this theme? I look forward to your pull requests und issues. Or drop me a line at [hello@connorbaer.io](mailto:hello@connorbaer.io).
+Interested in contributing to the development of this theme? I look forward to your pull requests und issues. Or drop me a line at [hello@connorbaer.co](mailto:hello@connorbaer.co).
 
 
 # Copyright
 
-UWC Website Theme, Copyright 2016 [Made by Connor](http://madebyconnor.io). UWC Website is distributed under the terms of the [GNU GPL-3.0 License](https://github.com/uwc/uwc-wordpress/blob/master/LICENSE.md).
+UWC Website Theme, Copyright 2016 [Made by Connor](http://madebyconnor.co). UWC Website is distributed under the terms of the [GNU GPL-3.0 License](https://github.com/uwc/uwc-wordpress/blob/master/LICENSE.md).
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
